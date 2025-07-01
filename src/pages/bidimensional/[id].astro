@@ -20,16 +20,16 @@ const { Content } = await render(serie)
 
 <Layout title={`${title} - Pedro Escapa`}>
     <div class="flex gap-12">
-        <aside>
+        <aside class="flex flex-col items-center gap-4">
             <img
-                class="mr-6 w-72"
+                class="mr-6 w-full"
                 src={`/${img}`}
                 alt={title}
             />
         </aside>
-        <main>
-            <h1>{title}</h1>
-            <div class="">
+        <main class="max-w-sm">
+            <h1 class="text-4xl font-bold mb-4">{title}</h1>
+            <div class="prose">
                 <Content />
             </div>
         </main>
