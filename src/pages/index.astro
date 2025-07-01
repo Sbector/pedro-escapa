@@ -1,11 +1,51 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const bidimensional = await getCollection("bidimensional");
+console.log(bidimensional);
+console.log("refresh");
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<h1 class="text-center text-7xl font-extrabold py-4 mb-8">
+			Pedro <span class="block">Escapa</span>
+		</h1>
+		<section aria-label="Obras bidimensionales">
+			<div class="px-4 mx-auto max-w-screen-xl">
+				<div class="grid gap-6 md:grid-cols-2">
+					{
+						bidimensional.map((serie) => {
+							const { slug, data } = serie;
+							const { title, img, imgUrl, description } = data;
+
+							return (
+								<article class="flex">
+									<a
+										href={`/bidimensional/${slug}`}
+										class="mb-2 xl:mb-0 transition"
+									>
+										<img
+											class="mr-6 w-full rounded-xl transition-transform duration-300 hover:scale-103"
+											src={`/${img}`}
+											alt={title}
+										/>
+									</a>
+									<div class="flex flex-col justify-center">
+										<h2 class="mb-2 text-2xl font-bold leading-tight text-gray-900">
+											{title}
+										</h2>
+										<p class="mb-4 text-gray-600 max-w-sm">
+											{description}
+										</p>
+									</div>
+								</article>
+							);
+						})
+					}
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
