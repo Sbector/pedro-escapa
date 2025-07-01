@@ -3,11 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const bidimensional = await getCollection("bidimensional");
-console.log(bidimensional);
-console.log("refresh");
 ---
 
-<Layout>
+<Layout title="Pedro Escapa">
 	<main>
 		<h1 class="text-center text-7xl font-extrabold py-4 mb-8">
 			Pedro <span class="block">Escapa</span>
