@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const bidimensional = await getCollection("bidimensional");
+
+export const prerender = true
 ---
 
 <Layout title="Pedro Escapa">
@@ -25,6 +27,7 @@ const bidimensional = await getCollection("bidimensional");
 										class="mb-2 xl:mb-0 transition"
 									>
 										<img
+											transition:name={`img-${slug}`}
 											class="mr-6 w-full rounded-xl transition-transform duration-300 hover:scale-103"
 											src={`/${img}`}
 											alt={title}
