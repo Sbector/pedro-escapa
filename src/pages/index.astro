@@ -3,29 +3,26 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<main>
+	<main class="p-6">
 		<header
-			class="py-3 px-6 flex flex-col items-center fixed top-0 w-full justify-between"
+			class="py-3 px-6 flex flex-col items-center w-full justify-between"
 		>
-			<div class="flex">
-				<h1 class="text-2xl">Pedro Escapa</h1>
+			<div class="flex flex-grow">
+				<h1 class="text-2xl pb-10">PEDRO ESCAPA</h1>
 			</div>
-			<article class="prose lg:prose-xl">
-				<h1>Garlic bread with cheese: What the science tells us</h1>
-				<p>
-					For years parents have espoused the health benefits of
-					eating garlic bread with cheese to their children, with the
-					food earning such an iconic status in our culture that kids
-					will often dress up as warm, cheesy loaf for Halloween.
-				</p>
-				<p>
-					But a recent study shows that the celebrated appetizer may
-					be linked to a series of rabies cases springing up around
-					the country.
-				</p>
-				<!-- ... -->
-			</article>
+			<nav class="pb-10">
+				<ul
+					class="flex flex-col text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li]:hover:underline"
+				>
+					<li><a href="/acerca-de">ACERCA DE</a></li>
+					<li><a href="#">BIDIMENSIONAL</a></li>
+					<li><a href="#">INTERACCIONES</a></li>
+					<li><a href="#">PAPELERÍA</a></li>
+					<li><a href="#">EN CURSO</a></li>
+					<li><a href="#">CONTACTO</a></li>
+				</ul>
+			</nav>
 		</header>
-		<div class="size-6 bg-amber-300"></div>
+		<section class="size-72 flex-grow m-auto bg-amber-300"></section>
 	</main>
 </Layout>
