@@ -2,7 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const bidimensional = await getCollection("bidimensional");
+const bidimensional = (await getCollection("bidimensional")).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
+);
 
 export const prerender = true
 ---

@@ -6,7 +6,8 @@ const bidimensional = defineCollection({
         title: z.string(),
         img: z.string(),
         imgUrl: z.string().url(),
-        description: z.string()
+        description: z.string(),
+        order: z.number(),
     })
 })
 
