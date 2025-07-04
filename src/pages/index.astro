@@ -4,12 +4,12 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
 	<main>
-		<heade class="py-6 px-10 flex items-center fixed top-0 w-full justify-between">
-			<div>
+		<header class="py-3 px-6 flex flex-col items-center fixed top-0 w-full justify-between">
+			<div class="flex">
 				<h1 class="text-2xl">Pedro Escapa</h1>
 			</div>
 			<nav>
-				<ul>
+				<ul class="flex flex-col text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li]:hover:underline">
 					<li><a href="#">ACERCA DE</a></li>
 					<li><a href="#">BIDIMENSIONAL</a></li>
 					<li><a href="#">INTERACCIONES</a></li>
@@ -19,5 +19,8 @@ import Layout from "../layouts/Layout.astro";
 				</ul>
 			</nav>
 		</header>
+		<div class="size-6 bg-amber-300">
+
+		</div>
 	</main>
 </Layout>
