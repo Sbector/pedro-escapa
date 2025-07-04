@@ -34,9 +34,6 @@ export const prerender = true
                 src={`/${img}`}
                 alt={title}
             />
-            <SerieScore server:defer id="score">
-                <span slot="fallback" class="text-xs">Recabando información...</span>
-            </SerieScore>
             {
                 SHOW_BUY_BUTTON && (
                     <a
