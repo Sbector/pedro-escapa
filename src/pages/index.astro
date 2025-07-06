@@ -2,13 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout title="Pedro Escapa">
 	<main class="flex flex-col md:flex-row">
-		<header class="py-3 px-6 flex flex-col items-center justify-between">
-			<div class="flex flex-grow">
+		<header class="py-10 px-9 flex flex-col items-center justify-between">
+			<div class="flex">
 				<a href="/" class="text-2xl pb-10">PEDRO ESCAPA</a>
 			</div>
-			<nav class="pb-10">
+			<nav class="pb-10 w-full">
 				<ul
 					class="flex flex-col text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li]:hover:italic"
 				>
@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
 				</ul>
 			</nav>
 		</header>
-		<section class="h-[100dvh] content-center my-auto mx-auto justify-center">
+		<section class="md:h-[100dvh] content-center my-auto mx-auto justify-center">
 			<div class="size-72 bg-amber-300"></div>
 		</section>
 	</main>
