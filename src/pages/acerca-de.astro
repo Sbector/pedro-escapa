@@ -1,18 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const title = "Acerca de"
+const title = "Acerca de";
 ---
 
 <Layout title={`${title} - Pedro Escapa`}>
-    <main class="flex flex-col md:flex-row">
-        <section
-            class="md:h-[100dvh] md:content-center md:my-auto md:mx-auto md:justify-center"
-        >
-            <div class="size-6 md:size-72 bg-amber-300"></div>
-        </section>
-        <article class="h-[100dvh] overflow-y-scroll p-10 prose lg:prose-md">
-            <h1 class="text-2xl font-medium">Pedro Escapa Esquisabel</h1>
+    <div class="flex flex-grow py-28 pr-40 justify-end">
+        <article class="prose lg:prose-md">
+            <h1 class="pt-10 text-2xl font-medium">Pedro Escapa Esquisabel</h1>
+            <p>
+                Pedro Escapa concibe el arte como una forma de diálogo. Su
+                trabajo explora la interacción entre materiales, ideas,
+                contextos y voces —tanto del pasado como del presente. Sus
+                piezas pueden presentarse como tallas en madera o como trazos
+                sencillo sobre papel; a veces adquieren de nidas, otras veces se
+                mantienen en constante transformación. No se limita a un solo
+                medio o técnica, sino que elige lo que cada proyecto necesita
+                para expresarse.
+            </p>
+
+            <p>
+                Originario de Barcelona y radicado en México desde hace cuatro
+                décadas, su mirada se ha nutrido de diversas culturas,
+                experiencias personales y territorios creativos. Esta
+                perspectiva multicultural atraviesa su obra, que transita entre
+                texturas, luces, sombras, procesos y materiales en evolución.
+                Para Escapa, nada permanece jo: incluso lo más sólido está en
+                movimiento.
+            </p>
+            <p>
+                A lo largo de su trayectoria, ha colaborado con artistas de
+                distintas disciplinas, generando obras en diálogo con otras
+                prácticas o reimaginando elementos del pasado desde nuevos
+                enfoques. Más que ofrecer respuestas, su arte abre preguntas;
+                investiga, sugiere y provoca.
+            </p>
+            <p>
+                Su trabajo busca detonar experiencias sensoriales y re exivas en
+                el espectador. En lugar de cerrar signi cados, propone un
+                espacio abierto a la percepción, al encuentro y a la
+                transformación constante.
+            </p>
+            <p>
+                Sabadell. Barcelona. España. 1966. Reside en México desde 1982
+            </p>
+
+            <h1 class="pt-10 text-2xl font-medium">Pedro Escapa Esquisabel</h1>
             <p>
                 Pedro Escapa concibe el arte como una forma de diálogo. Su
                 trabajo explora la interacción entre materiales, ideas,
@@ -50,5 +83,5 @@ const title = "Acerca de"
                 Sabadell. Barcelona. España. 1966. Reside en México desde 1982
             </p>
         </article>
-    </main>
+    </div>
 </Layout>

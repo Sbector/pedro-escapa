@@ -6,7 +6,7 @@ interface Props {
 	title: string;
 }
 
-const {title} = Astro.props
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,8 +19,25 @@ const {title} = Astro.props
 		<title>{title}</title>
 		<ClientRouter />
 	</head>
-	<body>
-		<slot />
+	<body class="flex flex-row">
+		<header class="py-10 px-10 flex flex-col items-center justify-between">
+			<a href="/" class="text-2xl pb-10 w-44 font-medium">PEDRO ESCAPA</a>
+
+			<nav class="w-full">
+				<ul
+					class="flex flex-col text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li]:hover:italic"
+				>
+					<li><a href="#">BIDIMENSIONAL</a></li>
+					<li><a href="#">INTERACCIONES</a></li>
+					<li><a href="#">PAPELERÍA</a></li>
+					<li><a href="#">EN CURSO</a></li>
+					<li><a href="/acerca-de">ACERCA DE</a></li>
+					<li><a href="#">CONTACTO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="h-dvh w-full flex flex-row overflow-y-auto">
+			<slot />
+		</main>
 	</body>
 </html>
-
