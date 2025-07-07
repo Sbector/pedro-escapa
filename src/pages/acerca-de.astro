@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 
 const title = "Acerca de";
 ---
@@ -7,7 +7,7 @@ const title = "Acerca de";
 <Layout title={`${title} Pedro Escapa`}>
     <div class="flex flex-grow py-28 pr-40 justify-end">
         <article class="prose lg:prose-md">
-            <h1 class="pt-14 text-2xl font-medium">Pedro Escapa Esquisabel</h1>
+            <h1 class="text-2xl font-medium pb-10">Pedro Escapa Esquisabel</h1>
             <p>
                 Pedro Escapa concibe el arte como una forma de diálogo. Su
                 trabajo explora la interacción entre materiales, ideas,
@@ -45,43 +45,41 @@ const title = "Acerca de";
                 Sabadell. Barcelona. España. 1966. Reside en México desde 1982
             </p>
 
-            <h1 class="pt-10 text-2xl font-medium">Pedro Escapa Esquisabel</h1>
-            <p>
-                Pedro Escapa concibe el arte como una forma de diálogo. Su
-                trabajo explora la interacción entre materiales, ideas,
-                contextos y voces —tanto del pasado como del presente. Sus
-                piezas pueden presentarse como tallas en madera o como trazos
-                sencillo sobre papel; a veces adquieren de nidas, otras veces se
-                mantienen en constante transformación. No se limita a un solo
-                medio o técnica, sino que elige lo que cada proyecto necesita
-                para expresarse.
-            </p>
-
-            <p>
-                Originario de Barcelona y radicado en México desde hace cuatro
-                décadas, su mirada se ha nutrido de diversas culturas,
-                experiencias personales y territorios creativos. Esta
-                perspectiva multicultural atraviesa su obra, que transita entre
-                texturas, luces, sombras, procesos y materiales en evolución.
-                Para Escapa, nada permanece jo: incluso lo más sólido está en
-                movimiento.
-            </p>
-            <p>
-                A lo largo de su trayectoria, ha colaborado con artistas de
-                distintas disciplinas, generando obras en diálogo con otras
-                prácticas o reimaginando elementos del pasado desde nuevos
-                enfoques. Más que ofrecer respuestas, su arte abre preguntas;
-                investiga, sugiere y provoca.
-            </p>
-            <p>
-                Su trabajo busca detonar experiencias sensoriales y re exivas en
-                el espectador. En lugar de cerrar signi cados, propone un
-                espacio abierto a la percepción, al encuentro y a la
-                transformación constante.
-            </p>
-            <p>
-                Sabadell. Barcelona. España. 1966. Reside en México desde 1982
-            </p>
+            <h2 class="text-lg font-medium">Exposiciones individuales</h2>
+            <ul>
+                <li>
+                    <strong>2018</strong><br />
+                    “Death of painting is a play of lights”, Drexel Galería, Garza
+                    García, N.L., México
+                </li>
+                <li>
+                    <strong>2017</strong><br />
+                    “Pluma (adj.)”, Escultura urbana, Guadalajara, Jal., México<br
+                    />
+                    “Photo and paintings”, Franco Moragrega, San Diego, CA, Estados
+                    Unidos
+                </li>
+                <li>
+                    <strong>2013</strong><br />
+                    “SIC”, Diéresis, Guadalajara, Jal., México
+                </li>
+                <li>
+                    <strong>2012</strong><br />
+                    “Papelería y Alma Zen”, Centro de las Artes, Monterrey, N.L.,
+                    México
+                </li>
+                <li>
+                    <strong>2011</strong><br />
+                    “A quien corresponda”, Museo de Sitio, Guadalajara, Jal., México
+                </li>
+                <li>
+                    <strong>2009</strong><br />
+                    “Arquitecturas”, Drexel Galería, Garza García, N.L., México<br
+                    />
+                    “De la vista el amor”, Fototeca, Centro de las Artes, Monterrey,
+                    N.L., México
+                </li>
+            </ul>
         </article>
     </div>
 </Layout>
