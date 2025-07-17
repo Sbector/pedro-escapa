@@ -1,16 +1,95 @@
-<header class="py-14 px-10 flex flex-col justify-between">
-    <a href="/" class="text-2xl w-44 font-medium">PEDRO ESCAPA</a>
+---
+const menu = [
+    {
+        label: "BIDIMENSIONAL",
+        href: "/",
+        subitems: [
+            { label: "89-01", href: "/" },
+            { label: "Escaleras", href: "/" },
+            { label: "Pi", href: "/" },
+            { label: "Mixta sobre escaleras", href: "/" },
+            { label: "Composición", href: "/" },
+            { label: "Consejos", href: "/" },
+            { label: "Usos múltiples", href: "/" },
+            { label: "Semicírculos", href: "/" },
+            { label: "Óleo", href: "/" },
+        ],
+    },
+    {
+        label: "INTERACCIONES",
+        href: "/",
+        subitems: [
+            { label: "De la vista el amor", href: "/" },
+            { label: "Colegages", href: "/" },
+            { label: "Arquitecturas", href: "/" },
+            { label: "A quien corresponda", href: "/" },
+            { label: "Papelería y almaZen", href: "/" },
+            { label: "Sic", href: "/" },
+            { label: "Abstracción figurativa", href: "/" },
+            { label: "Death of painting is a", href: "/" },
+            { label: "Aspect ratio", href: "/" },
+            { label: "Paráfrasis", href: "/" },
+        ],
+    },
+    {
+        label: "PAPELERÍA",
+        href: "/",
+        subitems: [
+            { label: "Proyecto", href: "/" },
+            { label: "Shakers", href: "/" },
+        ],
+    },
+    {
+        label: "VOLÚMENES",
+        href: "/",
+        subitems: [
+            { label: "Esculturas", href: "/" },
+            { label: "Maquetas", href: "/" },
+        ],
+    },
+    {
+        label: "EN CURSO",
+        href: "/",
+        subitems: [
+            { label: "Home painting", href: "/" },
+            { label: "Papelería", href: "/" },
+            { label: "Maquetas", href: "/" },
+        ],
+    },
+    {
+        label: "ACERCA DE",
+        href: "/acerca-de",
+    },
+];
+---
 
-    <nav class="flex flex-col justify-center w-full h-full">
-        <ul
-            class="text-sm [&>li>a]:inline-block [&>li>a]:py-4 [&>li]:hover:italic"
-        >
-            <li><a href="/">BIDIMENSIONAL</a></li>
-            <li><a href="/">INTERACCIONES</a></li>
-            <li><a href="/">PAPELERÍA</a></li>
-            <li><a href="/">EN CURSO</a></li>
-            <li><a href="/acerca-de">ACERCA DE</a></li>
-            <li class="pt-10"><a href="/">CONTACTO</a></li>
+<header class="pt-12 pl-12 min-w-60 flex flex-col">
+    <a href="/" class="text-xl pb-20 font-semibold tracking-widest">PEDRO ESCAPA</a>
+
+    <nav class="flex flex-col w-full h-full">
+        <ul class="text-xs space-y-5 font-semibold tracking-wide">
+            {
+                menu.map((item) => (
+                    <li class={`relative ${item.subitems ? "group" : ""}`}>
+                        <a
+                            href={item.href}
+                            class="inline-block font-medium"
+                        >
+                            {item.label}
+                        </a>
+                        {item.subitems && (
+                            <ul class="hidden group-hover:block group-focus-within:block text-gray-400 font-medium pt-3 space-y-2 capitalize">
+                                {item.subitems.map((sub) => (
+                                    <li>
+                                        <a href={sub.href}>{sub.label}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                ))
+            }
         </ul>
+        <a href="/" class="text-xs font-medium pt-10">CONTACTO</a>
     </nav>
 </header>
