@@ -2,6 +2,13 @@
 @plugin "@tailwindcss/typography";
 @import "@fontsource/inter";
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
 html,
 body {
