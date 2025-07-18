@@ -1,110 +1,124 @@
 ---
 const menu = [
-  {
-    id: 'bidimensional',
-    label: 'BIDIMENSIONAL',
-    href: '/',
-    subitems: [
-      { label: '89-01', href: '/' },
-      { label: 'Escaleras', href: '/' },
-      { label: 'Pi', href: '/' },
-      { label: 'Mixta sobre escaleras', href: '/' },
-      { label: 'Composición', href: '/' },
-      { label: 'Consejos', href: '/' },
-      { label: 'Usos múltiples', href: '/' },
-      { label: 'Semicírculos', href: '/' },
-      { label: 'Óleo', href: '/' },
-    ]
-  },
-  {
-    id: 'interacciones',
-    label: 'INTERACCIONES',
-    href: '/',
-    subitems: [
-      { label: 'De la vista el amor', href: '/' },
-      { label: 'Colegages', href: '/' },
-      { label: 'Arquitecturas', href: '/' },
-      { label: 'A quien corresponda', href: '/' },
-      { label: 'Papelería y almaZen', href: '/' },
-      { label: 'Sic', href: '/' },
-      { label: 'Abstracción figurativa', href: '/' },
-      { label: 'Death of painting is a', href: '/' },
-      { label: 'Aspect ratio', href: '/' },
-      { label: 'Paráfrasis', href: '/' },
-    ]
-  },
-  {
-    id: 'papeleria',
-    label: 'PAPELERÍA',
-    href: '/',
-    subitems: [
-      { label: 'Proyecto', href: '/' },
-      { label: 'Shakers', href: '/' },
-    ]
-  },
-  {
-    id: 'volumenes',
-    label: 'VOLÚMENES',
-    href: '/',
-    subitems: [
-      { label: 'Esculturas', href: '/' },
-      { label: 'Maquetas', href: '/' },
-    ]
-  },
-  {
-    id: 'encurso',
-    label: 'EN CURSO',
-    href: '/',
-    subitems: [
-      { label: 'Home painting', href: '/' },
-      { label: 'Papelería', href: '/' },
-      { label: 'Maquetas', href: '/' },
-    ]
-  },
-  {
-    id: 'acerca',
-    label: 'ACERCA DE',
-    href: '/acerca-de'
-  }
+    {
+        id: "bidimensional",
+        label: "BIDIMENSIONAL",
+        href: "/",
+        subitems: [
+            { label: "89-01", href: "/" },
+            { label: "Escaleras", href: "/" },
+            { label: "Pi", href: "/" },
+            { label: "Mixta sobre escaleras", href: "/" },
+            { label: "Composición", href: "/" },
+            { label: "Consejos", href: "/" },
+            { label: "Usos múltiples", href: "/" },
+            { label: "Semicírculos", href: "/" },
+            { label: "Óleo", href: "/" },
+        ],
+    },
+    {
+        id: "interacciones",
+        label: "INTERACCIONES",
+        href: "/",
+        subitems: [
+            { label: "De la vista el amor", href: "/" },
+            { label: "Colegages", href: "/" },
+            { label: "Arquitecturas", href: "/" },
+            { label: "A quien corresponda", href: "/" },
+            { label: "Papelería y almaZen", href: "/" },
+            { label: "Sic", href: "/" },
+            { label: "Abstracción figurativa", href: "/" },
+            { label: "Death of painting is a", href: "/" },
+            { label: "Aspect ratio", href: "/" },
+            { label: "Paráfrasis", href: "/" },
+        ],
+    },
+    {
+        id: "papeleria",
+        label: "PAPELERÍA",
+        href: "/",
+        subitems: [
+            { label: "Proyecto", href: "/" },
+            { label: "Shakers", href: "/" },
+        ],
+    },
+    {
+        id: "volumenes",
+        label: "VOLÚMENES",
+        href: "/",
+        subitems: [
+            { label: "Esculturas", href: "/" },
+            { label: "Maquetas", href: "/" },
+        ],
+    },
+    {
+        id: "encurso",
+        label: "EN CURSO",
+        href: "/",
+        subitems: [
+            { label: "Home painting", href: "/" },
+            { label: "Papelería", href: "/" },
+            { label: "Maquetas", href: "/" },
+        ],
+    },
+    {
+        id: "acerca",
+        label: "ACERCA DE",
+        href: "/acerca-de",
+    },
 ];
 ---
+
 <nav class="flex flex-col w-full h-full">
-  <form class="text-xs space-y-5 font-semibold tracking-widest">
-    {menu.map((item) => (
-      <div>
-        {item.subitems ? (
-          <div class="flex flex-col">
-            <input
-              type="radio"
-              name="menu"
-              id={item.id}
-              class="hidden peer"
-            />
-            <label for={item.id} class="inline-block font-medium cursor-pointer">
-              {item.label}
-            </label>
-            <ul
-              class="
-                ml-[1px] hidden peer-checked:block 
-                text-[#878383] font-medium pt-3 space-y-2 capitalize
-              "
-            >
-              {item.subitems.map((sub) => (
-                <li>
-                  <a href={sub.href} class="hover:italic">{sub.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <div>
-            <a href={item.href} class="inline-block font-medium">{item.label}</a>
-          </div>
-        )}
-      </div>
-    ))}
-    <div class="pt-10">
-      <a href="/" class="text-xs font-medium">CONTACTO</a>
-    </div>
-  </form>
+    <form class="text-xs space-y-5 font-semibold tracking-widest">
+        {
+            menu.map((item) => (
+                <div>
+                    {item.subitems ? (
+                        <div class="flex flex-col">
+                            <input
+                                type="radio"
+                                name="menu"
+                                id={item.id}
+                                class="hidden peer"
+                            />
+                            <label
+                                for={item.id}
+                                class="inline-block font-medium cursor-pointer"
+                            >
+                                {item.label}
+                            </label>
+                            <ul
+                                class="
+                                        ml-[1px] max-h-0 overflow-hidden opacity-0
+                                        peer-checked:max-h-40 peer-checked:opacity-100
+                                        transition-all duration-400 ease-in-out
+                                        text-[#878383] font-medium pt-3 space-y-2 capitalize"
+                            >
+                                {item.subitems.map((sub) => (
+                                    <li>
+                                        <a href={sub.href} class="hover:italic">
+                                            {sub.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : (
+                        <div>
+                            <a
+                                href={item.href}
+                                class="inline-block font-medium"
+                            >
+                                {item.label}
+                            </a>
+                        </div>
+                    )}
+                </div>
+            ))
+        }
+        <div class="pt-10">
+            <a href="/" class="text-xs font-medium">CONTACTO</a>
+        </div>
+    </form>
 </nav>
