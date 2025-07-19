@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HomeCard from "@components/HomeCard.astro";
+import { menu } from "@lib/menu";
+
+export async function getStaticPaths() {
+  const paths = [];
+
+  for (const item of menu) {
+    if (item.subitems) {
+      for (const sub of item.subitems) {
+        paths.push({
+          params: {
+            categoria: item.id,
+            slug: sub.slug,
+          },
+        });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { categoria, slug } = Astro.params;
+
+// Buscar el label desde el objeto menu
+const categoriaData = menu.find((item) => item.id === categoria);
+const subitem = categoriaData?.subitems?.find((sub) => sub.slug === slug);
+const label = subitem?.label ?? slug;
+---
+
+<Layout title={`${label} · Pedro Escapa`}>
+  <HomeCard/>
+</Layout>

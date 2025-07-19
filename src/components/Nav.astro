@@ -1,72 +1,5 @@
 ---
-const menu = [
-    {
-        id: "bidimensional",
-        label: "BIDIMENSIONAL",
-        href: "/",
-        subitems: [
-            { label: "89-01", href: "/89-01" },
-            { label: "Escaleras", href: "/" },
-            { label: "Pi", href: "/" },
-            { label: "Mixta sobre escaleras", href: "/" },
-            { label: "Composición", href: "/" },
-            { label: "Consejos", href: "/" },
-            { label: "Usos múltiples", href: "/" },
-            { label: "Semicírculos", href: "/" },
-            { label: "Óleo", href: "/" },
-        ],
-    },
-    {
-        id: "interacciones",
-        label: "INTERACCIONES",
-        href: "/",
-        subitems: [
-            { label: "De la vista el amor", href: "/" },
-            { label: "Colegages", href: "/" },
-            { label: "Arquitecturas", href: "/" },
-            { label: "A quien corresponda", href: "/" },
-            { label: "Papelería y almaZen", href: "/" },
-            { label: "Sic", href: "/" },
-            { label: "Abstracción figurativa", href: "/" },
-            { label: "Death of painting is a", href: "/" },
-            { label: "Aspect ratio", href: "/" },
-            { label: "Paráfrasis", href: "/" },
-        ],
-    },
-    {
-        id: "papeleria",
-        label: "PAPELERÍA",
-        href: "/",
-        subitems: [
-            { label: "Proyecto", href: "/" },
-            { label: "Shakers", href: "/" },
-        ],
-    },
-    {
-        id: "volumenes",
-        label: "VOLÚMENES",
-        href: "/",
-        subitems: [
-            { label: "Esculturas", href: "/" },
-            { label: "Maquetas", href: "/" },
-        ],
-    },
-    {
-        id: "encurso",
-        label: "EN CURSO",
-        href: "/",
-        subitems: [
-            { label: "Home painting", href: "/" },
-            { label: "Papelería", href: "/" },
-            { label: "Maquetas", href: "/" },
-        ],
-    },
-    {
-        id: "acerca",
-        label: "ACERCA DE",
-        href: "/acerca-de",
-    },
-];
+import { menu } from "@lib/menu";
 ---
 
 <nav class="flex flex-col w-full h-ful overflow-auto no-scrollbar">
@@ -98,7 +31,10 @@ const menu = [
                             >
                                 {item.subitems.map((sub) => (
                                     <li>
-                                        <a href={sub.href} class="hover:italic">
+                                        <a 
+                                            href={`/${item.id}/${sub.slug}`} 
+                                            class="hover:italic"
+                                        >
                                             {sub.label}
                                         </a>
                                     </li>
