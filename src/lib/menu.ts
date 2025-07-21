@@ -1,4 +1,6 @@
-export const menu = [
+import type { MenuItem } from "./getSubitemData";
+
+export const menu: MenuItem[] = [
   {
     id: "bidimensional",
     label: "BIDIMENSIONAL",

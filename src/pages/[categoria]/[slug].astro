@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import HomeCard from "@components/HomeCard.astro";
 import { menu } from "@lib/menu";
+import { getSubitemData } from "@lib/getSubitemData"; // ← usa la ruta correcta
 
 export async function getStaticPaths() {
   const paths = [];
@@ -23,11 +24,13 @@ export async function getStaticPaths() {
 }
 
 const { categoria, slug } = Astro.params;
+const subitemData = getSubitemData(menu, categoria, slug);
 
-// Buscar el label desde el objeto menu
-const categoriaData = menu.find((item) => item.id === categoria);
-const subitem = categoriaData?.subitems?.find((sub) => sub.slug === slug);
-const label = subitem?.label ?? slug;
+if (!subitemData) {
+  throw new Error(`No se encontró el subitem: ${categoria}/${slug}`);
+}
+
+const { label } = subitemData;
 ---
 
 <Layout title={`${label} · Pedro Escapa`}>
