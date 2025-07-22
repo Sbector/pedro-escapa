@@ -8,14 +8,18 @@ export async function getStaticPaths() {
   const paths = [];
 
   for (const item of menu) {
-    if (item.subitems) {
+    // Solo incluir elementos visibles
+    if (item.visible !== false && item.subitems) {
       for (const sub of item.subitems) {
-        paths.push({
-          params: {
-            categoria: item.id,
-            slug: sub.slug,
-          },
-        });
+        // Solo incluir subelementos visibles
+        if (sub.visible !== false) {
+          paths.push({
+            params: {
+              categoria: item.id,
+              slug: sub.slug,
+            },
+          });
+        }
       }
     }
   }
