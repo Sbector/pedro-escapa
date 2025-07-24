@@ -2,52 +2,123 @@
 import img1 from "@assets/images/bidimensional/98-01/01.webp";
 import img2 from "@assets/images/bidimensional/98-01/02.webp";
 import img3 from "@assets/images/bidimensional/98-01/03.webp";
-import leftArrow from "@assets/icons/flechaIzq.svg"
-import rightArrow from "@assets/icons/flechaDer.svg"
+import img4 from "@assets/images/bidimensional/98-01/04.webp";
+import img5 from "@assets/images/bidimensional/98-01/05.webp";
+import img6 from "@assets/images/bidimensional/98-01/06.webp";
+
 import { Image } from "astro:assets";
 ---
 
-<div class="w-full h-full py-9 px-9 relative">
-  <!-- Carrusel -->
-  <ul
-    id="carousel"
-    class="h-full w-full py-32 flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
-  >
-    <li class="snap-start min-w-full flex flex-col justify-center items-center relative">
-      <Image src={img1} alt="img1" class="h-full object-contain" />
-      <p class="text-center absolute bottom-0 translate-y-16">
-        <span class="italic">Título</span>, técnica, año y medidas.
-      </p>
-    </li>
-    <li class="snap-start min-w-full flex flex-col justify-center items-center relative">
-      <Image src={img2} alt="img2" class="h-full object-contain" />
-      <p class="text-center absolute bottom-0 translate-y-16">
-        <span class="italic">Título</span>, técnica, año y medidas.
-      </p>
-    </li>
-    <li class="snap-start min-w-full flex flex-col justify-center items-center relative">
-      <Image src={img3} alt="img3" class="h-full object-contain" />
-      <p class="text-center absolute bottom-0 translate-y-16">
-        <span class="italic">Título</span>, técnica, año y medidas.
-      </p>
-    </li>
-  </ul>
+<div class="w-full h-full py-9 px-20 relative">
+    <!-- Carrusel -->
+    <ul
+        id="carousel"
+        class="h-full w-full py-32 flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar
+        [&>li]:bg-white"
+    >
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img1} alt="img1" class="h-full object-contain" />
+            <p
+                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-16"
+            >
+                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
+                técnica. 000 x 000 cm.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img2} alt="img2" class="h-full object-contain" />
+            <p
+                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-16"
+            >
+                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
+                técnica. 000 x 000 cm.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img3} alt="img3" class="h-full object-contain" />
+            <p
+                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-16"
+            >
+                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
+                técnica. 000 x 000 cm.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img4} alt="img4" class="h-full object-contain" />
+            <p
+                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-16"
+            >
+                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
+                técnica. 000 x 000 cm.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img5} alt="img5" class="h-full object-contain" />
+            <p
+                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-16"
+            >
+                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
+                técnica. 000 x 000 cm.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img6} alt="img6" class="h-full object-contain" />
+            <p
+                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-16"
+            >
+                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
+                técnica. 000 x 000 cm.
+            </p>
+        </li>
+    </ul>
 
-  <!-- Flecha izquierda -->
-  <button
-    onclick="document.getElementById('carousel').scrollBy({ left: -window.innerWidth, behavior: 'smooth' })"
-    class="absolute top-1/2 left-4 -translate-y-1/2 rounded-full p-2 cursor-pointer"
-    aria-label="Anterior"
-  >
-    <Image src={leftArrow} alt="Anterior" class="size-8" />
-  </button>
+    <!-- Flecha izquierda -->
+    <button
+        onclick="document.getElementById('carousel').scrollBy({ left: -window.innerWidth, behavior: 'smooth' })"
+        class="absolute top-1/2 left-12 -translate-y-1/2 rounded-full p-2 cursor-pointer"
+        aria-label="Anterior"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 283.46 283.46"
+            class="size-8 text-black hover:text-gray-600 fill-current"
+        >
+            <polygon
+                points="84.77 141.74 85.9 142.87 85.9 142.87 197.57 255.41 198.7 254.27 87.03 141.73 198.7 29.19 197.57 28.06 85.9 140.6 85.9 140.59 84.77 141.73 84.77 141.73 84.77 141.74"
+                fill="currentColor"
+                stroke="black"
+                stroke-width="10"></polygon>
+        </svg>
+    </button>
 
-  <!-- Flecha derecha -->
-  <button
-    onclick="document.getElementById('carousel').scrollBy({ left: window.innerWidth, behavior: 'smooth' })"
-    class="absolute top-1/2 right-4 -translate-y-1/2 rounded-full p-2 cursor-pointer"
-    aria-label="Siguiente"
-  >
-    <Image src={rightArrow} alt="Siguiente" class="size-8" />
-  </button>
+    <!-- Flecha derecha -->
+    <button
+        onclick="document.getElementById('carousel').scrollBy({ left: window.innerWidth, behavior: 'smooth' })"
+        class="absolute top-1/2 right-12 -translate-y-1/2 rounded-full p-2 cursor-pointer"
+        aria-label="Siguiente"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 283.46 283.46"
+            class="size-8 text-black hover:text-gray-600 fill-current"
+        >
+            <polygon
+                points="198.7 141.73 197.57 140.59 197.57 140.6 85.9 28.06 84.77 29.19 196.44 141.73 84.77 254.27 85.9 255.41 197.57 142.87 197.57 142.87 198.7 141.74 198.69 141.73 198.7 141.73"
+                fill="currentColor"
+                stroke="black"
+                stroke-width="10"></polygon>
+        </svg>
+    </button>
 </div>
