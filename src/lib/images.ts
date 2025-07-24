@@ -1,22 +1,22 @@
 // Lista de todas las imágenes disponibles en bidimensional
 export const bidimensionalImages = [
   // Imágenes de 98-01
-  "/images/bidimensional/98-01/01.webp",
-  "/images/bidimensional/98-01/02.webp",
-  "/images/bidimensional/98-01/03.webp",
-  "/images/bidimensional/98-01/04.webp",
-  "/images/bidimensional/98-01/05.webp",
-  "/images/bidimensional/98-01/06.webp",
-  "/images/bidimensional/98-01/07.webp",
+  "@assets/images/bidimensional/98-01/01.webp",
+  "@assets/images/bidimensional/98-01/02.webp",
+  "@assets/images/bidimensional/98-01/03.webp",
+  "@assets/images/bidimensional/98-01/04.webp",
+  "@assets/images/bidimensional/98-01/05.webp",
+  "@assets/images/bidimensional/98-01/06.webp",
+  "@assets/images/bidimensional/98-01/07.webp",
 
   // Imágenes de escaleras
-  "/images/bidimensional/escaleras/01.webp",
-  "/images/bidimensional/escaleras/02.webp",
-  "/images/bidimensional/escaleras/03.webp",
-  "/images/bidimensional/escaleras/04.webp",
-  "/images/bidimensional/escaleras/05.webp",
-  "/images/bidimensional/escaleras/06.webp",
-  "/images/bidimensional/escaleras/07.webp",
+  "@assets/images/bidimensional/escaleras/01.webp",
+  "@assets/images/bidimensional/escaleras/02.webp",
+  "@assets/images/bidimensional/escaleras/03.webp",
+  "@assets/images/bidimensional/escaleras/04.webp",
+  "@assets/images/bidimensional/escaleras/05.webp",
+  "@assets/images/bidimensional/escaleras/06.webp",
+  "@assets/images/bidimensional/escaleras/07.webp",
 ]
 
 // Función para obtener una imagen aleatoria

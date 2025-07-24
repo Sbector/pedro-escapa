@@ -1,9 +1,12 @@
 ---
-
+import { Image } from "astro:assets";
+import exampleImg from "@assets/images/bidimensional/98-01/02.webp";
 ---
 
 <div class="w-full h-full py-9 px-9 flex justify-center items-center">
-    <div class="h-full w-full bg-amber-300">
-
-    </div>
+    <Image
+        src={exampleImg}
+        alt="home-painting"
+        class="h-full w-auto object-contain"
+    />
 </div>
