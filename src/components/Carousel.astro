@@ -1,12 +1,37 @@
 ---
+import img1 from "@assets/images/bidimensional/98-01/01.webp";
+import img2 from "@assets/images/bidimensional/98-01/02.webp";
+import img3 from "@assets/images/bidimensional/98-01/03.webp";
 import { Image } from "astro:assets";
-import exampleImg from "@assets/images/bidimensional/98-01/02.webp";
 ---
 
-<div class="w-full h-full py-9 px-9 flex justify-center items-center">
-    <Image
-        src={exampleImg}
-        alt="home-painting"
-        class="h-full w-auto object-contain"
-    />
+<div class="w-full h-full py-9 px-9 justify-center items-center">
+    <ul
+        class="h-full w-full py-32 px-9 flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar space-x-10"
+    >
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img1} alt="img1" class="h-full object-contain" />
+            <p class="text-center absolute bottom-0 translate-y-16">
+                <span class="italic">Título</span>, técnica, año y medidas.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img2} alt="img2" class="h-full object-contain" />
+            <p class="text-center absolute bottom-0 translate-y-16">
+                <span class="italic">Título</span>, técnica, año y medidas.
+            </p>
+        </li>
+        <li
+            class="snap-start min-w-full flex flex-col justify-center items-center relative"
+        >
+            <Image src={img3} alt="img3" class="h-full object-contain" />
+            <p class="text-center absolute bottom-0 translate-y-16">
+                <span class="italic">Título</span>, técnica, año y medidas.
+            </p>
+        </li>
+    </ul>
 </div>
