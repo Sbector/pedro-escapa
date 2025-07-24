@@ -1,11 +1,15 @@
 ---
-import imgEscalera from "@assets/images/bidimensional/escaleras/02.webp";
+// Versión más simple usando el loader
+import { loadAllImages, getRandomImageFromLoaded } from "@lib/image-loader";
 import { Image } from "astro:assets";
+
+const allImages = await loadAllImages();
+const randomImage = getRandomImageFromLoaded(allImages);
 ---
 
 <div class="w-full py-9 px-9 h-full flex justify-center items-center">
   <Image
-    src={imgEscalera}
+    src={randomImage || "/placeholder.svg"}
     alt="home-painting"
     class="h-full w-auto object-contain"
   />
