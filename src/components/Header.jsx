@@ -17,13 +17,11 @@ export default function ReactHeader() {
             flex flex-col 
             w-full h-full 
             overflow-auto no-scrollbar">
-                <a href="/" className="inline-block font-medium">
-                    <ReactNav/>
-                </a>
+                <ReactNav />
             </div>
             <div className="flex items-center">
                 <a href="#">
-                    <img className="block size-8 lg:hidden" src="/menu-icon.svg" alt="Menú"/>
+                    <img className="block size-8 lg:hidden" src="/menu-icon.svg" alt="Menú" />
                 </a>
             </div>
 
