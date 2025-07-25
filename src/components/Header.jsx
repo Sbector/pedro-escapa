@@ -7,7 +7,7 @@ export default function ReactHeader() {
         px-4 lg:pl-12 lg:pr-0
         flex flex-row lg:flex-col">
             <h1 className="
-            text-xl lg:text-2xl
+            text-2xl
             lg:pb-20 
             font-semibold tracking-widest
             whitespace-nowrap">
