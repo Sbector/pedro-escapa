@@ -7,7 +7,12 @@ const allImages = await loadAllImages();
 const randomImage = getRandomImageFromLoaded(allImages);
 ---
 
-<div class="w-full py-9 px-9 h-full flex justify-center items-center">
+<div class="
+w-full h-full
+pt-2 pb-6 lg:py-9
+px-12 lg:px-9
+flex justify-center items-center
+">
   <Image
     src={randomImage || "/placeholder.svg"}
     alt="home-painting"
