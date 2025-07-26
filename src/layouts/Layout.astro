@@ -25,7 +25,7 @@ console.log(currentPath)
 		<ClientRouter />
 	</head>
 	<body class="h-dvh flex flex-col lg:flex-row">
-		<ReactHeader client:load currentPath={currentPath} />
+		<ReactHeader client:only="react" currentPath={currentPath} />
 		<main class="flex-1 overflow-y-auto">
 			<slot />
 		</main>
