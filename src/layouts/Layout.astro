@@ -10,9 +10,20 @@ interface Props {
 
 const { title } = Astro.props;
 
-// Obtener la ruta actual
-const currentPath = Astro.url.pathname;
-console.log(currentPath)
+// Construir la ruta actual basándose en los parámetros y la ruta
+let currentPath = Astro.url.pathname;
+
+// Para rutas dinámicas, construir la ruta desde los parámetros
+if (Astro.params.categoria && Astro.params.slug) {
+  currentPath = `/${Astro.params.categoria}/${Astro.params.slug}`;
+} else if (Astro.params.categoria) {
+  currentPath = `/${Astro.params.categoria}`;
+}
+
+// Normalizar la ruta (remover trailing slash si existe, excepto para root)
+if (currentPath !== '/' && currentPath.endsWith('/')) {
+  currentPath = currentPath.slice(0, -1);
+}
 ---
 
 <!doctype html>
@@ -25,7 +36,7 @@ console.log(currentPath)
 		<ClientRouter />
 	</head>
 	<body class="h-dvh flex flex-col lg:flex-row">
-		<ReactHeader client:only="react" currentPath={currentPath} />
+		<ReactHeader client:load currentPath={currentPath} />
 		<main class="flex-1 overflow-y-auto">
 			<slot />
 		</main>
