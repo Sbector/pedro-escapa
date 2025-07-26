@@ -1,7 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { menu } from "@lib/menu";
 
-export default function ReactNav({ currentPath }) {
+export default function ReactNav({ currentPath, isMobile = false, onLinkClick }) {
     // Función para verificar si un enlace está activo
     const isActive = (href) => {
         if (href === '/' && currentPath === '/') return true;
@@ -22,13 +22,27 @@ export default function ReactNav({ currentPath }) {
         );
     };
 
+    // Manejar click en enlaces
+    const handleLinkClick = () => {
+        if (isMobile && onLinkClick) {
+            onLinkClick();
+        }
+    };
+
+    // Clases base para desktop y mobile
+    const containerClasses = isMobile 
+        ? "flex flex-col space-y-6 text-sm tracking-widest"
+        : "hidden lg:flex lg:flex-col lg:space-y-[20px] text-xs tracking-widest";
+
+    const spacingClasses = isMobile 
+        ? "pt-4 space-y-3 ml-2"
+        : "pt-[15px] space-y-[10px] ml-[1px]";
+
+    const contactSpacing = isMobile ? "pt-8" : "pt-20";
+
     return (
         <nav>
-            <ul
-                className="hidden lg:flex lg:flex-col 
-            lg:space-y-[20px] 
-            text-xs tracking-widest"
-            >
+            <ul className={containerClasses}>
                 {menu
                     .filter((item) => item.visible !== false)
                     .map((item) => (
@@ -36,25 +50,26 @@ export default function ReactNav({ currentPath }) {
                             {item.subitems ? (
                                 <Disclosure defaultOpen={hasCategoryActiveSubitem(item)}>
                                     <DisclosureButton 
-                                        className={`cursor-pointer ${
+                                        className={`cursor-pointer text-left ${
                                             hasCategoryActiveSubitem(item) 
-                                                ? 'font-semibold italic' 
+                                                ? 'font-bold text-black' 
                                                 : 'font-medium'
                                         }`}
                                     >
                                         {item.label}
                                     </DisclosureButton>
                                     <DisclosurePanel>
-                                        <ul className="pt-[20px] pb-[12px] space-y-[10px] ml-[1px]">
+                                        <ul className={spacingClasses}>
                                             {item.subitems
                                                 .filter((subitem) => subitem.visible !== false)
                                                 .map((sub) => (
                                                     <li key={sub.slug}>
                                                         <a
                                                             href={`/${item.id}/${sub.slug}`}
+                                                            onClick={handleLinkClick}
                                                             className={`block hover:italic ${
                                                                 isSubitemActive(item.id, sub.slug)
-                                                                    ? 'text-black italic'
+                                                                    ? 'text-black font-semibold italic'
                                                                     : 'text-[#878383]'
                                                             }`}
                                                         >
@@ -68,9 +83,10 @@ export default function ReactNav({ currentPath }) {
                             ) : (
                                 <a 
                                     href={item.href} 
+                                    onClick={handleLinkClick}
                                     className={`inline-block ${
                                         isActive(item.href)
-                                            ? 'font-semibold italic'
+                                            ? 'font-bold text-black'
                                             : 'font-medium'
                                     }`}
                                 >
@@ -80,12 +96,13 @@ export default function ReactNav({ currentPath }) {
                         </li>
                     ))}
 
-                <li className="pt-20">
+                <li className={contactSpacing}>
                     <a 
                         href="/contacto" 
+                        onClick={handleLinkClick}
                         className={`text-xs ${
                             isActive('/contacto')
-                                ? 'font-semibold italic'
+                                ? 'font-bold text-black'
                                 : 'font-medium'
                         }`}
                     >
