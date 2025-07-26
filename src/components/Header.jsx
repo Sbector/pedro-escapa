@@ -1,9 +1,10 @@
 import ReactNav from "./Nav";
 
-export default function ReactHeader() {
+export default function ReactHeader({ currentPath }) {
     return (
         <header className="
         min-h-14
+        lg:max-w-[245px]
         relative
         pt-6 lg:pt-12 
         px-6 lg:pl-12 lg:pr-0
@@ -21,7 +22,7 @@ export default function ReactHeader() {
             flex flex-col 
             w-full h-full 
             overflow-auto no-scrollbar">
-                <ReactNav />
+                <ReactNav currentPath={currentPath} />
             </div>
             <div className="absolute right-6 items-center">
                 <a href="#">
