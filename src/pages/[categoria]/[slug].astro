@@ -1,10 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
 import { menu } from "@lib/menu";
 import { getSubitemData } from "@lib/getSubitemData";
 import Carousel from "@components/Carousel.astro";
-import exampleImage from "@assets/images/bidimensional/98-01/01.webp"
 
 export async function getStaticPaths() {
   const paths = [];
@@ -40,11 +38,5 @@ const { label } = subitemData;
 ---
 
 <Layout title={`${label} · Pedro Escapa`}>
-  <Carousel>
-    <Image
-      src={exampleImage}
-      alt="home-painting"
-      class="h-full w-auto object-contain"
-    />
-  </Carousel>
+  <Carousel/>
 </Layout>
