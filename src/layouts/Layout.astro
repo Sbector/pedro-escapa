@@ -5,7 +5,7 @@ import ReactHeader from "@components/Header.jsx";
 import Footer from "@components/Footer.astro";
 
 interface Props {
-	title: string;
+	title?: string;
 }
 
 const { title } = Astro.props;
@@ -21,7 +21,7 @@ const { title } = Astro.props;
 		<ClientRouter />
 	</head>
 	<body class="h-dvh flex flex-col lg:flex-row">
-		<ReactHeader client:only="react"/>
+		<ReactHeader client:load />
 		<main class="flex-1 overflow-y-auto">
 			<slot />
 		</main>

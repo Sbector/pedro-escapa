@@ -2,20 +2,17 @@
 // Versión más simple usando el loader
 import { loadAllImages, getRandomImageFromLoaded } from "@lib/image-loader";
 import { Image } from "astro:assets";
+import Wrapper from "./Wrapper.astro";
 
 const allImages = await loadAllImages();
 const randomImage = getRandomImageFromLoaded(allImages);
+// const randomImage = allImages[10];
 ---
 
-<div class="
-w-full h-full
-pt-2 pb-6 lg:py-9
-px-12 lg:px-9
-flex justify-center items-center
-">
+<Wrapper>
   <Image
     src={randomImage || "/placeholder.svg"}
     alt="home-painting"
     class="h-full w-auto object-contain"
   />
-</div>
+</Wrapper>
