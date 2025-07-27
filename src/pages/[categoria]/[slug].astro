@@ -2,7 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 import { menu } from "@lib/menu";
 import { getSubitemData } from "@lib/getSubitemData";
-import Carousel from "@components/Carousel.astro";
+import { loadCollectionImages, optimizeImages } from "@lib/image-collection-loader";
+import DynamicCarousel from "@components/Carousel.astro";
 
 export async function getStaticPaths() {
   const paths = [];
@@ -35,8 +36,21 @@ if (!subitemData) {
 }
 
 const { label } = subitemData;
+
+// Cargar y optimizar las imágenes para esta colección
+const rawImages = await loadCollectionImages(categoria, slug);
+const optimizedImages = await optimizeImages(rawImages);
+
+// Construir la ruta actual explícitamente
+const currentPath = `/${categoria}/${slug}`;
 ---
 
-<Layout title={`${label} · Pedro Escapa`}>
-  <Carousel/>
+<Layout title={`${label} · Pedro Escapa`} currentPath={currentPath}>
+  {optimizedImages.length > 0 ? (
+    <DynamicCarousel images={optimizedImages} />
+  ) : (
+    <div class="flex items-center justify-center h-full">
+      <p class="text-gray-500">No hay imágenes disponibles para esta colección.</p>
+    </div>
+  )}
 </Layout>
