@@ -1,18 +1,24 @@
 ---
-import img1 from "@assets/images/bidimensional/98-01/01.webp";
-import img2 from "@assets/images/bidimensional/98-01/02.webp";
-import img3 from "@assets/images/bidimensional/98-01/03.webp";
-import img4 from "@assets/images/bidimensional/98-01/04.webp";
-import img5 from "@assets/images/bidimensional/98-01/05.webp";
-import img6 from "@assets/images/bidimensional/98-01/06.webp";
 import LeftArrow from "@components/icons/LeftArrow.astro";
 import RightArrow from "@components/icons/RightArrow.astro";
 import Wrapper from "./Wrapper.astro";
 
-import { Image } from "astro:assets";
+interface Props {
+  images: Array<{
+    src: string;
+    alt: string;
+    title?: string;
+    description?: string;
+    width?: number;
+    height?: number;
+  }>;
+  className?: string;
+}
+
+const { images, className = "" } = Astro.props;
 ---
 
-<Wrapper className="">
+<Wrapper className={className}>
     <!-- Carrusel -->
     <ul
         id="carousel"
@@ -24,72 +30,26 @@ import { Image } from "astro:assets";
         scroll-smooth no-scrollbar
         [&>li]:bg-white"
     >
-        <li
-            class="snap-start min-w-full flex flex-col justify-center items-center relative"
-        >
-            <Image src={img1} alt="img1" class="h-full object-contain" />
-            <p
-                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
+        {images.map((image, index) => (
+            <li
+                class="snap-start min-w-full flex flex-col justify-center items-center relative"
             >
-                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
-                técnica. 000 x 000 cm.
-            </p>
-        </li>
-        <li
-            class="snap-start min-w-full flex flex-col justify-center items-center relative"
-        >
-            <Image src={img2} alt="img2" class="h-full object-contain" />
-            <p
-                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
-            >
-                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
-                técnica. 000 x 000 cm.
-            </p>
-        </li>
-        <li
-            class="snap-start min-w-full flex flex-col justify-center items-center relative"
-        >
-            <Image src={img3} alt="img3" class="h-full object-contain" />
-            <p
-                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
-            >
-                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
-                técnica. 000 x 000 cm.
-            </p>
-        </li>
-        <li
-            class="snap-start min-w-full flex flex-col justify-center items-center relative"
-        >
-            <Image src={img4} alt="img4" class="h-full object-contain" />
-            <p
-                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
-            >
-                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
-                técnica. 000 x 000 cm.
-            </p>
-        </li>
-        <li
-            class="snap-start min-w-full flex flex-col justify-center items-center relative"
-        >
-            <Image src={img5} alt="img5" class="h-full object-contain" />
-            <p
-                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
-            >
-                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
-                técnica. 000 x 000 cm.
-            </p>
-        </li>
-        <li
-            class="snap-start min-w-full flex flex-col justify-center items-center relative"
-        >
-            <Image src={img6} alt="img6" class="h-full object-contain" />
-            <p
-                class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
-            >
-                <span class="font-bold uppercase pr-1">Título</span> Ejemplo de ficha
-                técnica. 000 x 000 cm.
-            </p>
-        </li>
+                <img 
+                    src={image.src || "/placeholder.svg"} 
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    class="h-full object-contain"
+                    loading={index === 0 ? "eager" : "lazy"}
+                />
+                <p
+                    class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
+                >
+                    <span class="font-bold uppercase pr-1">{image.title || "Título"}</span> 
+                    {image.description || "Ejemplo de ficha técnica. 000 x 000 cm."}
+                </p>
+            </li>
+        ))}
     </ul>
 
     <!-- Flecha izquierda -->
