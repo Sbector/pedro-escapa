@@ -4,6 +4,7 @@ import { menu } from "@lib/menu";
 import { getSubitemData } from "@lib/getSubitemData";
 import { loadCollectionImages, optimizeImages } from "@lib/image-collection-loader";
 import DynamicCarousel from "@components/Carousel.astro";
+import Wrapper from "@components/Wrapper.astro";
 
 export async function getStaticPaths() {
   const paths = [];
@@ -35,7 +36,7 @@ if (!subitemData) {
   throw new Error(`No se encontró el subitem: ${categoria}/${slug}`);
 }
 
-const { label } = subitemData;
+const { label, className = ""  } = subitemData;
 
 // Cargar y optimizar las imágenes para esta colección
 const rawImages = await loadCollectionImages(categoria, slug);
@@ -46,6 +47,8 @@ const currentPath = `/${categoria}/${slug}`;
 ---
 
 <Layout title={`${label} · Pedro Escapa`} currentPath={currentPath}>
+  <Wrapper className={className}>
+
   {optimizedImages.length > 0 ? (
     <DynamicCarousel images={optimizedImages} />
   ) : (
@@ -53,4 +56,5 @@ const currentPath = `/${categoria}/${slug}`;
       <p class="text-gray-500">No hay imágenes disponibles para esta colección.</p>
     </div>
   )}
+  </Wrapper>
 </Layout>
