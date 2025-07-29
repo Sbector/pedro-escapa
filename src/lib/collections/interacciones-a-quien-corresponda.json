@@ -1,0 +1,67 @@
+{
+  "category": "interacciones",
+  "collection": "a-quien-corresponda",
+  "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "A quien corresponda 1",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "02.webp",
+      "title": "A quien corresponda 2",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "03.webp",
+      "title": "A quien corresponda 3",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "04.webp",
+      "title": "A quien corresponda 4",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "05.webp",
+      "title": "A quien corresponda 5",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "06.webp",
+      "title": "A quien corresponda 6",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "07.webp",
+      "title": "A quien corresponda 7",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "08.webp",
+      "title": "A quien corresponda 8",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "09.webp",
+      "title": "A quien corresponda 9",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "10.webp",
+      "title": "A quien corresponda 10",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "11.webp",
+      "title": "A quien corresponda 11",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "12.webp",
+      "title": "A quien corresponda 12",
+      "description": "Instalación. Dimensiones variables"
+    }
+  ]
+} 

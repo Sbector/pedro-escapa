@@ -1,0 +1,42 @@
+{
+  "category": "papeleria",
+  "collection": "torculo",
+  "about": "",
+  "images": [
+    {
+      "filename": "1.webp",
+      "title": "Tórculo 1",
+      "description": "Grabado. Dimensiones variables"
+    },
+    {
+      "filename": "2.webp",
+      "title": "Tórculo 2",
+      "description": "Grabado. Dimensiones variables"
+    },
+    {
+      "filename": "4.webp",
+      "title": "Tórculo 3",
+      "description": "Grabado. Dimensiones variables"
+    },
+    {
+      "filename": "5.webp",
+      "title": "Tórculo 4",
+      "description": "Grabado. Dimensiones variables"
+    },
+    {
+      "filename": "6.webp",
+      "title": "Tórculo 5",
+      "description": "Grabado. Dimensiones variables"
+    },
+    {
+      "filename": "7.webp",
+      "title": "Tórculo 6",
+      "description": "Grabado. Dimensiones variables"
+    },
+    {
+      "filename": "8.webp",
+      "title": "Tórculo 7",
+      "description": "Grabado. Dimensiones variables"
+    }
+  ]
+} 

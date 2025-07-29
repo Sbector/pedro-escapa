@@ -1,0 +1,37 @@
+{
+  "category": "interacciones",
+  "collection": "colegages",
+  "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "Varios (díptico)",
+      "description": "Mixta / tela 80 x 100. 2009"
+    },
+    {
+      "filename": "02.webp",
+      "title": "Marta P",
+      "description": "Mixta / tela. 135 x 135. 2007"
+    },
+    {
+      "filename": "04.webp",
+      "title": "Daniel L",
+      "description": "Óleo/madera. 52 x 40 cm y 55 x 40 cm. 2006"
+    },
+    {
+      "filename": "05.webp",
+      "title": "José F. 4",
+      "description": "Mixta / tela. 136 x 186. 2006"
+    },
+    {
+      "filename": "06.webp",
+      "title": "Manuela G",
+      "description": "mixta / tela. 120 x 140 cm. 2006"
+    },
+    {
+      "filename": "07.webp",
+      "title": "Roberto T. 4 (tríptico)",
+      "description": "Mixta / madera. 50 x 200. 2007"
+    }
+  ]
+} 

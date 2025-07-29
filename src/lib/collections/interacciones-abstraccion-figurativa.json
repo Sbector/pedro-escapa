@@ -1,0 +1,17 @@
+{
+  "category": "interacciones",
+  "collection": "abstraccion-figurativa",
+  "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "Abstracción figurativa 1",
+      "description": "Instalación. Dimensiones variables"
+    },
+    {
+      "filename": "07.webp",
+      "title": "Abstracción figurativa 2",
+      "description": "Instalación. Dimensiones variables"
+    }
+  ]
+} 

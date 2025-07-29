@@ -1,22 +1,4 @@
-export interface Subitem {
-  slug: string
-  label: string
-  visible?: boolean // Propiedad opcional para controlar visibilidad
-  [key: string]: any // puedes quitar esto si defines todos los campos
-}
-
-export interface MenuItem {
-  id: string
-  label: string
-  visible?: boolean // Propiedad opcional para controlar visibilidad
-  subitems?: Subitem[]
-  [key: string]: any
-}
-
-export interface SubitemData extends Subitem {
-  categoria: string
-  categoriaLabel: string
-}
+import type { MenuItem, SubitemData } from "../types/menu";
 
 export function getSubitemData(menu: MenuItem[], categoria: string, slug: string): SubitemData | null {
   const categoriaData = menu.find((item) => item.id === categoria)

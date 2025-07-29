@@ -1,4 +1,4 @@
-import type { MenuItem } from "./getSubitemData"
+import type { MenuItem } from "../types/menu"
 
 export const menu: MenuItem[] = [
   {
@@ -7,7 +7,7 @@ export const menu: MenuItem[] = [
     href: "/bidimensional",
     visible: true, // Este elemento será visible
     subitems: [
-      { label: "89-01", slug: "89-01", visible: true },
+      { label: "98-01", slug: "98-01", visible: true },
       { label: "Escaleras", slug: "escaleras", visible: true },
       { label: "Pi", slug: "pi", visible: false },
       { label: "Mixta sobre escaleras", slug: "mixta-sobre-escaleras", visible: true },
@@ -27,7 +27,7 @@ export const menu: MenuItem[] = [
     subitems: [
       { label: "De la vista el amor", slug: "de-la-vista-el-amor", visible: false },
       { label: "Colegages", slug: "colegages", visible: true },
-      { label: "Arquitecturas", slug: "arquitecturas", visible: true },
+      { label: "Arquitecturas", slug: "arquitecturas", visible: false },
       { label: "A quien corresponda", slug: "a-quien-corresponda", visible: true },
       { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: false },
       { label: "Sic", slug: "sic", visible: false },
