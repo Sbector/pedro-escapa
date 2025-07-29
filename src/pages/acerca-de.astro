@@ -1,85 +1,395 @@
 ---
+import Wrapper from "@components/Wrapper.astro";
 import Layout from "@layouts/Layout.astro";
+import SemicircleHandler from "@components/SemicircleHandler";
 
 const title = "Acerca de";
+
+// Exposiciones Individuales
+const exposicionesIndividuales = [
+  {
+    año: "2018",
+    exposiciones: [
+      {
+        titulo: "Death of Painting Is a Play of Lights",
+        lugar: "Drexel Galería, Garza García, N.L., México.",
+      },
+    ],
+  },
+  {
+    año: "2017",
+    exposiciones: [
+      {
+        titulo: "Pluma (adj.)",
+        lugar: "Escultura urbana, Guadalajara, Jal., México.",
+      },
+      {
+        titulo: "Photo and Paintings",
+        lugar: "Franco Moragrega, San Diego, CA, Estados Unidos.",
+      },
+    ],
+  },
+  {
+    año: "2013",
+    exposiciones: [
+      {
+        titulo: "SIC",
+        lugar: "Diéresis, Guadalajara, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "2012",
+    exposiciones: [
+      {
+        titulo: "Papelería y Alma Zen",
+        lugar: "Centro de las Artes, Monterrey, N.L., México.",
+      },
+    ],
+  },
+  {
+    año: "2011",
+    exposiciones: [
+      {
+        titulo: "A quien corresponda",
+        lugar: "Museo de Sitio, Guadalajara, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "2009",
+    exposiciones: [
+      {
+        titulo: "Arquitecturas",
+        lugar: "Drexel Galería, Garza García, N.L., México.",
+      },
+      {
+        titulo: "De la vista el amor",
+        lugar: "Fototeca, Centro de las Artes, Monterrey, N.L., México.",
+      },
+    ],
+  },
+  {
+    año: "2008",
+    exposiciones: [
+      {
+        titulo: "Fumador converso",
+        lugar: "Drexel Proyectos, Garza García, N.L., México.",
+      },
+      {
+        titulo: "Escrito en muro",
+        lugar: "(junto a José Fors), Bodega Quetzalli, Oaxaca, Oax., México.",
+      },
+      {
+        titulo: "Colegages y retales",
+        lugar: "Casa Lamm, Ciudad de México.",
+      },
+    ],
+  },
+  {
+    año: "2007",
+    exposiciones: [
+      {
+        titulo: "Fragmentos",
+        lugar: "Drexel Galería, Garza García, N.L., México.",
+      },
+      {
+        titulo: "Colegages",
+        lugar: "Museo de las Artes de la U. de G., Guadalajara, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "2006",
+    exposiciones: [
+      {
+        titulo: "Usos múltiples",
+        lugar: "Pablo Guerrero Galería, Guadalajara, Jal., México.",
+      },
+      {
+        titulo: "Registros",
+        lugar: "Galería Haus Der Kunst, Guadalajara, Jal., México.",
+      },
+      {
+        titulo: "De la vista el amor",
+        lugar: "Museo de Arte de Sinaloa, Culiacán, Sin., México.",
+      },
+    ],
+  },
+  {
+    año: "2005",
+    exposiciones: [
+      {
+        titulo: "Composiciones",
+        lugar: "Drexel Galería, Garza García, N.L., México.",
+      },
+      {
+        titulo: "De la vista el amor",
+        lugar: "Centro de las Artes - Fototeca, Monterrey, N.L., México.",
+      },
+    ],
+  },
+  {
+    año: "2004",
+    exposiciones: [
+      {
+        titulo: "Buenos consejos, pequeños progresos, nuevas luces",
+        lugar: "Galería Haus Der Kunst, Guadalajara, Jal., México.",
+      },
+      {
+        titulo: "Mixta sobre escaleras",
+        lugar: "Galería de Arte Mexicano, Ciudad de México.",
+      },
+    ],
+  },
+  {
+    año: "2003",
+    exposiciones: [
+      {
+        titulo: "Fracción de Pi",
+        lugar: "Museo de Arte de Zapopan, Zapopan, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "2002",
+    exposiciones: [
+      {
+        titulo: "Escaleras",
+        lugar: "Drexel Galería, Garza García, N.L., México.",
+      },
+      {
+        titulo: "Escaleras",
+        lugar: "Ex Convento del Carmen, Guadalajara, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "2001",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "Galería Haus Der Kunst, Guadalajara, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "2000",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "Academia Bellas Artes, Sabadell, Barcelona, España.",
+      },
+    ],
+  },
+  {
+    año: "1999",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "Casa Vallarta, U. de G., Guadalajara, Jal., México.",
+      },
+    ],
+  },
+  {
+    año: "1998",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "Ex Convento del Carmen, Guadalajara, Jal., México.",
+      },
+    ],
+  },
+];
+
+// Exposiciones Colectivas
+const exposicionesColectivas = [
+  {
+    año: "2022",
+    exposiciones: [
+      {
+        titulo: "Colectiva 30 años",
+        lugar: "Drexel Galería, Monterrey, N.L., México.",
+      },
+    ],
+  },
+  {
+    año: "2021",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "Galería Quetzalli, Oaxaca, Oax., México.",
+      },
+    ],
+  },
+  {
+    año: "2019",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "Galería Quetzalli, Oaxaca, Oax., México.",
+      },
+    ],
+  },
+  {
+    año: "2018–2016",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "D.A.F., Dallas, TX, Estados Unidos.",
+      },
+    ],
+  },
+  {
+    año: "2016",
+    exposiciones: [
+      {
+        titulo: "Atlas sobre papel",
+        lugar: "Páramo Galería, Guadalajara, Jal.",
+      },
+    ],
+  },
+  {
+    año: "2015",
+    exposiciones: [
+      {
+        titulo: "Ciudades Ausentes",
+        lugar: "Galería Ethra, Ciudad de México.",
+      },
+      {
+        titulo: "Plástica del s. XXI",
+        lugar: "M.U.S.A., Guadalajara, Jal.",
+      },
+    ],
+  },
+  {
+    año: "2014",
+    exposiciones: [
+      {
+        titulo: null,
+        lugar: "G.A.F., Ámsterdam, Holanda.",
+      },
+    ],
+  },
+  {
+    año: "2013",
+    exposiciones: [
+      {
+        titulo: "Sin Límites",
+        lugar: "Centro Cultural de México, París, Francia.",
+      },
+      {
+        titulo: "Houston Fine Art Fair",
+        lugar: "Houston, Estados Unidos.",
+      },
+    ],
+  },
+];
 ---
 
 <Layout title={`${title} Pedro Escapa`}>
-    <div class="flex flex-grow py-28 pr-40 justify-end">
-        <article class="prose lg:prose-md">
-            <h1 class="text-2xl font-medium pb-10">Pedro Escapa Esquisabel</h1>
-            <p>
-                Pedro Escapa concibe el arte como una forma de diálogo. Su
-                trabajo explora la interacción entre materiales, ideas,
-                contextos y voces —tanto del pasado como del presente. Sus
-                piezas pueden presentarse como tallas en madera o como trazos
-                sencillo sobre papel; a veces adquieren de nidas, otras veces se
-                mantienen en constante transformación. No se limita a un solo
-                medio o técnica, sino que elige lo que cada proyecto necesita
-                para expresarse.
-            </p>
+  <Wrapper className="">
+    <div class="max-h-full flex flex-reverse-col lg:flex-row overflow-hidden">
+      <!-- Contenido central con figura -->
+      <div
+        class="hidden lg:flex-1 lg:flex items-center justify-center relative"
+      >
+        <img
+          src="/semicirculo.svg"
+          alt="Semicírculo"
+          class="w-80 h-80 object-contain transition-transform duration-0"
+          id="semicircle"
+        />
+      </div>
 
-            <p>
-                Originario de Barcelona y radicado en México desde hace cuatro
-                décadas, su mirada se ha nutrido de diversas culturas,
-                experiencias personales y territorios creativos. Esta
-                perspectiva multicultural atraviesa su obra, que transita entre
-                texturas, luces, sombras, procesos y materiales en evolución.
-                Para Escapa, nada permanece jo: incluso lo más sólido está en
-                movimiento.
-            </p>
-            <p>
-                A lo largo de su trayectoria, ha colaborado con artistas de
-                distintas disciplinas, generando obras en diálogo con otras
-                prácticas o reimaginando elementos del pasado desde nuevos
-                enfoques. Más que ofrecer respuestas, su arte abre preguntas;
-                investiga, sugiere y provoca.
-            </p>
-            <p>
-                Su trabajo busca detonar experiencias sensoriales y re exivas en
-                el espectador. En lugar de cerrar signi cados, propone un
-                espacio abierto a la percepción, al encuentro y a la
-                transformación constante.
-            </p>
-            <p>
-                Sabadell. Barcelona. España. 1966. Reside en México desde 1982
-            </p>
+      <!-- Contenido de texto -->
+      <div id="text-scroll" class="lg:flex-1 overflow-auto no-scrollbar">
+        <div class="h-full">
+          <div class="lg:pr-12 lg:pt-12">
+            <div class="prose prose-sm max-w-none">
+              <p class="text-sm leading-relaxed mb-6">
+                Pedro Escapa (Sabadell, 1966) vive principalmente en
+                Guadalajara, Jalisco, desde 1982. Autodidacta, Escapa es un
+                artista visual cuya obra se despliega como una indagación
+                persistente sobre los vínculos que estructuran nuestra
+                percepción del mundo. A través de composiciones pictóricas que
+                combinan rigor formal y pensamiento conceptual, explora las
+                tensiones entre lo individual y lo colectivo, lo sensible y lo
+                racional, lo caótico y lo normativo. Su trabajo invita a mirar
+                con atención, a cuestionar lo evidente y a habitar el espacio de
+                la duda.
+              </p>
 
-            <h2 class="text-lg font-medium">Exposiciones individuales</h2>
-            <ul>
-                <li>
-                    <strong>2018</strong><br />
-                    “Death of painting is a play of lights”, Drexel Galería, Garza
-                    García, N.L., México
-                </li>
-                <li>
-                    <strong>2017</strong><br />
-                    “Pluma (adj.)”, Escultura urbana, Guadalajara, Jal., México<br
-                    />
-                    “Photo and paintings”, Franco Moragrega, San Diego, CA, Estados
-                    Unidos
-                </li>
-                <li>
-                    <strong>2013</strong><br />
-                    “SIC”, Diéresis, Guadalajara, Jal., México
-                </li>
-                <li>
-                    <strong>2012</strong><br />
-                    “Papelería y Alma Zen”, Centro de las Artes, Monterrey, N.L.,
-                    México
-                </li>
-                <li>
-                    <strong>2011</strong><br />
-                    “A quien corresponda”, Museo de Sitio, Guadalajara, Jal., México
-                </li>
-                <li>
-                    <strong>2009</strong><br />
-                    “Arquitecturas”, Drexel Galería, Garza García, N.L., México<br
-                    />
-                    “De la vista el amor”, Fototeca, Centro de las Artes, Monterrey,
-                    N.L., México
-                </li>
-            </ul>
-        </article>
+              <p class="text-sm leading-relaxed mb-6">
+                Su práctica artística —que abarca principalmente lo pictórico,
+                aunque nunca se limita a ello— se mueve entre la abstracción
+                geométrica y la sugerencia simbólica, buscando tensar los
+                límites entre forma y contenido, entre lo visualmente
+                reconocible y lo conceptualmente inasible.
+              </p>
+
+              <p class="text-sm leading-relaxed mb-8">
+                Escapa no parte de una intención meramente estética: su trabajo
+                es, ante todo, una forma de pensamiento visual. Las estructuras
+                que crea —con frecuencia formadas por módulos, repeticiones,
+                ritmos o fracturas— funcionan como metáforas materiales de
+                conceptos complejos como la organización social, la
+                conectividad, la fragmentación o la pertenencia.
+              </p>
+
+              <h2 class="text-sm font-bold tracking-wide mb-4 text-gray-900">
+                EXPOSICIONES INDIVIDUALES
+              </h2>
+
+              <div class="space-y-4 text-sm">
+                {
+                  exposicionesIndividuales.map((item) => (
+                    <div>
+                      <p class="font-bold pb-0.5">{item.año}</p>
+                      {item.exposiciones.map((expo, index) => (
+                        <div class={index > 0 ? "pt-2" : ""}>
+                          {expo.titulo ? (
+                            <p class="mb-2">
+                              <span class="italic">{expo.titulo},</span>
+                              {expo.lugar}
+                            </p>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  ))
+                }
+              </div>
+
+              <h2
+                class="text-sm font-bold tracking-wide mb-4 mt-12 text-gray-900"
+              >
+                EXPOSICIONES COLECTIVAS (SELECCIÓN)
+              </h2>
+
+              <div class="space-y-4 text-sm">
+                {
+                  exposicionesColectivas.map((item) => (
+                    <div>
+                      <p class="font-bold mb-1">{item.año}</p>
+                      {item.exposiciones.map((expo, index) => (
+                        <div class={index > 0 ? "mt-2" : ""}>
+                          {expo.titulo ? (
+                            <p class="italic mb-1">{expo.titulo}</p>
+                          ) : null}
+                          <p>{expo.lugar}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </Wrapper>
 </Layout>
+
+<SemicircleHandler client:load />

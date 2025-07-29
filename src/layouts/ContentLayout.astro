@@ -1,0 +1,13 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+	<div class="flex flex-grow py-28 pr-40 justify-end">
+		<article class="prose lg:prose-md max-w-none">
+			<slot />
+		</article>
+	</div>
+</Layout>
