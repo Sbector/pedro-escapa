@@ -45,8 +45,8 @@ const { images, className = "" } = Astro.props;
                 <p
                     class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16"
                 >
-                    <span class="font-bold uppercase pr-1">{image.title || "Título"}</span> 
-                    {image.description || "Ejemplo de ficha técnica. 000 x 000 cm."}
+                    <span class="font-bold uppercase pr-1">{image.title || ""}</span> 
+                    {image.description || ""}
                 </p>
             </li>
         ))}

@@ -5,63 +5,63 @@
   "images": [
     {
       "filename": "01.webp",
-      "title": "A quien corresponda 1",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "02.webp",
-      "title": "A quien corresponda 2",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "03.webp",
-      "title": "A quien corresponda 3",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "04.webp",
-      "title": "A quien corresponda 4",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "05.webp",
-      "title": "A quien corresponda 5",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "06.webp",
-      "title": "A quien corresponda 6",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "07.webp",
-      "title": "A quien corresponda 7",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "08.webp",
-      "title": "A quien corresponda 8",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "09.webp",
-      "title": "A quien corresponda 9",
-      "description": "Instalación. Dimensiones variables"
+      "title": "",
+      "description": ""
     },
     {
       "filename": "10.webp",
-      "title": "A quien corresponda 10",
-      "description": "Instalación. Dimensiones variables"
+      "title": "0",
+      "description": ""
     },
     {
       "filename": "11.webp",
-      "title": "A quien corresponda 11",
-      "description": "Instalación. Dimensiones variables"
+      "title": "1",
+      "description": ""
     },
     {
       "filename": "12.webp",
-      "title": "A quien corresponda 12",
-      "description": "Instalación. Dimensiones variables"
+      "title": "2",
+      "description": ""
     }
   ]
 } 

@@ -27,7 +27,7 @@ export const menu: MenuItem[] = [
     subitems: [
       { label: "De la vista el amor", slug: "de-la-vista-el-amor", visible: false },
       { label: "Colegages", slug: "colegages", visible: true },
-      { label: "Arquitecturas", slug: "arquitecturas", visible: false },
+      { label: "Arquitecturas", slug: "arquitectura", visible: true },
       { label: "A quien corresponda", slug: "a-quien-corresponda", visible: true },
       { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: false },
       { label: "Sic", slug: "sic", visible: false },
