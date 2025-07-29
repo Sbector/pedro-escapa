@@ -57,7 +57,7 @@ export default function ReactHeader({ currentPath }) {
             {/* Overlay del menú mobile */}
             {isMobileMenuOpen && (
                 <div 
-                    className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+                    className="lg:hidden fixed inset-0 bg-black/5 z-40"
                     onClick={closeMobileMenu}
                 />
             )}
