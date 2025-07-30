@@ -52,7 +52,7 @@ export const menu: MenuItem[] = [
     id: "volumenes",
     label: "VOLÚMENES",
     href: "/volumenes",
-    visible: true,
+    visible: false,
   },
   {
     id: "encurso",
