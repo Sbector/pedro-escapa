@@ -1,0 +1,42 @@
+{
+  "category": "bidimensional",
+  "collection": "consejos",
+  "about": "",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "Poema catenal",
+      "description": "Punta seca-papel/tela. 176 x 195 m.i."
+    },
+    {
+      "filename": "02.webp",
+      "title": "Sin título",
+      "description": "Punta seca-papel/tela y óleo/madera. 189 x 65"
+    },
+    {
+      "filename": "03.webp",
+      "title": "Ecos de pasión",
+      "description": "Serigrafía-papel/tela. 100 x 126"
+    },
+    {
+      "filename": "04.webp",
+      "title": "Metamorfosis (me quiere no me quiere)",
+      "description": "Punta seca-papel/tela. 223 x 223"
+    },
+    {
+      "filename": "05.webp",
+      "title": "Metamorfosis en rojo",
+      "description": "Punta seca-papel/tela. 190 x 190"
+    },
+    {
+      "filename": "06.webp",
+      "title": "Muestrario",
+      "description": "Mixta/tela. 126 x 204"
+    },
+    {
+      "filename": "07.webp",
+      "title": "Nosotros",
+      "description": "Mixta/tela. 132 x 125"
+    }
+  ]
+} 

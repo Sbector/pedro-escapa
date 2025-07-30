@@ -1,0 +1,42 @@
+{
+  "category": "bidimensional",
+  "collection": "98-01",
+  "about": "",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "Todos menos tú",
+      "description": "Mixta/tela. 140 x 140 cm"
+    },
+    {
+      "filename": "02.webp",
+      "title": "Sin título (aguamanil)",
+      "description": "Mixta/tela. 140 x 140"
+    },
+    {
+      "filename": "03.webp",
+      "title": "La vida sale al encuentro",
+      "description": "Mixta / tela. 135 x 180"
+    },
+    {
+      "filename": "04.webp",
+      "title": "Balances",
+      "description": "Mixta/tela. 90 x 150"
+    },
+    {
+      "filename": "05.webp",
+      "title": "México",
+      "description": "Mixta/madera. 80 x 122"
+    },
+    {
+      "filename": "06.webp",
+      "title": "Ganchos",
+      "description": "Mixta/madera. 122 x 80"
+    },
+    {
+      "filename": "07.webp",
+      "title": "Barcas",
+      "description": "Mixta/tela. 65 x 95"
+    }
+  ]
+} 

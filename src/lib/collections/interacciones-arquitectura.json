@@ -1,0 +1,42 @@
+{
+  "category": "interacciones",
+  "collection": "arquitectura",
+  "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "filename": "02.webp",
+      "title": "",
+      "description": ""
+    },
+    {
+      "filename": "03.webp",
+      "title": "Metrópoli silencio",
+      "description": "140 x 200 cm. Mixta / tela"
+    },
+    {
+      "filename": "04.webp",
+      "title": "Canciones del Segundo Piso",
+      "description": "102 x 180 cm. Mixta / tela"
+    },
+    {
+      "filename": "05.webp",
+      "title": "30 cortinas y un resane",
+      "description": "202 x 128 cm. Mixta / tela"
+    },
+    {
+      "filename": "06.webp",
+      "title": "Suelo de uso mixto",
+      "description": "102 x 117cm. Mixta / tela"
+    },
+    {
+      "filename": "07.webp",
+      "title": "Sin título",
+      "description": "105 x 130 cm. Mixta / tela"
+    }
+  ]
+} 

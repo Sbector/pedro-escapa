@@ -1,18 +1,30 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import react from '@astrojs/react';
+
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'hover' // Solo prefetch en hover explícito
   },
-  env: {
-    schema: {
-      SHOW_BUY_BUTTON: envField.boolean({ default: false, context: 'server', access: 'public' }),
-      SCORE_API_ENDPOINT: envField.string({ context: 'server', access: 'public' })
+  vite: {
+    plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@lib': '/src/lib',
+        '@assets': '/src/assets',
+        '@components': '/src/components',
+        '@layouts': '/src/layouts',
+        '@types': '/src/types'
+      }
     }
   },
-  output:'server'
+
+  integrations: [react(), mdx()]
 });

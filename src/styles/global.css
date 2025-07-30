@@ -1,18 +1,19 @@
 @import "tailwindcss";
-@import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import "@fontsource/inter";
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
 
 html,
 body {
     margin: 0;
     width: 100%;
     height: 100%;
-}
-
-body {
-    @apply grid place-content-center p-20;
-}
-
-body>div {
-    @apply container;
+    font-family: 'Inter', sans-serif;
 }

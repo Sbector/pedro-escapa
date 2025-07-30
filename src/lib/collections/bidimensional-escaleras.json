@@ -1,0 +1,42 @@
+{
+  "category": "bidimensional",
+  "collection": "escaleras",
+  "about": "",
+  "images": [
+    {
+      "filename": "01.webp",
+      "title": "Sin titulo AA",
+      "description": "Acrílico/tela. 100 x 116"
+    },
+    {
+      "filename": "02.webp",
+      "title": "Sin titulo (azul)",
+      "description": "Acrílico/tela. 116 x 100"
+    },
+    {
+      "filename": "03.webp",
+      "title": "Descanso azul",
+      "description": "Acrílico/tela. 150 x 155"
+    },
+    {
+      "filename": "04.webp",
+      "title": "Escalera a Babel",
+      "description": "Acrílico/tela. 162 x 62"
+    },
+    {
+      "filename": "05.webp",
+      "title": "Escalera y banca",
+      "description": "Acrílico/tela. 140 x 180"
+    },
+    {
+      "filename": "06.webp",
+      "title": "Escultura transitable",
+      "description": "Acrílico/tela.  100 x 100"
+    },
+    {
+      "filename": "07.webp",
+      "title": "Sin título",
+      "description": "Acrílico/tela. 100 x 80"
+    }
+  ]
+} 
