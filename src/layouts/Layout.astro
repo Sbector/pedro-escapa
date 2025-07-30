@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import ReactHeader from "@components/Header.jsx";
 import Footer from "@components/Footer.astro";
+import UnderConstructionModal from "@components/UnderConstructionModal";
 
 interface Props {
 	title?: string;
@@ -16,14 +17,14 @@ let currentPath = Astro.url.pathname;
 
 // Para rutas dinámicas, construir la ruta desde los parámetros
 if (Astro.params.categoria && Astro.params.slug) {
-  currentPath = `/${Astro.params.categoria}/${Astro.params.slug}`;
+	currentPath = `/${Astro.params.categoria}/${Astro.params.slug}`;
 } else if (Astro.params.categoria) {
-  currentPath = `/${Astro.params.categoria}`;
+	currentPath = `/${Astro.params.categoria}`;
 }
 
 // Normalizar la ruta (remover trailing slash si existe, excepto para root)
-if (currentPath !== '/' && currentPath.endsWith('/')) {
-  currentPath = currentPath.slice(0, -1);
+if (currentPath !== "/" && currentPath.endsWith("/")) {
+	currentPath = currentPath.slice(0, -1);
 }
 ---
 
@@ -40,7 +41,8 @@ if (currentPath !== '/' && currentPath.endsWith('/')) {
 		<ReactHeader client:idle currentPath={currentPath} />
 		<main class="flex-1 overflow-y-auto">
 			<slot />
+			<UnderConstructionModal client:load />
 		</main>
-		{currentPath == '/' && <Footer />}
+		{currentPath == "/" && <Footer />}
 	</body>
 </html>
