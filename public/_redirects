@@ -1,1 +1,6 @@
-/*    /index.html   200   conditions=Role=not file
+# Archivos estáticos
+/_astro/*    /_astro/:splat    200
+/favicon.ico    /favicon.ico    200
+
+# SPA fallback solo para rutas de página
+/*    /index.html   200
