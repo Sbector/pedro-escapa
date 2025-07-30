@@ -9,7 +9,10 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  trailingSlash: 'ignore',
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'hover' // Solo prefetch en hover explícito
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
