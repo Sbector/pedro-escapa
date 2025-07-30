@@ -37,10 +37,15 @@ const { images } = Astro.props;
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
-                    class="h-full object-contain"
+                    class="max-h-full object-contain"
                     loading={index === 0 ? "eager" : "lazy"}
                 />
-                <p class="text-xs font-light tracking-widest text-center absolute bottom-0 translate-y-8 lg:translate-y-16">
+                <p
+                    class="
+                        text-xs font-light tracking-widest text-center
+                        static mt-8
+                        lg:absolute lg:bottom-0 lg:translate-y-16 lg:mt-0
+                        ">
                     <span class="font-bold uppercase pr-1">
                         {image.title || ""}
                     </span>
