@@ -9,34 +9,49 @@ export default function RandomImage({ images }) {
   const inactivityTimeout = useRef(null);
 
   const changeImage = () => {
-    setFade(false);
+    setFade(false); // fade out
+
     setTimeout(() => {
+      // Elegir siguiente imagen distinta
       let next;
       do {
         next = Math.floor(Math.random() * images.length);
       } while (next === current);
-      setCurrent(next);
-      setFade(true);
-    }, 1000); // duración de fade
+
+      // Crear imagen JS para pre-cargar
+      const imgPreload = new Image();
+      imgPreload.src = images[next].src;
+
+      imgPreload.onload = () => {
+        // Cuando cargue, cambia la imagen y hace fade in
+        setCurrent(next);
+        setFade(true);
+      };
+
+      // Opcional: manejar error de carga
+      imgPreload.onerror = () => {
+        // Si falla, mantén la actual y haz fade in para no dejar la pantalla vacía
+        setFade(true);
+      };
+    }, 1000); // duración fade out (igual que CSS)
   };
 
-  // Manejo del intervalo para cambio automático
+  // Manejo intervalo cambio automático
   useEffect(() => {
-    if (paused) return; // no hacer nada si está pausado
+    if (paused) return;
 
     const interval = setInterval(() => {
       changeImage();
-    }, 5000); // cada 5 segundos
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [paused, current, images.length]);
 
-  // Detectar movimiento y pausar
+  // Pausar y reactivar al mover mouse o touch
   const handleMouseMove = () => {
     setPaused(true);
     clearTimeout(inactivityTimeout.current);
 
-    // Reactivar tras 2 segundos sin movimiento
     inactivityTimeout.current = setTimeout(() => {
       setPaused(false);
     }, 2000);
@@ -46,7 +61,7 @@ export default function RandomImage({ images }) {
     <div
       className="h-full w-full flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
-      onTouchMove={handleMouseMove} // para touch también
+      onTouchMove={handleMouseMove}
     >
       <img
         src={images[current].src}
