@@ -41,7 +41,7 @@ if (currentPath !== "/" && currentPath.endsWith("/")) {
 		<ReactHeader client:idle currentPath={currentPath} />
 		<main class="flex-1 overflow-y-auto">
 			<slot />
-			<UnderConstructionModal client:load />
+			<!-- <UnderConstructionModal client:load /> -->
 		</main>
 		{currentPath == "/" && <Footer />}
 	</body>
