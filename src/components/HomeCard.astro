@@ -1,17 +1,32 @@
 ---
-// Versión más simple usando el loader
-import { loadAllImages, getRandomImageFromLoaded } from "@lib/image-loader";
-import { Image } from "astro:assets";
 import Wrapper from "./Wrapper.astro";
+import RandomImage from "./RandomImage.jsx"; // será un island React/vanilla
+import { getImage } from "astro:assets";
 
-const allImages = await loadAllImages();
-const randomImage = getRandomImageFromLoaded(allImages);
+// Obtener imágenes
+const images = Object.values(
+  import.meta.glob("../assets/images/*/*/*.webp", { eager: true })
+);
+
+// Optimizar
+const optimizedImages = await Promise.all(
+  images.map(async (img: any) => {
+    const optimized = await getImage({
+      src: img.default ?? img.src ?? img,
+      format: "webp",
+      quality: 85,
+      height: 800,
+    });
+
+    return {
+      src: optimized.src,
+      width: optimized.attributes.width,
+      height: optimized.attributes.height,
+    };
+  })
+);
 ---
 
 <Wrapper>
-  <Image
-    src={randomImage || "/placeholder.svg"}
-    alt="home-painting"
-    class="h-full w-auto object-contain"
-  />
+  <RandomImage client:load images={optimizedImages} />
 </Wrapper>
