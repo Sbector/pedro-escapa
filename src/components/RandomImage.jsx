@@ -1,56 +1,56 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function RandomImage({ images }) {
-  const [current, setCurrent] = useState(
-    () => Math.floor(Math.random() * images.length)
+  const [current, setCurrent] = useState(() =>
+    Math.floor(Math.random() * images.length)
   );
   const [fade, setFade] = useState(true);
   const [paused, setPaused] = useState(false);
   const inactivityTimeout = useRef(null);
 
+  // Lista dinámica que se va vaciando hasta reiniciarse
+  const availableImagesRef = useRef([...images.keys()].filter(i => i !== current));
+
+  const getNextImageIndex = () => {
+    if (availableImagesRef.current.length === 0) {
+      // Reiniciar baraja (excepto la actual para evitar repetición inmediata)
+      availableImagesRef.current = [...images.keys()].filter(i => i !== current);
+    }
+    const randomIndex = Math.floor(Math.random() * availableImagesRef.current.length);
+    const nextIndex = availableImagesRef.current[randomIndex];
+    availableImagesRef.current.splice(randomIndex, 1);
+    return nextIndex;
+  };
+
   const changeImage = () => {
     setFade(false); // fade out
 
     setTimeout(() => {
-      // Elegir siguiente imagen distinta
-      let next;
-      do {
-        next = Math.floor(Math.random() * images.length);
-      } while (next === current);
-
-      // Crear imagen JS para pre-cargar
+      const next = getNextImageIndex();
       const imgPreload = new Image();
       imgPreload.src = images[next].src;
 
       imgPreload.onload = () => {
-        // Cuando cargue, cambia la imagen y hace fade in
         setCurrent(next);
         setFade(true);
       };
-
       imgPreload.onerror = () => {
         setFade(true);
       };
-    }, 1000); // ⬅ CAMBIAR ESTE VALOR → duración del fade out en milisegundos (debe coincidir con el CSS)
+    }, 800); // ← duración del fade out
   };
 
   useEffect(() => {
     if (paused) return;
 
-    const interval = setInterval(() => {
-      changeImage();
-    }, 4000); // ⬅ CAMBIAR ESTE VALOR → tiempo entre cambios automáticos en milisegundos
-
+    const interval = setInterval(changeImage, 5000); // ← tiempo entre cambios
     return () => clearInterval(interval);
   }, [paused, current, images.length]);
 
   const handleMouseMove = () => {
     setPaused(true);
     clearTimeout(inactivityTimeout.current);
-
-    inactivityTimeout.current = setTimeout(() => {
-      setPaused(false);
-    }, 1000); // tiempo de inactividad antes de reanudar el cambio automático
+    inactivityTimeout.current = setTimeout(() => setPaused(false), 2000);
   };
 
   return (
@@ -64,9 +64,9 @@ export default function RandomImage({ images }) {
         width={images[current].width}
         height={images[current].height}
         alt=""
-        className={`h-full w-auto object-contain transition-opacity duration-1000 ease-in-out ${
+        className={`h-full w-auto object-contain transition-opacity duration-800 ease-in-out ${
           fade ? "opacity-100" : "opacity-0"
-        }`} // ⬅ CAMBIAR "duration-1000" EN TAILWIND → duración de la transición en ms
+        }`}
         style={{ cursor: "default" }}
       />
     </div>
