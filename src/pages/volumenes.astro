@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Carousel from "@components/Carousel.jsx";
 import { getImage } from "astro:assets";
+import Wrapper from "@components/Wrapper.astro";
 
 // Obtener imágenes
 const images = Object.values(
@@ -28,5 +29,7 @@ const optimizedImages = await Promise.all(
 ---
 
 <Layout>
-    <Carousel client:load images={optimizedImages} />
+    <Wrapper>
+        <Carousel client:load images={optimizedImages} />
+    </Wrapper>
 </Layout>
