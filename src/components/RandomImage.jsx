@@ -28,33 +28,29 @@ export default function RandomImage({ images }) {
         setFade(true);
       };
 
-      // Opcional: manejar error de carga
       imgPreload.onerror = () => {
-        // Si falla, mantén la actual y haz fade in para no dejar la pantalla vacía
         setFade(true);
       };
-    }, 1000); // duración fade out (igual que CSS)
+    }, 1000); // ⬅ CAMBIAR ESTE VALOR → duración del fade out en milisegundos (debe coincidir con el CSS)
   };
 
-  // Manejo intervalo cambio automático
   useEffect(() => {
     if (paused) return;
 
     const interval = setInterval(() => {
       changeImage();
-    }, 5000);
+    }, 4000); // ⬅ CAMBIAR ESTE VALOR → tiempo entre cambios automáticos en milisegundos
 
     return () => clearInterval(interval);
   }, [paused, current, images.length]);
 
-  // Pausar y reactivar al mover mouse o touch
   const handleMouseMove = () => {
     setPaused(true);
     clearTimeout(inactivityTimeout.current);
 
     inactivityTimeout.current = setTimeout(() => {
       setPaused(false);
-    }, 2000);
+    }, 1000); // tiempo de inactividad antes de reanudar el cambio automático
   };
 
   return (
@@ -70,7 +66,7 @@ export default function RandomImage({ images }) {
         alt=""
         className={`h-full w-auto object-contain transition-opacity duration-1000 ease-in-out ${
           fade ? "opacity-100" : "opacity-0"
-        }`}
+        }`} // ⬅ CAMBIAR "duration-1000" EN TAILWIND → duración de la transición en ms
         style={{ cursor: "default" }}
       />
     </div>
