@@ -43,14 +43,14 @@ export default function RandomImage({ images }) {
   useEffect(() => {
     if (paused) return;
 
-    const interval = setInterval(changeImage, 5000); // ← tiempo entre cambios
+    const interval = setInterval(changeImage, 3000); // ← tiempo entre cambios
     return () => clearInterval(interval);
   }, [paused, current, images.length]);
 
   const handleMouseMove = () => {
     setPaused(true);
     clearTimeout(inactivityTimeout.current);
-    inactivityTimeout.current = setTimeout(() => setPaused(false), 2000);
+    inactivityTimeout.current = setTimeout(() => setPaused(false), 1000);
   };
 
   return (

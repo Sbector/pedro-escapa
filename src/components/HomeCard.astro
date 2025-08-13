@@ -4,9 +4,10 @@ import RandomImage from "./RandomImage.jsx"; // será un island React/vanilla
 import { getImage } from "astro:assets";
 
 // Obtener imágenes
-const images = Object.values(
-  import.meta.glob("../assets/images/*/*/*.webp", { eager: true })
-);
+const images = [
+  ...Object.values(import.meta.glob("../assets/images/*/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/*/*/*.webp", { eager: true }))
+];
 
 // Optimizar
 const optimizedImages = await Promise.all(
