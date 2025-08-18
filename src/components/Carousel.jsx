@@ -11,7 +11,7 @@ const LeftArrow = () => (
             points="84.77 141.74 85.9 142.87 85.9 142.87 197.57 255.41 198.7 254.27 87.03 141.73 198.7 29.19 197.57 28.06 85.9 140.6 85.9 140.59 84.77 141.73 84.77 141.73 84.77 141.74"
             fill="currentColor"
             stroke="black"
-            stroke-width="4"></polygon>
+            strokeWidth="4"></polygon>
     </svg>
 );
 
@@ -25,7 +25,7 @@ const RightArrow = () => (
             points="198.7 141.73 197.57 140.59 197.57 140.6 85.9 28.06 84.77 29.19 196.44 141.73 84.77 254.27 85.9 255.41 197.57 142.87 197.57 142.87 198.7 141.74 198.69 141.73 198.7 141.73"
             fill="currentColor"
             stroke="black"
-            stroke-width="4"></polygon>
+            strokeWidth="4"></polygon>
     </svg>
 );
 
