@@ -1,74 +1,97 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react"
 
 export default function RandomImage({ images }) {
-  const [current, setCurrent] = useState(() =>
-    Math.floor(Math.random() * images.length)
-  );
-  const [fade, setFade] = useState(true);
-  const [paused, setPaused] = useState(false);
-  const inactivityTimeout = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+  const [paused, setPaused] = useState(false)
+  const [opacity, setOpacity] = useState(0)
+  const inactivityTimeout = useRef(null)
+  const availableImagesRef = useRef([])
+  const preloadedImageRef = useRef(null)
+  const [isInitialized, setIsInitialized] = useState(false)
 
-  // Lista dinámica que se va vaciando hasta reiniciarse
-  const availableImagesRef = useRef([...images.keys()].filter(i => i !== current));
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * images.length)
+    setCurrentIndex(randomIndex)
+    availableImagesRef.current = [...images.keys()].filter((i) => i !== randomIndex)
+    setIsInitialized(true)
+    setTimeout(() => setOpacity(1), 100)
+  }, [])
 
   const getNextImageIndex = () => {
     if (availableImagesRef.current.length === 0) {
-      // Reiniciar baraja (excepto la actual para evitar repetición inmediata)
-      availableImagesRef.current = [...images.keys()].filter(i => i !== current);
+      availableImagesRef.current = [...images.keys()].filter((i) => i !== currentIndex)
     }
-    const randomIndex = Math.floor(Math.random() * availableImagesRef.current.length);
-    const nextIndex = availableImagesRef.current[randomIndex];
-    availableImagesRef.current.splice(randomIndex, 1);
-    return nextIndex;
-  };
+    const randomIndex = Math.floor(Math.random() * availableImagesRef.current.length)
+    const nextIndex = availableImagesRef.current[randomIndex]
+    availableImagesRef.current.splice(randomIndex, 1)
+    return nextIndex
+  }
 
   const changeImage = () => {
-    setFade(false); // fade out
+    if (isLoading) return
 
-    setTimeout(() => {
-      const next = getNextImageIndex();
-      const imgPreload = new Image();
-      imgPreload.src = images[next].src;
+    const nextIndex = getNextImageIndex()
+    setIsLoading(true)
+    setOpacity(0)
 
-      imgPreload.onload = () => {
-        setCurrent(next);
-        setFade(true);
-      };
-      imgPreload.onerror = () => {
-        setFade(true);
-      };
-    }, 800); // ← duración del fade out
-  };
+    const imgPreload = new Image()
+    imgPreload.src = images[nextIndex].src
+
+    imgPreload.onload = () => {
+      preloadedImageRef.current = imgPreload
+      setTimeout(() => {
+        setCurrentIndex(nextIndex)
+        setIsLoading(false)
+        setTimeout(() => setOpacity(1), 50)
+      }, 400)
+    }
+
+    imgPreload.onerror = () => {
+      console.warn(`Failed to load image: ${images[nextIndex].src}`)
+      setIsLoading(false)
+      setOpacity(1)
+      setTimeout(changeImage, 100)
+    }
+  }
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || isLoading || !isInitialized) return
+    const interval = setInterval(changeImage, 3000)
+    return () => clearInterval(interval)
+  }, [paused, isLoading, currentIndex, isInitialized])
 
-    const interval = setInterval(changeImage, 3000); // ← tiempo entre cambios
-    return () => clearInterval(interval);
-  }, [paused, current, images.length]);
+  useEffect(() => {
+    if (images.length <= 1 || !isInitialized) return
+
+    const nextIndex = availableImagesRef.current[0] || getNextImageIndex()
+    const imgPreload = new Image()
+    imgPreload.src = images[nextIndex].src
+  }, [currentIndex, isInitialized])
 
   const handleMouseMove = () => {
-    setPaused(true);
-    clearTimeout(inactivityTimeout.current);
-    inactivityTimeout.current = setTimeout(() => setPaused(false), 1000);
-  };
+    setPaused(true)
+    clearTimeout(inactivityTimeout.current)
+    inactivityTimeout.current = setTimeout(() => setPaused(false), 1000)
+  }
 
   return (
     <div
-      className="h-full w-full flex items-center justify-center overflow-hidden"
+      className="h-full w-full flex items-center justify-center overflow-hidden relative"
       onMouseMove={handleMouseMove}
       onTouchMove={handleMouseMove}
     >
       <img
-        src={images[current].src}
-        width={images[current].width}
-        height={images[current].height}
+        key={currentIndex}
+        src={images[currentIndex].src || "/placeholder.svg"}
         alt=""
-        className={`h-full w-auto object-contain transition-opacity duration-800 ease-in-out ${
-          fade ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ cursor: "default" }}
+        className="absolute h-full w-auto object-contain"
+        style={{
+          opacity: isInitialized ? opacity : 0,
+          transition: "opacity 0.4s ease-in-out",
+        }}
+        onLoad={() => setIsLoading(false)}
       />
     </div>
-  );
+  )
 }

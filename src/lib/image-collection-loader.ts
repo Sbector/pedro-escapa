@@ -98,6 +98,26 @@ const collectionImageImports: Record<string, () => Promise<any[]>> = {
   ],
   
   // Papelería
+  // Volúmenes
+  "volumenes-volumenes": async () => [
+    (await import("@assets/images/volumenes/01b.webp")).default,
+    (await import("@assets/images/volumenes/02.webp")).default,
+    (await import("@assets/images/volumenes/03.webp")).default,
+    (await import("@assets/images/volumenes/05.webp")).default,
+    (await import("@assets/images/volumenes/05b.webp")).default,
+    (await import("@assets/images/volumenes/07b.webp")).default,
+    (await import("@assets/images/volumenes/08.webp")).default,
+    (await import("@assets/images/volumenes/09.webp")).default,
+    (await import("@assets/images/volumenes/11.webp")).default,
+    (await import("@assets/images/volumenes/11b.webp")).default,
+    (await import("@assets/images/volumenes/12.webp")).default,
+    (await import("@assets/images/volumenes/12b.webp")).default,
+    (await import("@assets/images/volumenes/13.webp")).default,
+    (await import("@assets/images/volumenes/14.webp")).default,
+    (await import("@assets/images/volumenes/15.webp")).default,
+    (await import("@assets/images/volumenes/16.webp")).default,
+    (await import("@assets/images/volumenes/16b.webp")).default,
+  ],
   "papeleria-torculo": async () => [
     (await import("@assets/images/papeleria/torculo/1.webp")).default,
     (await import("@assets/images/papeleria/torculo/2.webp")).default,
