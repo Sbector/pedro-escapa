@@ -1,35 +1,18 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Carousel from "@components/Carousel.jsx";
-import { getImage } from "astro:assets";
 import Wrapper from "@components/Wrapper.astro";
+import { getCollection } from "astro:content";
 
-// Obtener imágenes
-const images = Object.values(
-    import.meta.glob("../assets/images/*/*.webp", { eager: true }),
-);
+// Obtener todas las colecciones 'itemCollections'
+const itemCollections = await getCollection("itemCollections");
 
-// Optimizar
-const optimizedImages = await Promise.all(
-    images.map(async (img: any) => {
-        const optimized = await getImage({
-            src: img.default ?? img.src ?? img,
-            format: "webp",
-            quality: 85,
-            height: 800,
-        });
-
-        return {
-            src: optimized.src,
-            width: optimized.attributes.width,
-            height: optimized.attributes.height,
-        };
-    }),
-);
+console.log(itemCollections[0].data.images[0]);
 ---
 
 <Layout>
     <Wrapper>
-        <Carousel client:load images={optimizedImages} />
+        <img src={itemCollections[0].data.images[0].imageRoute.src} />
+        <p>{itemCollections[0].data.images[0].title}</p>
     </Wrapper>
 </Layout>
