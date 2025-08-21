@@ -4,15 +4,13 @@ import Carousel from "@components/Carousel.jsx";
 import Wrapper from "@components/Wrapper.astro";
 import { getCollection } from "astro:content";
 
-// Obtener todas las colecciones 'itemCollections'
+
 const itemCollections = await getCollection("itemCollections");
 
-console.log(itemCollections[0].data.images[0]);
 ---
 
 <Layout>
     <Wrapper>
-        <img src={itemCollections[0].data.images[0].imageRoute.src} />
-        <p>{itemCollections[0].data.images[0].title}</p>
+        <Carousel images={itemCollections[0].data.images} client:only="react"/>
     </Wrapper>
 </Layout>
