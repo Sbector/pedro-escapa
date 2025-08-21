@@ -95,13 +95,24 @@ export default function Carousel({ images }) {
                         className="snap-start min-w-full flex flex-col justify-center items-center relative bg-white"
                     >
                         <img
-                            src={image.src}
+                            src={image.imageRoute.src}
                             alt=""
                             width={image.width}
                             height={image.height}
                             className="max-h-full object-contain"
                             loading={index === 0 ? "eager" : "lazy"}
                         />
+                        <p
+                            className="
+                        text-xs font-light tracking-widest text-center
+                        static mt-8
+                        lg:absolute lg:bottom-0 lg:translate-y-16 lg:mt-0
+                        ">
+                            <span className="font-bold uppercase pr-1">
+                                {image.title || ""}
+                            </span>
+                            {image.description || ""}
+                        </p>
                     </li>
                 ))}
             </ul>
