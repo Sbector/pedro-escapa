@@ -9,8 +9,8 @@ const itemCollections = await getCollection("itemCollections");
 
 ---
 
-<Layout>
+<Layout title="Volúmenes · Pedro Escapa">
     <Wrapper>
-        <Carousel images={itemCollections[0].data.images} client:only="react"/>
+        <Carousel client:load images={itemCollections[0].data.images}/>
     </Wrapper>
 </Layout>
