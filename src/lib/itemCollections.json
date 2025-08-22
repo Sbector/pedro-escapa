@@ -506,6 +506,33 @@
       }
     ]
   },
+   {
+    "id": "sic",
+    "title": "SIC",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "images": [
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/sic/01.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/sic/02.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/sic/03.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/sic/04.webp"
+      }
+    ]
+  },
   {
     "id": "papeleria-y-almazen",
     "title": "Papelería y Almacen",
