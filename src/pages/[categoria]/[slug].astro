@@ -2,18 +2,16 @@
 import Layout from "@layouts/Layout.astro";
 import { menu } from "@lib/menu";
 import { getSubitemData } from "@lib/getSubitemData";
-import { loadCollectionImages, optimizeImages } from "@lib/image-collection-loader";
-import Carousel from "@components/Carousel.astro";
+import { getCollection } from "astro:content";
+import Carousel from "@components/Carousel.jsx";
 import Wrapper from "@components/Wrapper.astro";
 
 export async function getStaticPaths() {
   const paths = [];
 
   for (const item of menu) {
-    // Solo incluir elementos visibles
     if (item.visible !== false && item.subitems) {
       for (const sub of item.subitems) {
-        // Solo incluir subelementos visibles
         if (sub.visible !== false) {
           paths.push({
             params: {
@@ -36,25 +34,19 @@ if (!subitemData) {
   throw new Error(`No se encontró el subitem: ${categoria}/${slug}`);
 }
 
-const { label, className = ""  } = subitemData;
-
-// Cargar y optimizar las imágenes para esta colección
-const rawImages = await loadCollectionImages(categoria, slug);
-const optimizedImages = await optimizeImages(rawImages);
+const { label, className = "" } = subitemData;
 
 // Construir la ruta actual explícitamente
 const currentPath = `/${categoria}/${slug}`;
----
 
+// Traer la colección de imágenes
+const itemCollections = await getCollection("itemCollections");
+const collection = itemCollections.find(item => item.id === slug);
+---
 <Layout title={`${label} · Pedro Escapa`} currentPath={currentPath}>
   <Wrapper className={className}>
-
-  {optimizedImages.length > 0 ? (
-    <Carousel images={optimizedImages} />
-  ) : (
-    <div class="flex items-center justify-center h-full">
-      <p class="text-gray-500">No hay imágenes disponibles para esta colección.</p>
-    </div>
-  )}
+    {collection?.data?.images && (
+      <Carousel client:load images={collection.data.images} />
+    )}
   </Wrapper>
 </Layout>
