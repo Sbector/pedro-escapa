@@ -506,6 +506,33 @@
       }
     ]
   },
+   {
+    "id": "sic",
+    "title": "SIC",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "images": [
+      {
+        "title": "Sombras de pasión / V.RE",
+        "description": "Óleo sobre madera. 120 x 160 cm",
+        "imageRoute": "../assets/images/interacciones/sic/01.webp"
+      },
+      {
+        "title": "Abstracción figurativa de lo conceptual 1 / V.RE",
+        "description": "Óleo sobre tela. 140 x 160 cm",
+        "imageRoute": "../assets/images/interacciones/sic/02.webp"
+      },
+      {
+        "title": "Escalera y banca / V.RE",
+        "description": "Óleo sobre maderas. 140 x 200 cm",
+        "imageRoute": "../assets/images/interacciones/sic/03.webp"
+      },
+      {
+        "title": "La vida sale al encuentro / V.RE",
+        "description": "Óleo sobre madera. 166 x 110 cm",
+        "imageRoute": "../assets/images/interacciones/sic/04.webp"
+      }
+    ]
+  },
   {
     "id": "papeleria-y-almazen",
     "title": "Papelería y Almacen",
