@@ -4,13 +4,13 @@ import Carousel from "@components/Carousel.jsx";
 import Wrapper from "@components/Wrapper.astro";
 import { getCollection } from "astro:content";
 
-
 const itemCollections = await getCollection("itemCollections");
 
+const volumenes = itemCollections.find(item => item.id === "volumenes")
 ---
 
-<Layout title="Volúmenes · Pedro Escapa">
+<Layout title={`${volumenes?.data.title} · Pedro Escapa`}>
     <Wrapper>
-        <Carousel client:load images={itemCollections[0].data.images}/>
+        <Carousel client:load images={volumenes?.data.images} />
     </Wrapper>
 </Layout>

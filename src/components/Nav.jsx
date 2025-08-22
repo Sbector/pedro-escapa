@@ -100,7 +100,7 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
                     <a 
                         href="/contacto" 
                         onClick={handleLinkClick}
-                        className={`text-xs ${
+                        className={` ${
                             isActive('/contacto')
                                 ? 'font-bold text-black'
                                 : 'font-medium'
