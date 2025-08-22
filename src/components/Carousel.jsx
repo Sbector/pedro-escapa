@@ -86,7 +86,7 @@ export default function Carousel({ images }) {
             {/* Carousel */}
             <ul
                 ref={carouselRef}
-                className="h-full w-full py-8 lg:py-32 flex flex-row space-x-32 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+                className="h-full w-full py-8 lg:py-32 flex flex-row space-x-32 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar touch-pan-x"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {images.map((image, index) => (
@@ -95,13 +95,24 @@ export default function Carousel({ images }) {
                         className="snap-start min-w-full flex flex-col justify-center items-center relative bg-white"
                     >
                         <img
-                            src={image.src}
+                            src={image.imageRoute.src}
                             alt=""
                             width={image.width}
                             height={image.height}
                             className="max-h-full object-contain"
                             loading={index === 0 ? "eager" : "lazy"}
                         />
+                        <p
+                            className="
+                        text-xs font-light tracking-widest text-center
+                        static mt-8
+                        lg:absolute lg:bottom-0 lg:translate-y-16 lg:mt-0
+                        ">
+                            <span className="font-bold uppercase pr-1">
+                                {image.title || ""}
+                            </span>
+                            {image.description || ""}
+                        </p>
                     </li>
                 ))}
             </ul>
