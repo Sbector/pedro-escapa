@@ -1,95 +1,690 @@
 [
- {
-  "id": "volumenes",
-  "title": "volumenes",
-  "description": "Colección de volúmenes",
-  "images": [
-    {
-      "title": "Rusia 70",
-      "description": "Nogal y Acero esmaltado. 19.5 x 48.5 x 16 cm",
-      "imageRoute": "../assets/images/volumenes/01b.webp"
-    },
-    {
-      "title": "Pluma (adj.)",
-      "description": "Acero korten, Concreto pigmentado, Acero inoxidable, luz roja. 501 x 68.47 x 68.47 cm",
-      "imageRoute": "../assets/images/volumenes/02.webp"
-    },
-    {
-      "title": "Script",
-      "description": "Cedro, pasta, plomo y concreto pigmentado, base mármol. 174 x 20 cm",
-      "imageRoute": "../assets/images/volumenes/03.webp"
-    },
-    {
-      "title": "Dynámica",
-      "description": "Acero esmaltado. 220 x 400 x 100 cm",
-      "imageRoute": "../assets/images/volumenes/05.webp"
-    },
-    {
-      "title": "Dynamica",
-      "description": "Acero esmaltado. 220 x 400 x 100 cm",
-      "imageRoute": "../assets/images/volumenes/05b.webp"
-    },
-    {
-      "title": "México",
-      "description": "Concreto lanzado. 564 x 600 x 635 cm",
-      "imageRoute": "../assets/images/volumenes/07b.webp"
-    },
-    {
-      "title": "Caballo de mar y fuego",
-      "description": "Acero esmaltado. 88 x 52 x 34.5 cm",
-      "imageRoute": "../assets/images/volumenes/08.webp"
-    },
-    {
-      "title": "México",
-      "description": "Madera de cedro y hoja de oro. 30 x 32 x 34 cm",
-      "imageRoute": "../assets/images/volumenes/09.webp"
-    },
-    {
-      "title": "Les pelvis Maqueta",
-      "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
-      "imageRoute": "../assets/images/volumenes/11.webp"
-    },
-    {
-      "title": "Les pelvis Maqueta",
-      "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
-      "imageRoute": "../assets/images/volumenes/11b.webp"
-    },
-    {
-      "title": "Les pelvis",
-      "description": "Acero corten. 130 x 145 x 108 cm",
-      "imageRoute": "../assets/images/volumenes/12.webp"
-    },
-    {
-      "title": "Les pelvis",
-      "description": "Acero corten. 130 x 145 x 108 cm",
-      "imageRoute": "../assets/images/volumenes/12b.webp"
-    },
-    {
-      "title": "Inicio del siglo XXI",
-      "description": "Madera de parota y concreto pigmentado. 190 x variables",
-      "imageRoute": "../assets/images/volumenes/13.webp"
-    },
-    {
-      "title": "México cerámico volcánico Maqueta",
-      "description": "Madera, petate y pasta acrílica. 23 x 16 x 16 cm",
-      "imageRoute": "../assets/images/volumenes/14.webp"
-    },
-    {
-      "title": "Sin título",
-      "description": "Madera de cedro y pasta acrílica. 46 x 22 x 18 cm",
-      "imageRoute": "../assets/images/volumenes/15.webp"
-    },
-    {
-      "title": "Sin título Maqueta",
-      "description": "Madera de cedro y pasta. 61 x 52 x 37 cm",
-      "imageRoute": "../assets/images/volumenes/16.webp"
-    },
-    {
-      "title": "Sin título Maqueta",
-      "description": "Madera de cedro y pasta. 61 x 52 x 37 cm",
-      "imageRoute": "../assets/images/volumenes/16b.webp"
-    }
-  ]
-}
-
+  {
+    "id": "volumenes",
+    "title": "Volúmenes",
+    "description": "Colección de volúmenes",
+    "images": [
+      {
+        "title": "Rusia 70",
+        "description": "Nogal y Acero esmaltado. 19.5 x 48.5 x 16 cm",
+        "imageRoute": "../assets/images/volumenes/01b.webp"
+      },
+      {
+        "title": "Pluma (adj.)",
+        "description": "Acero korten, Concreto pigmentado, Acero inoxidable, luz roja. 501 x 68.47 x 68.47 cm",
+        "imageRoute": "../assets/images/volumenes/02.webp"
+      },
+      {
+        "title": "Script",
+        "description": "Cedro, pasta, plomo y concreto pigmentado, base mármol. 174 x 20 cm",
+        "imageRoute": "../assets/images/volumenes/03.webp"
+      },
+      {
+        "title": "Dynámica",
+        "description": "Acero esmaltado. 220 x 400 x 100 cm",
+        "imageRoute": "../assets/images/volumenes/05.webp"
+      },
+      {
+        "title": "Dynamica",
+        "description": "Acero esmaltado. 220 x 400 x 100 cm",
+        "imageRoute": "../assets/images/volumenes/05b.webp"
+      },
+      {
+        "title": "México",
+        "description": "Concreto lanzado. 564 x 600 x 635 cm",
+        "imageRoute": "../assets/images/volumenes/07b.webp"
+      },
+      {
+        "title": "Caballo de mar y fuego",
+        "description": "Acero esmaltado. 88 x 52 x 34.5 cm",
+        "imageRoute": "../assets/images/volumenes/08.webp"
+      },
+      {
+        "title": "México",
+        "description": "Madera de cedro y hoja de oro. 30 x 32 x 34 cm",
+        "imageRoute": "../assets/images/volumenes/09.webp"
+      },
+      {
+        "title": "Les pelvis Maqueta",
+        "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
+        "imageRoute": "../assets/images/volumenes/11.webp"
+      },
+      {
+        "title": "Les pelvis Maqueta",
+        "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
+        "imageRoute": "../assets/images/volumenes/11b.webp"
+      },
+      {
+        "title": "Les pelvis",
+        "description": "Acero corten. 130 x 145 x 108 cm",
+        "imageRoute": "../assets/images/volumenes/12.webp"
+      },
+      {
+        "title": "Les pelvis",
+        "description": "Acero corten. 130 x 145 x 108 cm",
+        "imageRoute": "../assets/images/volumenes/12b.webp"
+      },
+      {
+        "title": "Inicio del siglo XXI",
+        "description": "Madera de parota y concreto pigmentado. 190 x variables",
+        "imageRoute": "../assets/images/volumenes/13.webp"
+      },
+      {
+        "title": "México cerámico volcánico Maqueta",
+        "description": "Madera, petate y pasta acrílica. 23 x 16 x 16 cm",
+        "imageRoute": "../assets/images/volumenes/14.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Madera de cedro y pasta acrílica. 46 x 22 x 18 cm",
+        "imageRoute": "../assets/images/volumenes/15.webp"
+      },
+      {
+        "title": "Sin título Maqueta",
+        "description": "Madera de cedro y pasta. 61 x 52 x 37 cm",
+        "imageRoute": "../assets/images/volumenes/16.webp"
+      },
+      {
+        "title": "Sin título Maqueta",
+        "description": "Madera de cedro y pasta. 61 x 52 x 37 cm",
+        "imageRoute": "../assets/images/volumenes/16b.webp"
+      }
+    ]
+  },
+  {
+    "id": "98-01",
+    "title": "98-01",
+    "description": "Colección bidimensional 98-01",
+    "images": [
+      {
+        "title": "Todos menos tú",
+        "description": "Mixta/tela. 140 x 140 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/01.webp"
+      },
+      {
+        "title": "Sin título (aguamanil)",
+        "description": "Mixta/tela. 140 x 140 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/02.webp"
+      },
+      {
+        "title": "La vida sale al encuentro",
+        "description": "Mixta / tela. 135 x 180 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/03.webp"
+      },
+      {
+        "title": "Balances",
+        "description": "Mixta/tela. 90 x 150 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/04.webp"
+      },
+      {
+        "title": "México",
+        "description": "Mixta/madera. 80 x 122 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/05.webp"
+      },
+      {
+        "title": "Ganchos",
+        "description": "Mixta/madera. 122 x 80 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/06.webp"
+      },
+      {
+        "title": "Barcas",
+        "description": "Mixta/tela. 65 x 95 cm",
+        "imageRoute": "../assets/images/bidimensional/98-01/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "composicion",
+    "title": "Composición",
+    "description": "Colección bidimensional Composición",
+    "images": [
+      {
+        "title": "Paisaje n1",
+        "description": "Mixta-papel/tela. 140 x 170 cm",
+        "imageRoute": "../assets/images/bidimensional/composicion/01.webp"
+      },
+      {
+        "title": "Patronato de temporada",
+        "description": "Mixta-papel/tela. 130 x 120 cm",
+        "imageRoute": "../assets/images/bidimensional/composicion/02.webp"
+      },
+      {
+        "title": "Adoración",
+        "description": "Mixta-papel/tela. 125 x 130 cm",
+        "imageRoute": "../assets/images/bidimensional/composicion/03.webp"
+      },
+      {
+        "title": "Composición",
+        "description": "Mixta-papel/tela. 165 x 114 cm",
+        "imageRoute": "../assets/images/bidimensional/composicion/04.webp"
+      },
+      {
+        "title": "Inframince",
+        "description": "Mixta-papel/tela. 130 x 160 cm",
+        "imageRoute": "../assets/images/bidimensional/composicion/05.webp"
+      },
+      {
+        "title": "Paisaje compuesto",
+        "description": "Mixta-papel/tela. 26, 28, 30 y 26 x 180 cm",
+        "imageRoute": "../assets/images/bidimensional/composicion/06.webp"
+      }
+    ]
+  },
+  {
+    "id": "consejos",
+    "title": "Consejos",
+    "description": "Colección bidimensional Consejos",
+    "images": [
+      {
+        "title": "Poema catenal",
+        "description": "Punta seca-papel/tela. 176 x 195 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/01.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Punta seca-papel/tela y óleo/madera. 189 x 65 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/02.webp"
+      },
+      {
+        "title": "Ecos de pasión",
+        "description": "Serigrafía-papel/tela. 100 x 126 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/03.webp"
+      },
+      {
+        "title": "Metamorfosis (me quiere no me quiere)",
+        "description": "Punta seca-papel/tela. 223 x 223 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/04.webp"
+      },
+      {
+        "title": "Metamorfosis en rojo",
+        "description": "Punta seca-papel/tela. 190 x 190 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/05.webp"
+      },
+      {
+        "title": "Muestrario",
+        "description": "Mixta/tela. 126 x 204 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/06.webp"
+      },
+      {
+        "title": "Nosotros",
+        "description": "Mixta/tela. 132 x 125 cm",
+        "imageRoute": "../assets/images/bidimensional/consejos/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "escaleras",
+    "title": "Escaleras",
+    "description": "Colección bidimensional Escaleras",
+    "images": [
+      {
+        "title": "Sin titulo AA",
+        "description": "Acrílico/tela. 100 x 116 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/01.webp"
+      },
+      {
+        "title": "Sin titulo (azul)",
+        "description": "Acrílico/tela. 116 x 100 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/02.webp"
+      },
+      {
+        "title": "Descanso azul",
+        "description": "Acrílico/tela. 150 x 155 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/03.webp"
+      },
+      {
+        "title": "Escalera a Babel",
+        "description": "Acrílico/tela. 162 x 62 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/04.webp"
+      },
+      {
+        "title": "Escalera y banca",
+        "description": "Acrílico/tela. 140 x 180 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/05.webp"
+      },
+      {
+        "title": "Escultura transitable",
+        "description": "Acrílico/tela. 100 x 100 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/06.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Acrílico/tela. 100 x 80 cm",
+        "imageRoute": "../assets/images/bidimensional/escaleras/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "mixta-sobre-escaleras",
+    "title": "Mixta sobre escaleras",
+    "description": "Colección bidimensional Mixta sobre escaleras",
+    "images": [
+      {
+        "title": "Sombras de pasión",
+        "description": "Óleo/madera. 115 x 160 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/1.webp"
+      },
+      {
+        "title": "Starck stair",
+        "description": "mixta/madera. 169 x 170 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/02.webp"
+      },
+      {
+        "title": "Escalera de sacrificio",
+        "description": "Mixta/tela. 128 x 120 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/03.webp"
+      },
+      {
+        "title": "Escalera en escalera sobre escalera",
+        "description": "Óleo/madera. 100 x 172 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/04.webp"
+      },
+      {
+        "title": "Proyección",
+        "description": "Mixta/madera 110 x 190 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/05.webp"
+      },
+      {
+        "title": "Escalera rosa",
+        "description": "Óleo/madera. 142 x 181 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/06.webp"
+      },
+      {
+        "title": "Insurrección",
+        "description": "Óleo y cemento/madera. 108 x 193 cm",
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "papeleria-y-almazen",
+    "title": "Papelería y Almacen",
+    "description": "Colección bidimensional Papelería y Almacen",
+    "images": [
+      {
+        "title": "Dr. Buisman, 'Interpretación'",
+        "description": "Óleo/Tela. 140x160 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/01.webp"
+      },
+      {
+        "title": "Gymnopedias (Satie)",
+        "description": "Óleo/Tela. 180x180 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/02.webp"
+      },
+      {
+        "title": "Haciendo piña",
+        "description": "Óleo/Tela. 125x160 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/03.webp"
+      },
+      {
+        "title": "La multiplicidad de los unos",
+        "description": "Óleo/Tela. 80x100 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/04.webp"
+      },
+      {
+        "title": "México desdoblado",
+        "description": "Óleo/Madera (Políptico). 180x209 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/05.webp"
+      },
+      {
+        "title": "Paisaje para un perro astuto",
+        "description": "Óleo/Madera (Políptico). 126x180 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/06.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Óleo/Tela. 190x150 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/07.webp"
+      },
+      {
+        "title": "Trébol manualmente modificado",
+        "description": "Óleo/Madera. 156.5x120.5 cm",
+        "imageRoute": "../assets/images/bidimensional/papeleria-y-almazen/08.webp"
+      }
+    ]
+  },
+  {
+    "id": "a-quien-corresponda",
+    "title": "A quien corresponda",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "images": [
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/01.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/02.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/03.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/04.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/05.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/06.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/07.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/08.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/09.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/10.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/11.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/a-quien-corresponda/12.webp"
+      }
+    ]
+  },
+  {
+    "id": "abstraccion-figurativa",
+    "title": "Abstracción figurativa",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "images": [
+      {
+        "title": "Caja",
+        "description": "Óleo/tela.  80 x 100 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/01.webp"
+      },
+      {
+        "title": "Shell",
+        "description": "Acrílico/tela. 116 x 89 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "arquitectura",
+    "title": "Arquitectura",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "images": [
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/arquitectura/01.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/arquitectura/02.webp"
+      },
+      {
+        "title": "Metrópoli silencio",
+        "description": "Mixta/tela. 140 x 200 cm",
+        "imageRoute": "../assets/images/interacciones/arquitectura/03.webp"
+      },
+      {
+        "title": "Canciones del Segundo Piso",
+        "description": "Mixta/tela. 102 x 180 cm",
+        "imageRoute": "../assets/images/interacciones/arquitectura/04.webp"
+      },
+      {
+        "title": "30 cortinas y un resane",
+        "description": "Mixta/tela. 202 x 128 cm",
+        "imageRoute": "../assets/images/interacciones/arquitectura/05.webp"
+      },
+      {
+        "title": "Suelo de uso mixto",
+        "description": "Mixta/tela. 102 x 117 cm",
+        "imageRoute": "../assets/images/interacciones/arquitectura/06.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Mixta/tela. 105 x 130 cm",
+        "imageRoute": "../assets/images/interacciones/arquitectura/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "colegages",
+    "title": "Colegages",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "images": [
+      {
+        "title": "Varios (díptico)",
+        "description": "Mixta/tela 80 x 100 cm",
+        "imageRoute": "../assets/images/interacciones/colegages/01.webp"
+      },
+      {
+        "title": "Marta P",
+        "description": "Mixta/tela. 135 x 135 cm",
+        "imageRoute": "../assets/images/interacciones/colegages/02.webp"
+      },
+      {
+        "title": "Daniel L",
+        "description": "Óleo/madera. 52 x 40 cm y 55 x 40 cm",
+        "imageRoute": "../assets/images/interacciones/colegages/04.webp"
+      },
+      {
+        "title": "José F. 4",
+        "description": "Mixta/tela. 136 x 186 cm",
+        "imageRoute": "../assets/images/interacciones/colegages/05.webp"
+      },
+      {
+        "title": "Manuela G",
+        "description": "Mixta/tela. 120 x 140 cm",
+        "imageRoute": "../assets/images/interacciones/colegages/06.webp"
+      },
+      {
+        "title": "Roberto T. 4 (tríptico)",
+        "description": "Mixta/madera. 50 x 200 cm",
+        "imageRoute": "../assets/images/interacciones/colegages/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "papeleria-y-almazen",
+    "title": "Papelería y Almacen",
+    "description": "Colección de papelería y almacen",
+    "images": [
+      {
+        "title": "Excusas",
+        "description": "Fotograbado. 27.5 x 34.5 cm",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/01.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage y acuarela",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/02.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/03.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/04.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/05.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage y acuarela",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/06.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage y acuarela",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/07.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Prueba de estado y acuarela",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/08.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/09.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/10.webp"
+      },
+      {
+        "title": "Excusas",
+        "description": "Fotograbado. 27.5 x 34.5 cm",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/11.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Collage",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/12.webp"
+      },
+      {
+        "title": "Sin título",
+        "description": "Prueba de color y esmalte",
+        "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/13.webp"
+      }
+    ]
+  },
+  {
+    "id": "shakers",
+    "title": "Shakers",
+    "description": "Colección de Shakers",
+    "images": [
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/01.webp"
+      }
+    ]
+  },
+  {
+    "id": "torculo",
+    "title": "Tórculo",
+    "description": "Colección Tórculo",
+    "images": [
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/1.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/2.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/4.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/5.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/6.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/7.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/8.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/10.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/11.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/12.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/14.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/15.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/16.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/17.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/18.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/19.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/20.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/torculo/21.webp"
+      }
+    ]
+  }
 ]
