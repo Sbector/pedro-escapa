@@ -2,7 +2,7 @@
   {
     "id": "volumenes",
     "title": "Volúmenes",
-    "description": "Colección de volúmenes",
+    "description": "",
     "images": [
       {
         "title": "Rusia 70",
@@ -18,11 +18,6 @@
         "title": "Script",
         "description": "Cedro, pasta, plomo y concreto pigmentado, base mármol. 174 x 20 cm",
         "imageRoute": "../assets/images/volumenes/03.webp"
-      },
-      {
-        "title": "Dynámica",
-        "description": "Acero esmaltado. 220 x 400 x 100 cm",
-        "imageRoute": "../assets/images/volumenes/05.webp"
       },
       {
         "title": "Dynamica",
@@ -94,7 +89,7 @@
   {
     "id": "98-01",
     "title": "98-01",
-    "description": "Colección bidimensional 98-01",
+    "description": "",
     "images": [
       {
         "title": "Todos menos tú",
@@ -136,7 +131,7 @@
   {
     "id": "composicion",
     "title": "Composición",
-    "description": "Colección bidimensional Composición",
+    "description": "",
     "images": [
       {
         "title": "Paisaje n1",
@@ -173,7 +168,7 @@
   {
     "id": "consejos",
     "title": "Consejos",
-    "description": "Colección bidimensional Consejos",
+    "description": "",
     "images": [
       {
         "title": "Poema catenal",
@@ -215,7 +210,7 @@
   {
     "id": "escaleras",
     "title": "Escaleras",
-    "description": "Colección bidimensional Escaleras",
+    "description": "",
     "images": [
       {
         "title": "Sin titulo AA",
@@ -255,9 +250,41 @@
     ]
   },
   {
+    "id": "home-painting",
+    "title": "Home painting",
+    "description": "",
+    "images": [
+      {
+        "title": "Núcleo azul",
+        "description": "Vinílica y polímeros/lino. 130 x 116 cm",
+        "imageRoute": "../assets/images/bidimensional/home-painting/01.webp"
+      },
+      {
+        "title": "Cardin mon amour",
+        "description": "Vinílica y polímeros/lino. 175 x 136 cm",
+        "imageRoute": "../assets/images/bidimensional/home-painting/02.webp"
+      },
+      {
+        "title": "Taxón azul",
+        "description": "Vinílica y polímeros/lino y fajilla madera. 192 x 180 cm",
+        "imageRoute": "../assets/images/bidimensional/home-painting/03.webp"
+      },
+      {
+        "title": "Taxón",
+        "description": "Vinílica y polímeros/lino y fajilla madera. 168 x 160 cm",
+        "imageRoute": "../assets/images/bidimensional/home-painting/04.webp"
+      },
+      {
+        "title": "The marching of the ants",
+        "description": "Vinílica y polímeros/lino. 125 x 200 cm",
+        "imageRoute": "../assets/images/bidimensional/home-painting/05.webp"
+      }
+    ]
+  },
+  {
     "id": "mixta-sobre-escaleras",
     "title": "Mixta sobre escaleras",
-    "description": "Colección bidimensional Mixta sobre escaleras",
+    "description": "",
     "images": [
       {
         "title": "Sombras de pasión",
@@ -270,8 +297,8 @@
         "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/02.webp"
       },
       {
-        "title": "Escalera de sacrificio",
-        "description": "Mixta/tela. 128 x 120 cm",
+        "title": "Proyección",
+        "description": "Mixta sobre madera. 121 x 100 cm",
         "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/03.webp"
       },
       {
@@ -280,8 +307,8 @@
         "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/04.webp"
       },
       {
-        "title": "Proyección",
-        "description": "Mixta/madera 110 x 190 cm",
+        "title": "Escalera de sacrificio",
+        "description": "Mixta/tela. 128 x 120 cm",
         "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/05.webp"
       },
       {
@@ -299,7 +326,7 @@
   {
     "id": "papeleria-y-almazen",
     "title": "Papelería y Almacen",
-    "description": "Colección bidimensional Papelería y Almacen",
+    "description": "",
     "images": [
       {
         "title": "Dr. Buisman, 'Interpretación'",
@@ -346,7 +373,7 @@
   {
     "id": "a-quien-corresponda",
     "title": "A quien corresponda",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "",
     "images": [
       {
         "title": "",
@@ -413,7 +440,7 @@
   {
     "id": "abstraccion-figurativa",
     "title": "Abstracción figurativa",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "",
     "images": [
       {
         "title": "Caja",
@@ -430,16 +457,16 @@
   {
     "id": "arquitectura",
     "title": "Arquitectura",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "description": "",
     "images": [
       {
-        "title": "",
-        "description": "",
+        "title": "Códigos de honor",
+        "description": "Serigrafía y óleo/tela. 170 x 128 cm",
         "imageRoute": "../assets/images/interacciones/arquitectura/01.webp"
       },
       {
-        "title": "",
-        "description": "",
+        "title": "Proyecto 1",
+        "description": "Serigrafía, óleo, acrílico/Papel/Tela. 120 x 140 cm",
         "imageRoute": "../assets/images/interacciones/arquitectura/02.webp"
       },
       {
@@ -472,7 +499,7 @@
   {
     "id": "colegages",
     "title": "Colegages",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "description": "",
     "images": [
       {
         "title": "Varios (díptico)",
@@ -506,10 +533,10 @@
       }
     ]
   },
-   {
+  {
     "id": "sic",
     "title": "SIC",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "description": "",
     "images": [
       {
         "title": "Sombras de pasión / V.RE",
@@ -534,18 +561,18 @@
     ]
   },
   {
-    "id": "papeleria-y-almazen",
-    "title": "Papelería y Almacen",
-    "description": "Colección de papelería y almacen",
+    "id": "recursos",
+    "title": "Recursos (Papelería y AlmaZen)",
+    "description": "",
     "images": [
       {
-        "title": "Excusas",
-        "description": "Fotograbado. 27.5 x 34.5 cm",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/01.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage y acuarela",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/02.webp"
       },
       {
@@ -559,48 +586,48 @@
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/04.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/05.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage y acuarela",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/06.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage y acuarela",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/07.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Prueba de estado y acuarela",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/08.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/09.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/10.webp"
       },
       {
-        "title": "Excusas",
-        "description": "Fotograbado. 27.5 x 34.5 cm",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/11.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Collage",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/12.webp"
       },
       {
-        "title": "Sin título",
-        "description": "Prueba de color y esmalte",
+        "title": "",
+        "description": "",
         "imageRoute": "../assets/images/papeleria/papeleria-y-almazen/13.webp"
       }
     ]
@@ -608,19 +635,64 @@
   {
     "id": "shakers",
     "title": "Shakers",
-    "description": "Colección de Shakers",
+    "description": "",
     "images": [
       {
         "title": "",
         "description": "",
         "imageRoute": "../assets/images/papeleria/shakers/01.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/02.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/03.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/04.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/05.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/06.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/07.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/08.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/09.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/papeleria/shakers/10.webp"
       }
     ]
   },
   {
     "id": "torculo",
     "title": "Tórculo",
-    "description": "Colección Tórculo",
+    "description": "",
     "images": [
       {
         "title": "",

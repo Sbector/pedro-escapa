@@ -17,6 +17,7 @@ export const menu: MenuItem[] = [
       { label: "Semicírculos", slug: "semicirculos", visible: false },
       { label: "Óleo", slug: "oleo", visible: false },
       { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: true },
+      { label: "Home painting", slug: "home-painting", visible: true },
     ],
   },
   {
@@ -29,7 +30,6 @@ export const menu: MenuItem[] = [
       { label: "Colegages", slug: "colegages", visible: true },
       { label: "Arquitecturas", slug: "arquitectura", visible: true },
       { label: "A quien corresponda", slug: "a-quien-corresponda", visible: true },
-      { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: false },
       { label: "SIC", slug: "sic", visible: true },
       { label: "Abstracción figurativa", slug: "abstraccion-figurativa", visible: true },
       { label: "Death of painting is a", slug: "death-of-painting-is-a", visible: false },
@@ -45,7 +45,7 @@ export const menu: MenuItem[] = [
     subitems: [
       { label: "Tórculo", slug: "torculo", visible: true },
       { label: "Shakers", slug: "shakers", visible: true },
-      { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: true },
+      { label: "Recursos (Papelería y almaZen)", slug: "recursos", visible: true },
     ],
   },
   {
