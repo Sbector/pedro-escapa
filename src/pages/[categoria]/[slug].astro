@@ -43,7 +43,7 @@ const currentPath = `/${categoria}/${slug}`;
 const itemCollections = await getCollection("itemCollections");
 const collection = itemCollections.find(item => item.id === slug);
 ---
-<Layout title={`${label} · Pedro Escapa`} currentPath={currentPath}>
+<Layout title={`${collection?.data.title} · Pedro Escapa`} currentPath={currentPath}>
   <Wrapper className={className}>
     {collection?.data?.images && (
       <Carousel client:load images={collection.data.images} />

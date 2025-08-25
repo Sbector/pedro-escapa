@@ -439,17 +439,42 @@
   },
   {
     "id": "abstraccion-figurativa",
-    "title": "Abstracción figurativa",
+    "title": "Abstracción figurativa de lo conceptual",
     "description": "",
     "images": [
       {
-        "title": "Caja",
-        "description": "Óleo/tela.  80 x 100 cm",
+        "title": "About Yoko",
+        "description": "Óleo/tela. 130 x 140 cm",
         "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/01.webp"
       },
       {
-        "title": "Shell",
-        "description": "Acrílico/tela. 116 x 89 cm",
+        "title": "Conejo fluorescente",
+        "description": "Óleo/tela. 140 x 180 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/02.webp"
+      },
+      {
+        "title": "Perro",
+        "description": "Óleo/tela. 120 x 160 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/03.webp"
+      },
+      {
+        "title": "Cerdo",
+        "description": "Óleo/tela. 130 x 140 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/04.webp"
+      },
+      {
+        "title": "Abstracción figurativa de lo conceptual 1",
+        "description": "Óleo/tela. 120 x 140 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/05.webp"
+      },
+      {
+        "title": "Superficie sobre base",
+        "description": "Óleo/tela. 120 x 140 cm",
+        "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/06.webp"
+      },
+      {
+        "title": "Abstracción figurativa de lo conceptual 2",
+        "description": "Óleo/tela. 120 x 140 cm",
         "imageRoute": "../assets/images/interacciones/abstraccion-figurativa/07.webp"
       }
     ]
@@ -530,6 +555,58 @@
         "title": "Roberto T. 4 (tríptico)",
         "description": "Mixta/madera. 50 x 200 cm",
         "imageRoute": "../assets/images/interacciones/colegages/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "death-of-painting",
+    "title": "Death of painting is a play of lights",
+    "description": "",
+    "images": [
+      {
+        "title": "About Guy Debord",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 78 x 55 cm c.u.",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/01.webp"
+      },
+      {
+        "title": "Balance",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/02.webp"
+      },
+      {
+        "title": "Until you find 15 yellows",
+        "description": "Tinta de archivo en papel de algodón – óleo/madera 75 x  55 cm",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/03.webp"
+      },
+      {
+        "title": "Work done",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 76 x 55 cm",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/04.webp"
+      },
+      {
+        "title": "Y.2",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 80 x 50 cm",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/05.webp"
+      },
+      {
+        "title": "Action without painting 1",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 75 x 110 cm",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/06.webp"
+      },
+      {
+        "title": "B. g & r",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 78 x 53 cm c.u.",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/07.webp"
+      },
+      {
+        "title": "Based on “Directional forces” of J.B.",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 56 x 40 cm",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/08.webp"
+      },
+      {
+        "title": "A3",
+        "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 120 x 150 cm",
+        "imageRoute": "../assets/images/interacciones/death-of-painting/09.webp"
       }
     ]
   },

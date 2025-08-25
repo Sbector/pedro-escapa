@@ -32,7 +32,7 @@ export const menu: MenuItem[] = [
       { label: "A quien corresponda", slug: "a-quien-corresponda", visible: true },
       { label: "SIC", slug: "sic", visible: true },
       { label: "Abstracción figurativa", slug: "abstraccion-figurativa", visible: true },
-      { label: "Death of painting is a", slug: "death-of-painting-is-a", visible: false },
+      { label: "Death of painting is a", slug: "death-of-painting", visible: true },
       { label: "Aspect ratio", slug: "aspect-ratio", visible: false },
       { label: "Paráfrasis", slug: "parafrasis", visible: false },
     ],
