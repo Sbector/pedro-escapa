@@ -15,7 +15,7 @@ export const menu: MenuItem[] = [
       { label: "Consejos", slug: "consejos", visible: true },
       { label: "Usos múltiples", slug: "usos-multiples", visible: false },
       { label: "Semicírculos", slug: "semicirculos", visible: false },
-      { label: "Óleo", slug: "oleo", visible: false },
+      { label: "Óleo", slug: "oleo", visible: true },
       { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: true },
       { label: "Home painting", slug: "home-painting", visible: true },
     ],
