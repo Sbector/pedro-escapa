@@ -289,7 +289,7 @@
       {
         "title": "Sombras de pasión",
         "description": "Óleo/madera. 115 x 160 cm",
-        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/1.webp"
+        "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/01.webp"
       },
       {
         "title": "Starck stair",
@@ -320,6 +320,48 @@
         "title": "Insurrección",
         "description": "Óleo y cemento/madera. 108 x 193 cm",
         "imageRoute": "../assets/images/bidimensional/mixta-sobre-escaleras/07.webp"
+      }
+    ]
+  },
+  {
+    "id": "oleo",
+    "title": "Óleo",
+    "description": "",
+    "images": [
+      {
+        "title": "Biblioteca",
+        "description": "Óleo y metacrilato/madera. 158 x 205 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/01.webp"
+      },
+      {
+        "title": "El fuego de Santa Rita",
+        "description": "Óleo y metacrilato/madera. 120 x 160 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/02.webp"
+      },
+      {
+        "title": "Composición con paleta de inicio",
+        "description": "Óleo y metacrilato/madera. 155 x 196 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/03.webp"
+      },
+      {
+        "title": "Urbanismo",
+        "description": "Óleo y metacrilato/madera. 120 x 166 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/04.webp"
+      },
+      {
+        "title": "Composición minimal espiritual",
+        "description": "Óleo y metacrilato/madera. 160 x 120 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/05.webp"
+      },
+      {
+        "title": "Composición con margen verde",
+        "description": "Óleo y metacrilato/madera. 120 x 166 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/06.webp"
+      },
+      {
+        "title": "Composición con amarillo",
+        "description": "Óleo y metacrilato/madera. 120 x 166 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/07.webp"
       }
     ]
   },
