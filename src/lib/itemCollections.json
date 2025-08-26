@@ -167,8 +167,8 @@
   },
   {
     "id": "consejos",
-    "title": "Consejos",
-    "description": "",
+    "title": "Buenos consejos, pequeños progresos, nuevas luces",
+    "description": "Buenos consejos, pequeños progresos, nuevas luces",
     "images": [
       {
         "title": "Poema catenal",
@@ -213,7 +213,7 @@
     "description": "",
     "images": [
       {
-        "title": "Sin titulo AA",
+        "title": "Escalera para remedios",
         "description": "Acrílico/tela. 100 x 116 cm",
         "imageRoute": "../assets/images/bidimensional/escaleras/01.webp"
       },
@@ -325,7 +325,7 @@
   },
   {
     "id": "oleo",
-    "title": "Óleo",
+    "title": "Óleo y acrílico/madera",
     "description": "",
     "images": [
       {
@@ -609,16 +609,6 @@
         "title": "About Guy Debord",
         "description": "Tinta de archivo sobre papel de algodón – óleo/madera. 78 x 55 cm c.u.",
         "imageRoute": "../assets/images/interacciones/death-of-painting/01.webp"
-      },
-      {
-        "title": "Balance",
-        "description": "Tinta de archivo sobre papel de algodón – óleo/madera",
-        "imageRoute": "../assets/images/interacciones/death-of-painting/02.webp"
-      },
-      {
-        "title": "Until you find 15 yellows",
-        "description": "Tinta de archivo en papel de algodón – óleo/madera 75 x  55 cm",
-        "imageRoute": "../assets/images/interacciones/death-of-painting/03.webp"
       },
       {
         "title": "Work done",
