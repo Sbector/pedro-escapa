@@ -348,12 +348,14 @@ const exposicionesColectivas = [
                       <p class="font-bold pb-0.5">{item.año}</p>
                       {item.exposiciones.map((expo, index) => (
                         <div class={index > 0 ? "pt-2" : ""}>
-                          {expo.titulo ? (
-                            <p class="mb-2">
-                              <span class="italic">{expo.titulo},</span>
-                              {expo.lugar}
-                            </p>
-                          ) : null}
+                          <p class="mb-2">
+                            {expo.titulo ? (
+                              <span class="italic">{expo.titulo}, </span>
+                            ) : (
+                              ""
+                            )}
+                            {expo.lugar}
+                          </p>
                         </div>
                       ))}
                     </div>
