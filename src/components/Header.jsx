@@ -20,6 +20,7 @@ export default function ReactHeader({ currentPath }) {
             pt-6 lg:pt-12 
             px-6 lg:pl-12 lg:pr-0
             flex flex-row lg:flex-col
+            lg:max-w-3xs
             ">
                 <h1 className="
                 absolute lg:static
