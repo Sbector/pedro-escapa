@@ -63,7 +63,7 @@ export default function Carousel({ images }) {
   }, []);
 
   return (
-    <div className="h-full w-full relative">
+    <div className="h-full w-full">
       <ul
         ref={carouselRef}
         className="h-full w-full py-8 lg:py-32 flex flex-row space-x-32 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar touch-pan-x"
