@@ -34,8 +34,6 @@ if (!subitemData) {
   throw new Error(`No se encontró el subitem: ${categoria}/${slug}`);
 }
 
-const { label, className = "" } = subitemData;
-
 // Construir la ruta actual explícitamente
 const currentPath = `/${categoria}/${slug}`;
 
@@ -44,7 +42,7 @@ const itemCollections = await getCollection("itemCollections");
 const collection = itemCollections.find(item => item.id === slug);
 ---
 <Layout title={`${collection?.data.title} · Pedro Escapa`} currentPath={currentPath}>
-  <Wrapper className={className}>
+  <Wrapper>
     {collection?.data?.images && (
       <Carousel client:load images={collection.data.images} />
     )}
