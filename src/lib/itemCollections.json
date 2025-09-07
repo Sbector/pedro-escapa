@@ -208,6 +208,38 @@
     ]
   },
   {
+    "id": "semicirculos",
+    "title": "Semicirculos",
+    "description": "",
+    "images": [
+      {
+        "title": "Bajo mi piel",
+        "description": "Tinta china, papel encolado / Tela. 100 x 100 cm",
+        "imageRoute": "../assets/images/bidimensional/semicirculos/01.webp"
+      },
+      {
+        "title": "Momento mudéjar",
+        "description": "Óleo / madera. 148 x 122 cm",
+        "imageRoute": "../assets/images/bidimensional/semicirculos/02.webp"
+      },
+      {
+        "title": "Arcada",
+        "description": "Papel serigrafía / tela. 160 x 275 cm",
+        "imageRoute": "../assets/images/bidimensional/semicirculos/03.webp"
+      },
+      {
+        "title": "Patio",
+        "description": "Papel serigrafía / tela.  150 x 220 cm",
+        "imageRoute": "../assets/images/bidimensional/semicirculos/04.webp"
+      },
+      {
+        "title": "Sobreexpuesto",
+        "description": "Cloro papel encolado. 120 x 120 cm",
+        "imageRoute": "../assets/images/bidimensional/semicirculos/05.webp"
+      }
+    ]
+  },
+  {
     "id": "escaleras",
     "title": "Escaleras",
     "description": "",

@@ -14,7 +14,7 @@ export const menu: MenuItem[] = [
       { label: "Composición", slug: "composicion", visible: true },
       { label: "Buenos consejos, pequeños progresos, nuevas luces", slug: "consejos", visible: true },
       { label: "Usos múltiples", slug: "usos-multiples", visible: false },
-      { label: "Semicírculos", slug: "semicirculos", visible: false },
+      { label: "Semicírculos", slug: "semicirculos", visible: true },
       { label: "Óleo y acrílico/madera", slug: "oleo", visible: true },
       { label: "Papelería y almaZen", slug: "papeleria-y-almazen", visible: true },
       { label: "Home painting", slug: "home-painting", visible: true },
