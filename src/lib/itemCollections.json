@@ -334,11 +334,6 @@
         "imageRoute": "../assets/images/bidimensional/oleo/01.webp"
       },
       {
-        "title": "El fuego de Santa Rita",
-        "description": "Óleo y metacrilato/madera. 120 x 160 cm",
-        "imageRoute": "../assets/images/bidimensional/oleo/02.webp"
-      },
-      {
         "title": "Composición con paleta de inicio",
         "description": "Óleo y metacrilato/madera. 155 x 196 cm",
         "imageRoute": "../assets/images/bidimensional/oleo/03.webp"
@@ -360,8 +355,13 @@
       },
       {
         "title": "Composición con amarillo",
-        "description": "Óleo y metacrilato/madera. 120 x 166 cm",
+        "description": "Óleo, metacrilato y HDF / madera. 120 x 166 cm",
         "imageRoute": "../assets/images/bidimensional/oleo/07.webp"
+      },
+      {
+        "title": "Biblioteca contable",
+        "description": "Óleo, gatorboard y madera / madera. 149 x 201 cm",
+        "imageRoute": "../assets/images/bidimensional/oleo/08.webp"
       }
     ]
   },
