@@ -33,7 +33,7 @@ export const menu: MenuItem[] = [
       { label: "SIC", slug: "sic", visible: true },
       { label: "Abstracción figurativa de lo conceptual", slug: "abstraccion-figurativa", visible: true },
       { label: "Death of painting is a play of lights", slug: "death-of-painting", visible: true },
-      { label: "Aspect ratio", slug: "aspect-ratio", visible: false },
+      { label: "Aspect ratio", slug: "aspect-ratio", visible: true },
       { label: "Paráfrasis", slug: "parafrasis", visible: false },
     ],
   },

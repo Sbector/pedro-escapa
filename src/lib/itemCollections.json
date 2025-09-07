@@ -675,6 +675,43 @@
     ]
   },
   {
+    "id": "aspect-ratio",
+    "title": "Aspect ratio",
+    "description": "",
+    "images": [
+      {
+        "title": "",
+        "description": "Tinta de conservación/papel algodón. Acrílico/gator board.  75 x 53 cm",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/01.webp"
+      },
+      {
+        "title": "",
+        "description": "Tinta de conservación/papel algodón. óleo/madera.  160x120 cm",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/02.webp"
+      },
+      {
+        "title": "",
+        "description": "Tinta de conservación/papel algodón.  Óleo/madera.  160 x 120 cm",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/03.webp"
+      },
+      {
+        "title": "",
+        "description": "Tinta de conservación/papel algodón.  Óleo/madera.  160 x 120 cm",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/04.webp"
+      },
+      {
+        "title": "",
+        "description": "Tinta de conservación/papel algodón. Óleo/madera.  105 x 80 cm",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/05.webp"
+      },
+      {
+        "title": "",
+        "description": "Tinta de conservación/papel algodón .  Óleo/gator board. 80 x 70 cm",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/06.webp"
+      }
+    ]
+  },
+  {
     "id": "sic",
     "title": "SIC",
     "description": "sic",
