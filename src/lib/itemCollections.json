@@ -556,7 +556,7 @@
   {
     "id": "arquitectura",
     "title": "Arquitectura",
-    "description": "",
+    "description": "arquitectura",
     "images": [
       {
         "title": "Códigos de honor",
@@ -598,7 +598,7 @@
   {
     "id": "colegages",
     "title": "Colegages",
-    "description": "",
+    "description": "colegages",
     "images": [
       {
         "title": "Varios (díptico)",
@@ -635,7 +635,7 @@
   {
     "id": "death-of-painting",
     "title": "Death of painting is a play of lights",
-    "description": "",
+    "description": "death-of-painting",
     "images": [
       {
         "title": "About Guy Debord",
@@ -677,7 +677,7 @@
   {
     "id": "aspect-ratio",
     "title": "Aspect ratio",
-    "description": "",
+    "description": "aspect-ratio",
     "images": [
       {
         "title": "",
@@ -714,7 +714,7 @@
   {
     "id": "parafrasis",
     "title": "Paráfrasis",
-    "description": "",
+    "description": "parafrasis",
     "carouselMode": "double",
     "images": [
       {
@@ -807,7 +807,7 @@
   {
     "id": "sic",
     "title": "SIC",
-    "description": "",
+    "description": "sic",
     "images": [
       {
         "title": "Sombras de pasión / V.RE",

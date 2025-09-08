@@ -67,24 +67,29 @@ if (collection?.data?.description) {
   title={`${collection?.data.title} · Pedro Escapa`}
   currentPath={currentPath}
 >
-  {
-    DescriptionContent && (
-      <div
-        class="prose prose-sm prose-headings:text-2xl
-      max-w-none min-h-dvh
-      pt-16 lg:pt-48 
-      px-6 lg:px-20
-      text-justify"
-      >
-        <DescriptionContent />
-      </div>
-    )
-  }
-  <Wrapper>
+  <div class="h-dvh w-full overflow-y-auto snap-y snap-mandatory">
     {
-      collection?.data?.images && (
-        <Carousel client:load images={collection.data.images} mode={collection.data.carouselMode}/>
+      DescriptionContent && (
+        <div
+          class="prose prose-sm prose-headings:text-2xl
+          max-w-none min-h-dvh
+          pt-16 lg:pt-48 
+          px-6 lg:px-20
+          text-justify
+          snap-start"  
+        >
+          <DescriptionContent />
+        </div>
       )
     }
-  </Wrapper>
+
+    <Wrapper className="min-h-dvh snap-start">
+      {
+        collection?.data?.images && (
+          <Carousel client:load images={collection.data.images} mode={collection.data.carouselMode}/>
+        )
+      }
+    </Wrapper>
+  </div>
 </Layout>
+
