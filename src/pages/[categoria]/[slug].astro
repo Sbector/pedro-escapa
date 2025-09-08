@@ -83,7 +83,7 @@ if (collection?.data?.description) {
   <Wrapper>
     {
       collection?.data?.images && (
-        <Carousel client:load images={collection.data.images} />
+        <Carousel client:load images={collection.data.images} mode={collection.data.carouselMode}/>
       )
     }
   </Wrapper>

@@ -12,7 +12,7 @@ const RightArrow = () => (
   </svg>
 );
 
-export default function Carousel({ images }) {
+export default function Carousel({ images, mode = "single" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
 
@@ -66,11 +66,18 @@ export default function Carousel({ images }) {
     <div className="h-full w-full">
       <ul
         ref={carouselRef}
-        className="h-full w-full py-8 lg:py-32 flex flex-row space-x-32 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className={`h-full w-full py-8 lg:py-32 flex flex-row 
+    ${mode === "double" ? "gap-0" : "gap-8"} 
+    overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar`}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {images.map((image, index) => (
-          <li key={index} className="snap-start min-w-full flex flex-col justify-center items-center relative bg-white">
+          <li
+            key={index}
+            className={`snap-start flex flex-col justify-center items-center relative bg-white
+        ${mode === "double" ? "basis-1/2 flex-shrink-0 px-4" : "min-w-full"}
+      `}
+          >
             <img
               src={image.imageRoute.src}
               alt=""
@@ -87,13 +94,22 @@ export default function Carousel({ images }) {
         ))}
       </ul>
 
-      <button onClick={handlePrevious} className="hidden md:flex absolute top-1/2 left-0 -translate-y-1/2 rounded-full p-2 cursor-pointer" aria-label="Anterior">
+      <button
+        onClick={handlePrevious}
+        className="hidden md:flex absolute top-1/2 left-0 -translate-y-1/2 rounded-full p-2 cursor-pointer"
+        aria-label="Anterior"
+      >
         <LeftArrow />
       </button>
 
-      <button onClick={handleNext} className="hidden md:flex absolute top-1/2 right-0 -translate-y-1/2 rounded-full p-2 cursor-pointer" aria-label="Siguiente">
+      <button
+        onClick={handleNext}
+        className="hidden md:flex absolute top-1/2 right-0 -translate-y-1/2 rounded-full p-2 cursor-pointer"
+        aria-label="Siguiente"
+      >
         <RightArrow />
       </button>
     </div>
   );
+
 }
