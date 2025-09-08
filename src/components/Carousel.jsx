@@ -66,7 +66,7 @@ export default function Carousel({ images }) {
     <div className="h-full w-full">
       <ul
         ref={carouselRef}
-        className="h-full w-full py-8 lg:py-32 flex flex-row space-x-32 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar touch-pan-x"
+        className="h-full w-full py-8 lg:py-32 flex flex-row space-x-32 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {images.map((image, index) => (

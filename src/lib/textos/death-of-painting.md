@@ -1,0 +1,8 @@
+---
+title: "Death of painting is a play of lights"
+---
+
+# Death of painting is a play of lights. 2017
+
+El último año lo he dedicado a reflexionar sobre la relación, tanto en el arte contemporáneo en general, como en mi propia obra en particular, entre el concepto y la materia. Para ello, me he servido de una estrategia tan antigua como las propias artes plásticas: la re interpretación de la obra de otros artistas. De este modo, Yoko Ono, Joseph Beuys, o Yves Klein, y algunas de sus piezas más fuertemente sancionadas por el peso de la Historia y la Crítica del Arte, me han servido como punto de partida para trabajar en el estudio, donde me he apropiado de ellas, reconstruyéndolas por medio de la reinterpretación hecha con fuerte énfasis en sus aspectos estéticos. El objetivo ha sido crear y recrear la tensión inevitable entre la idea y el objeto, entre el concepto y lo sensual –lo que se puede ver, oler, tocar, sentir- de las obras elegidas. Estos artistas trabajan y trabajaron en marcos fuertemente conceptuales, y mi intención al repensar y recrear sus piezas, y llevarlas en este proceso hacia un contexto matérico y sensorial, ha sido precisamente jugar a mover el peso en la balanza entre estos dos polos, de un lado al otro, y proponer el resultado de ello al público, a quien le corresponde, muy al gusto de Duchamp, decidir si mis acciones son elogios o parodias de la obra de los artistas elegidos. El sentido de las piezas queda abierto, para que la experiencia directa con su materia –que a fin de cuentas es la protagonista-, se recibida y vivida por el público dentro de un espectro de ideas lo más amplio posible.
+

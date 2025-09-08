@@ -41,7 +41,7 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
     const contactSpacing = isMobile ? "pt-8" : "pt-20";
 
     return (
-        <nav>
+        <nav className="lg:max-w-[160px]">
             <ul className={containerClasses}>
                 {menu
                     .filter((item) => item.visible !== false)
@@ -100,7 +100,9 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
                     <a 
                         href="/contacto" 
                         onClick={handleLinkClick}
-                        className={` ${
+                        className={`
+                            pb-20 
+                            ${
                             isActive('/contacto')
                                 ? 'font-bold text-black'
                                 : 'font-medium'

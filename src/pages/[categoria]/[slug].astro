@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import { menu } from "@lib/menu";
 import { getSubitemData } from "@lib/getSubitemData";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Carousel from "@components/Carousel.jsx";
 import Wrapper from "@components/Wrapper.astro";
 
@@ -39,12 +39,52 @@ const currentPath = `/${categoria}/${slug}`;
 
 // Traer la colección de imágenes
 const itemCollections = await getCollection("itemCollections");
-const collection = itemCollections.find(item => item.id === slug);
+const collection = itemCollections.find((item) => item.id === slug);
+
+// Traer la colección de descripciones
+const descriptions = await getCollection("descriptions");
+
+let DescriptionContent = null;
+if (collection?.data?.description) {
+  const descriptionRef = collection.data.description;
+  console.log("Description ref type:", typeof descriptionRef);
+  console.log("Description ref value:", descriptionRef);
+
+  // Buscar la descripción por su id
+  // Si es una referencia, usar el id; si es un string, usar directamente
+  const refId =
+    typeof descriptionRef === "string" ? descriptionRef : descriptionRef.id;
+  const descriptionEntry = descriptions.find((desc) => desc.id === refId);
+
+  if (descriptionEntry) {
+    const { Content } = await render(descriptionEntry);
+    DescriptionContent = Content;
+  }
+}
 ---
-<Layout title={`${collection?.data.title} · Pedro Escapa`} currentPath={currentPath}>
+
+<Layout
+  title={`${collection?.data.title} · Pedro Escapa`}
+  currentPath={currentPath}
+>
+  {
+    DescriptionContent && (
+      <div
+        class="prose prose-sm prose-headings:text-2xl
+      max-w-none min-h-dvh
+      pt-16 lg:pt-48 
+      px-6 lg:px-20
+      text-justify"
+      >
+        <DescriptionContent />
+      </div>
+    )
+  }
   <Wrapper>
-    {collection?.data?.images && (
-      <Carousel client:load images={collection.data.images} />
-    )}
+    {
+      collection?.data?.images && (
+        <Carousel client:load images={collection.data.images} />
+      )
+    }
   </Wrapper>
 </Layout>
