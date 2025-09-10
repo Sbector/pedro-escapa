@@ -67,23 +67,24 @@ if (collection?.data?.description) {
   title={`${collection?.data.title} · Pedro Escapa`}
   currentPath={currentPath}
 >
-  <div class="h-dvh w-full overflow-y-auto snap-y snap-mandatory">
+  <div class="h-full w-full overflow-y-auto snap-y snap-mandatory">
     {
       DescriptionContent && (
         <div
           class="prose prose-sm prose-headings:text-2xl
-          max-w-none min-h-dvh
+          max-w-none min-h-full
           pt-16 lg:pt-48 
+          pb-16 lg:pb-48 
           px-6 lg:px-20
           text-justify
           snap-start"  
         >
-          <DescriptionContent />
+          <DescriptionContent pb-16/>
         </div>
       )
     }
 
-    <Wrapper className="min-h-dvh snap-start">
+    <Wrapper className="min-h-full snap-start">
       {
         collection?.data?.images && (
           <Carousel client:load images={collection.data.images} mode={collection.data.carouselMode}/>

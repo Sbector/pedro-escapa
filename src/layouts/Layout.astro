@@ -37,7 +37,7 @@ if (currentPath !== "/" && currentPath.endsWith("/")) {
 		<title>{title}</title>
 		<ClientRouter />
 	</head>
-	<body class="h-dvh flex flex-col lg:flex-row">
+	<body class="h-[calc(100dvh-64px)] lg:h-dvh flex flex-col lg:flex-row">
 		<ReactHeader client:idle currentPath={currentPath} />
 		<main class="flex-1 overflow-y-auto">
 			<slot />
