@@ -5,8 +5,15 @@ import { getImage } from "astro:assets";
 
 // Obtener imágenes
 const images = [
-  ...Object.values(import.meta.glob("../assets/images/*/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/*/*/*.webp", { eager: true }))
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/98-01/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/escaleras/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/mixta-sobre-escaleras/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/composicion/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/consejos/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/colegages/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/arquitectura/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/a-quien-corresponda/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/death-of-painting/*.webp", { eager: true })),
 ];
 
 // Optimizar
