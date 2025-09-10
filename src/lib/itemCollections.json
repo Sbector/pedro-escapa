@@ -450,62 +450,62 @@
     "description": "",
     "images": [
       {
-        "title": "",
+        "title": "Jis",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/01.webp"
       },
       {
-        "title": "",
+        "title": "Luis Vicente De Aguinaga",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/02.webp"
       },
       {
-        "title": "",
+        "title": "Carmen Villoro",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/03.webp"
       },
       {
-        "title": "",
+        "title": "José Fors",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/04.webp"
       },
       {
-        "title": "",
+        "title": "Jorge Esquinca",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/05.webp"
       },
       {
-        "title": "",
+        "title": "Falcón",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/06.webp"
       },
       {
-        "title": "",
+        "title": "Miguel Lugo",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/07.webp"
       },
       {
-        "title": "",
+        "title": "Silvia Eugenia Castillero",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/08.webp"
       },
       {
-        "title": "",
+        "title": "Carlos Ashida",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/09.webp"
       },
       {
-        "title": "",
+        "title": "Cecilia Fernandez",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/10.webp"
       },
       {
-        "title": "",
+        "title": "Luís Valsoto",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/11.webp"
       },
       {
-        "title": "",
+        "title": "Trino",
         "description": "",
         "imageRoute": "../assets/images/interacciones/a-quien-corresponda/12.webp"
       }
@@ -556,7 +556,7 @@
   {
     "id": "arquitectura",
     "title": "Arquitectura",
-    "description": "",
+    "description": "arquitectura",
     "images": [
       {
         "title": "Códigos de honor",
@@ -598,7 +598,7 @@
   {
     "id": "colegages",
     "title": "Colegages",
-    "description": "",
+    "description": "colegages",
     "images": [
       {
         "title": "Varios (díptico)",
@@ -635,7 +635,7 @@
   {
     "id": "death-of-painting",
     "title": "Death of painting is a play of lights",
-    "description": "",
+    "description": "death-of-painting",
     "images": [
       {
         "title": "About Guy Debord",
@@ -677,7 +677,7 @@
   {
     "id": "aspect-ratio",
     "title": "Aspect ratio",
-    "description": "",
+    "description": "aspect-ratio",
     "images": [
       {
         "title": "",
@@ -686,7 +686,7 @@
       },
       {
         "title": "",
-        "description": "Tinta de conservación/papel algodón. óleo/madera.  160x120 cm",
+        "description": "",
         "imageRoute": "../assets/images/interacciones/aspect-ratio/02.webp"
       },
       {
@@ -712,9 +712,102 @@
     ]
   },
   {
+    "id": "parafrasis",
+    "title": "Paráfrasis",
+    "description": "parafrasis",
+    "carouselMode": "double",
+    "images": [
+      {
+        "title": "Cecilia Jaime",
+        "description": "Hilo / Gator board. 36 x 67 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/02.webp"
+      },
+      {
+        "title": "Jose Dávila",
+        "description": "Impresión digital / papel / cartón. 39 x 40 x 39 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/03.webp"
+      },
+      {
+        "title": "Luís Rodrigo Medina",
+        "description": "Impresión digital / papel algodón. 80 x 112 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/04.webp"
+      },
+      {
+        "title": "Adrián Guerrero",
+        "description": "Grafito y lápiz color / papel. Políptico 57 x 78 cm c.u.",
+        "imageRoute": "../assets/images/interacciones/parafrasis/05.webp"
+      },
+      {
+        "title": "Francisco Morales",
+        "description": "Acrílicos / madera. 120 x 120 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/06.webp"
+      },
+      {
+        "title": "Carlos Vargas Pons",
+        "description": "Óleo / tela y madera. 18.5 x 90 x 14.5 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/07.webp"
+      },
+      {
+        "title": "Luís Alfonso Villalobos",
+        "description": "Óleo / madera. 40 x 40 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/08.webp"
+      },
+      {
+        "title": "Sector Reforma",
+        "description": "Impresión digital / papel. Díptico  51.5 x 76.5 cm.  c.u.",
+        "imageRoute": "../assets/images/interacciones/parafrasis/09.webp"
+      },
+      {
+        "title": "Enrique Oroz",
+        "description": "Óleo / tela. 100.5 x 85. cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/10.webp"
+      },
+      {
+        "title": "Roció Sainz",
+        "description": "Mixta / papel. 118 x 82.5 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/11.webp"
+      },
+      {
+        "title": "Claudia Rodriguez",
+        "description": "Pasta cerámica. 44 x 30 x 12.5 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/12.webp"
+      },
+      {
+        "title": "Víctor Hugo Pérez y Juan Carlos Macías",
+        "description": "Carbón y sanguina / papel. 146 x 160 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/13.webp"
+      },
+      {
+        "title": "Gabriel Rico",
+        "description": "Espejo, poliuretano y pluma de ave. 59 x 50 x 50 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/14.webp"
+      },
+      {
+        "title": "Francisco Ugarte",
+        "description": "Vitroblock y metacrilatos. 30 x 19.5 x 6 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/15.webp"
+      },
+      {
+        "title": "Miguel Ángel Vega",
+        "description": "Grafito y óleo / tela. Díptico 30 x 25 cm c.u.",
+        "imageRoute": "../assets/images/interacciones/parafrasis/16.webp"
+      },
+      {
+        "title": "Octavio Abúndez",
+        "description": "Impresión digital / papel algodón. 51 x 100 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/17.webp"
+      },
+      {
+        "title": "Ana Paula Santana",
+        "description": "Papel bond tejido. 24 x 41.5 cm",
+        "imageRoute": "../assets/images/interacciones/parafrasis/18.webp"
+      }
+    ]
+  },
+  {
     "id": "sic",
     "title": "SIC",
-    "description": "",
+    "description": "sic",
     "images": [
       {
         "title": "Sombras de pasión / V.RE",

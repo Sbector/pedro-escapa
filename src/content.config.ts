@@ -7,6 +7,7 @@ const itemCollections = defineCollection({
         ({ image }) => z.object({
             title: z.string(),
             description: reference("descriptions").optional(),
+            carouselMode: z.string().optional(),
             images: z.array(z.object({
                 title: z.string(),
                 description: z.string(),
