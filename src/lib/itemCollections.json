@@ -399,7 +399,7 @@
   },
   {
     "id": "papeleria-y-almazen",
-    "title": "Papelería y Almacen",
+    "title": "Papelería y AlmaZen",
     "description": "",
     "images": [
       {
@@ -447,7 +447,7 @@
   {
     "id": "a-quien-corresponda",
     "title": "A quien corresponda",
-    "description": "",
+    "description": "a-quien-corresponda",
     "images": [
       {
         "title": "Jis",
@@ -686,11 +686,6 @@
       },
       {
         "title": "",
-        "description": "",
-        "imageRoute": "../assets/images/interacciones/aspect-ratio/02.webp"
-      },
-      {
-        "title": "",
         "description": "Tinta de conservación/papel algodón.  Óleo/madera.  160 x 120 cm",
         "imageRoute": "../assets/images/interacciones/aspect-ratio/03.webp"
       },
@@ -708,6 +703,11 @@
         "title": "",
         "description": "Tinta de conservación/papel algodón .  Óleo/gator board. 80 x 70 cm",
         "imageRoute": "../assets/images/interacciones/aspect-ratio/06.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/aspect-ratio/07.webp"
       }
     ]
   },
@@ -844,7 +844,7 @@
   {
     "id": "recursos",
     "title": "Recursos (Papelería y AlmaZen)",
-    "description": "",
+    "description": "papeleria-y-almazen",
     "images": [
       {
         "title": "",

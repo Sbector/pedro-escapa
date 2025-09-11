@@ -1,6 +1,7 @@
 ---
 title: "Paráfrasis"
 ---
+## Paráfrasis
 
 A finales del 2015 inicié este proyecto a manera de teléfono descompuesto, aunque algunos lo han visto como un ejercicio de paráfrasis y otros como un cadáver exquisito. Inicialmente la idea era invitar a un total de veinte artistas tapatíos con el objetivo de hacer una pequeña lectura del acontecer plástico en Guadalajara y a la vez mostrar diferentes maneras de abordar la otredad en un proceso creativo.
 Empecé con una pieza de mi amiga Cecilia Jaime (†) la cual registré fotográficamente, dicha imagen se la hice llegar a otro artista por medio de correo electrónico con la consigna de que creara una pieza tomando como excusa o referencia dicha imagen; el resultado era fotografiado y enviada la imagen al siguiente artista y así sucesivamente. La pieza resultante se tenía que entregar en el tiempo aproximado de un mes por lo que el proyecto debía estar finalizado a los dos años de iniciado pero… no contaba con que hay meses ingleses y meses mexicanos. 
