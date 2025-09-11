@@ -1,78 +1,33 @@
 ---
 title: "SIC"
 ---
-# (SIC) Carlos Ashida 
+# (SIC) Carlos Ashida
 
-Pedro Escapa acumula con frecuencia materiales sin saber qué uso les dará. Papeles y pigmentos adquiridos en un viaje, tintas encontradas a precios de ocasión, marcos y bastidores obsequiados por algún amigo o incluso residuos sin ninguna utilidad aparente recolectados en su estudio o en el de algunos colegas, esperan por tiempo indefinido a que Pedro descifre su destino. Más que una compulsión (él es una persona pragmática con los pies bien plantados en el suelo), este comportamiento responde a la certeza de que el proceso creativo es la síntesis que se realiza entre ideas e imágenes con las posibilidades que cada material ofrece, y cuyo catalizador se presenta bajo formas insospechadas y en momentos imprevistos.  
+Pedro Escapa acumula con frecuencia materiales sin saber qué uso les dará. Papeles y pigmentos adquiridos en un viaje, tintas encontradas a precios de ocasión, marcos y bastidores obsequiados por algún amigo o incluso residuos sin ninguna utilidad aparente recolectados en su estudio o en el de algunos colegas, esperan por tiempo indefinido a que Pedro descifre su destino. Más que una compulsión (él es una persona pragmática con los pies bien plantados en el suelo), este comportamiento responde a la certeza de que el proceso creativo es la síntesis que se realiza entre ideas e imágenes con las posibilidades que cada material ofrece, y cuyo catalizador se presenta bajo formas insospechadas y en momentos imprevistos. 
 
 Posiblemente sea por desempeñarse como un artista cuyas acciones son guiadas en buena medida por la intuición y el azar (quizá también se deba a que se acerca al medio siglo de edad) que en los últimos tiempos Pedro se pregunta con frecuencia si en 17 años de carrera ha logrado un lenguaje propio; si después de todo este esfuerzo, de esta búsqueda constante, puede reconocerse en las obras que ha hecho. La respuesta que se ha dado varía según su estado anímico: va desde un Sí gratificante hasta un severo No, pasando por un amplio número de réplicas que mezclan variadas proporciones de asentimiento e insatisfacción. 
 
-El tema reclamó tal atención, que Pedro decidió enfrentarlo a través de una valoración externa, hecha por voces que desde sus respectivas percepciones le ofrecieran reflejos de su identidad creativa. El procedimiento consistió en formar un grupo de cinco personas; dos del círculo íntimo familiar: Gris, su esposa, y Alejandro Amaya, su compadre; y las tres restantes provenientes de campos directamente vinculados a su profesión: Klaus Kesting –uno de los coleccionistas que más se ha interesado en su obra–, Jorge Esquinca, poeta y el curador Carlos Ashida. A todos ellos pidió que seleccionaran de su página web las 25 obras que más les agradaran.
+El tema reclamó tal atención, que Pedro decidió enfrentarlo a través de una valoración externa, hecha por voces que desde sus respectivas percepciones le ofrecieran reflejos de su identidad creativa. El procedimiento consistió en formar un grupo de cinco personas; dos del círculo íntimo familiar: Gris, su esposa, y Alejandro Amaya, su compadre; y las tres restantes provenientes de campos directamente vinculados a su profesión: Klaus Kesting –uno de los coleccionistas que más se ha interesado en su obra–, Jorge Esquinca, poeta y el curador Carlos Ashida. A todos ellos pidió que seleccionaran de su página web las 25 obras que más les agradaran. 
 
-Además de recabar opiniones que por diferentes razones le resultan significativas, la intención de Pedro fue lidiar con sus dudas e inseguridades, aligerándolas mediante un juego que parodia la mid- career survey, formato de revisión retrospectiva por lo general un artista de la edad y madurez profesional de Pedro acude en busca de certezas y confirmaciones.
+Además de recabar opiniones que por diferentes razones le resultan significativas, la intención de Pedro fue lidiar con sus dudas e inseguridades, aligerándolas mediante un juego que parodia la mid- career survey, formato de revisión retrospectiva por lo general un artista de la edad y madurez profesional de Pedro acude en busca de certezas y confirmaciones. 
 
 Por otra parte, Pedro volvió a echar mano de la ironía en la realización de esta tarea. Esta exposición puede ser también leída como una parodia a diferentes niveles, ya sea como la actuación del artista agradecido que está dispuesto a interpretar un encore ante el aplauso de su público, o como un estudio de marketing que busca asegurar la aceptación de un producto, o como un comentario a la tendencia generalizada de reciclar imágenes, en busca de explotar la nostalgia de quienes conocieron sus primeras manifestaciones o de despertar la sorpresa entre quienes las desconocen y las creen nuevas.
 
-# Pedro Escapa: SIC 
+# Pedro Escapa: SIC
 
-Toda obra de arte es una lectura del mundo y, simultáneamente, una lectura de sí
-misma. El artista contemporáneo se ha encontrado ante una situación que lo
-obliga a realizar su obra como revisión crítica, además de hacerlo como esfuerzo
-de creación. Adjudicándose el papel de continuador de una tradición pictórica,
-Escapa afirma los valores de su propia obra. La “tradición” cultural sólo sirve de
-apoyo a una creación voluntariamente intelectualizada, que obliga al espectador a
-compartir el mismo marco cultural que el pintor, para comprender los conceptos
-que transmite la obra.  
+Toda obra de arte es una lectura del mundo y, simultáneamente, una lectura de sí misma. El artista contemporáneo se ha encontrado ante una situación que lo obliga a realizar su obra como revisión crítica, además de hacerlo como esfuerzo de creación. Adjudicándose el papel de continuador de una tradición pictórica, Escapa afirma los valores de su propia obra. La “tradición” cultural sólo sirve de apoyo a una creación voluntariamente intelectualizada, que obliga al espectador a compartir el mismo marco cultural que el pintor, para comprender los conceptos que transmite la obra. 
+Desde que empecé a ver los trabajos de Pedro Escapa, hace poco más de diez años, me llamó la atención lo que entiendo como un equilibrio entre lo espontáneo y lo deliberado. Pareciera que quiere llegar al meollo de lo visible sin recurrir a apariencias. Escapa nos ofrece una propuesta que se despliega dentro de las fronteras de la pintura y que incluye a la par, hay que advertirlo, los tonos anímicos expresivos del propio artista. Lo hace mediante el uso de colores sordos, melancólicos, teñidos de silencio y poco dados al decorativismo fácil, en lo que podemos considerar una pintura de presagios que corresponde al “vacío de los tiempos” que nos ha tocado vivir. 
 
-Desde que empecé a ver los trabajos de Pedro Escapa, hace poco más de diez
-años, me llamó la atención lo que entiendo como un equilibrio entre lo espontáneo
-y lo deliberado. Pareciera que quiere llegar al meollo de lo visible sin recurrir a
-apariencias. Escapa nos ofrece una propuesta que se despliega dentro de las
-fronteras de la pintura y que incluye a la par, hay que advertirlo, los tonos anímicos
-expresivos del propio artista. Lo hace mediante el uso de colores sordos,
-melancólicos, teñidos de silencio y poco dados al decorativismo fácil, en lo que
-podemos considerar una pintura de presagios que corresponde al “vacío de los
-tiempos” que nos ha tocado vivir.  
+Se vislumbra entonces repentinamente, detrás de los juegos formales, de los juegos semánticos, la presencia reflexiva del artista: cierto escepticismo en su manera de ver el mundo, de abarcar la cultura en un sentido más amplio y, con toda licencia, de criticarlo con la ironía penetrante del arte, con esa energía impalpable capaz de abrir los ojos y alumbrar conciencias. ¿Por qué pasar de imágenes nítidas a metamorfosis desconcertantes? ¿Por qué transitar de la sensatez a lo absurdo, de lo pedestre a lo sublime, del drama entre individuos a la confrontación de formas abstractas? Todo ello responde a la certidumbre de Escapa para alcanzar metáforas visuales que den forma a los cambiantes descubrimientos de su propia subjetividad. 
 
-Se vislumbra entonces repentinamente, detrás de los juegos formales, de los
-juegos semán- ticos, la presencia reflexiva del artista: cierto escepticismo en su
-manera de ver el mundo, de abarcar la cultura en un sentido más amplio y, con
-toda licencia, de criticarlo con la ironía penetrante del arte, con esa energía
-impalpable capaz de abrir los ojos y alumbrar concien- cias. ¿Por qué pasar de
-imágenes nítidas a metamorfosis desconcertantes? ¿Por qué transi- tar de la
-sensatez a lo absurdo, de lo pedestre a lo sublime, del drama entre individuos a la
-confrontación de formas abstractas? Todo ello responde a la certidumbre de
-Escapa para alcanzar metáforas visuales que den forma a los cambiantes
-descubrimientos de su propia subjetividad.  
+Esta preferencia deconstructiva le ha permitido a Escapa romper con el canon moderno que maniata a mucha pintura mexicana de hoy. La belleza aquí- si es que podríamos hablar de algún tipo de belleza – es un lugar sacrificial, un espacio donde el acto pictórico todo el tiempo se cuestiona a sí mismo y se rige no en función de un resultado estético, sino en beneficio de la situación de verdad que exige el propio acto incontrolado de su devenir como creación – facturación. 
 
-Esta preferencia deconstructiva le ha permitido a Escapa romper con el canon
-moderno que maniata a mucha pintura mexicana de hoy. La belleza aquí- si es
-que podríamos hablar de algún tipo de belleza – es un lugar sacrificial, un espacio
-donde el acto pictórico todo el tiempo se cuestiona a sí mismo y se rige no en
-función de un resultado estético, sino en beneficio de la situación de verdad que exige el propio acto incontrolado de su devenir como creación – facturación.
+Nos encontramos ante la increíble contradicción de que la imitación sin invención revela poco o nada de nosotros mismos, y que es justamente en la distancia de la reinterpretación en donde está la búsqueda de nuestro ser. 
 
-Nos encontramos ante la increíble contradicción de que la imitación sin invención
-revela poco o nada de nosotros mismos, y que es justamente en la distancia de la
-reinterpretación en donde está la búsqueda de nuestro ser.
+Podría decirse que la estrategia de bajo perfil que Pedro Escapa ha adoptado responde también al conocimiento de los complejos mecanismos de la memoria y su contraparte, el olvido. Ciertos hechos que exceden la comprensión pueden ser, cual dispositivo de defensa, negados, repelidos o pretendidamente ignorados por resultar inadmisibles a la razón. En contraparte, el espectáculo de lo inconcebible puede despertar una fascinación morbosa, similar al vértigo que produce la contemplación de un abismo insondable. Así Escapa, que parecería que no sabe adónde se dirige, nos entrega una obra que, como la de cualquier artista serio, tiene mucho de inexplicable: cómo llega, con tan pocos elementos, a algo tan complejo, tan acabado, es un misterio. La suya es una pintura que avanza, que no se detiene nunca a observarse a sí misma y que al final –ya en la pared– se nos echa encima, como una explosión en la que, maravillosamente, cada cosa ha caído en su lugar. 
 
-Podría decirse que la estrategia de bajo perfil que Pedro Escapa ha adoptado
-responde también al conocimiento de los complejos mecanismos de la memoria y
-su contraparte, el olvido. Ciertos hechos que exceden la comprensión pueden ser,
-cual dispositivo de defensa, negados, repelidos o pretendidamente ignorados por
-resultar inadmisibles a la razón. En contraparte, el espectáculo de lo inconcebible
-puede despertar una fascinación morbosa, similar al vértigo que produce la
-contemplación de un abismo insondable. Así Escapa, que parecería que no sabe
-adónde se dirige, nos entrega una obra que, como la de cualquier artista serio,
-tiene mucho de inexplicable: cómo llega, con tan pocos elementos, a algo tan
-complejo, tan acabado, es un misterio. La suya es una pintura que avanza, que no
-se detiene nunca a observarse a sí misma y que al final –ya en la pared– se nos
-echa encima, como una explosión en la que, maravillosamente, cada cosa ha
-caído en su lugar.  
+Texto hilado con recortes de textos de: Olivier Debroise , Juan García Ponce, Teresa del Conde, Raquel Tibol, Oswaldo Sánchez, Leila Driben, Renato González Melo, Jorge Juanes, Gonzalo Vélez, Avelina Lésper, Carlos Ashida, María Minera, Erik Castillo y Cuauhtémoc Medina. 
 
-Texto hilado con recortes de textos de: Olivier Debroise , Juan García Ponce,
-Teresa del Conde, Raquel Tibol, Oswaldo Sánchez, Leila Driben, Renato González
-Melo, Jorge Juanes, Gonzalo Vélez, Avelina Lésper, Carlos Ashida, María Minera,
-Erik Castillo y Cuauhtémoc Medina.  
+**“DJ” Boris Viskin** 
 
-“DJ” Boris Viskin
 

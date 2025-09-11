@@ -399,7 +399,7 @@
   },
   {
     "id": "papeleria-y-almazen",
-    "title": "Papelería y Almacen",
+    "title": "Papelería y AlmaZen",
     "description": "",
     "images": [
       {
@@ -447,7 +447,7 @@
   {
     "id": "a-quien-corresponda",
     "title": "A quien corresponda",
-    "description": "",
+    "description": "a-quien-corresponda",
     "images": [
       {
         "title": "Jis",
@@ -844,7 +844,7 @@
   {
     "id": "recursos",
     "title": "Recursos (Papelería y AlmaZen)",
-    "description": "",
+    "description": "papeleria-y-almazen",
     "images": [
       {
         "title": "",
