@@ -85,12 +85,19 @@ if (collection?.data?.description) {
     }
 
     <Wrapper className="min-h-full snap-start">
-      {
-        collection?.data?.images && (
-          <Carousel client:load images={collection.data.images} mode={collection.data.carouselMode}/>
-        )
-      }
-    </Wrapper>
+  {
+    (collection?.data?.images || collection?.data?.video) && (
+      <Carousel 
+        client:load 
+        items={[
+          ...collection.data.images, 
+          ...(collection.data.video ? [collection.data.video] : [])
+        ]} 
+        mode={collection.data.carouselMode}
+      />
+    )
+  }
+</Wrapper>
   </div>
 </Layout>
 

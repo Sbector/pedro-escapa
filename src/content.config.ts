@@ -1,5 +1,6 @@
 import { defineCollection, reference, z } from "astro:content"
 import { file, glob } from 'astro/loaders';
+import { Description } from "@headlessui/react";
 
 const itemCollections = defineCollection({
     loader: file("./src/lib/itemCollections.json"),
@@ -13,6 +14,11 @@ const itemCollections = defineCollection({
                 description: z.string(),
                 imageRoute: image(),
             })),
+            video: z.object({
+                title: z.string().optional(),
+                description: z.string().optional(),
+                videoRoute: z.string().optional()
+            }).optional()
         })
 })
 
