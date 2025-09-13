@@ -596,6 +596,33 @@
     ]
   },
   {
+    "id": "de-la-vista-el-amor",
+    "title": "10 días de encierrro de la vista nace el amor",
+    "description": "",
+    "images": [
+      {
+        "title": "Indigente",
+        "description": "Maniquí reconstruido y ropa usada en el encierro.  37 x 194 x 92 cm",
+        "imageRoute": "../assets/images/interacciones/de-la-vista-el-amor/04.webp"
+      },
+      {
+        "title": "Registro fotográfico",
+        "description": "Impresión fotográfica / acetato y aluminio. 210 x 150 x 300 cm",
+        "imageRoute": "../assets/images/interacciones/de-la-vista-el-amor/05.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/de-la-vista-el-amor/06.webp"
+      }
+    ],
+    "video": {
+      "title": "10 días de encierrro de la vista nace el amor",
+      "description": "",
+      "videoRoute": "../video.mp4"
+    }
+  },
+  {
     "id": "colegages",
     "title": "Colegages",
     "description": "colegages",
