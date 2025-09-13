@@ -47,8 +47,6 @@ const descriptions = await getCollection("descriptions");
 let DescriptionContent = null;
 if (collection?.data?.description) {
   const descriptionRef = collection.data.description;
-  console.log("Description ref type:", typeof descriptionRef);
-  console.log("Description ref value:", descriptionRef);
 
   // Buscar la descripción por su id
   // Si es una referencia, usar el id; si es un string, usar directamente
