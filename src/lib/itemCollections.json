@@ -619,7 +619,7 @@
     "video": {
       "title": "10 días de encierrro de la vista nace el amor",
       "description": "",
-      "videoRoute": "../video.mp4"
+      "videoRoute": "/video.mp4"
     }
   },
   {
