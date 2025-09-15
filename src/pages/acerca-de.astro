@@ -337,18 +337,18 @@ const exposicionesColectivas = [
                 conectividad, la fragmentación o la pertenencia.
               </p>
 
-              <h2 class="text-sm font-bold tracking-wide mb-4 text-gray-900">
+              <h2 class="text-sm font-bold tracking-wide mb-6 text-gray-900">
                 EXPOSICIONES INDIVIDUALES
               </h2>
 
-              <div class="space-y-4 text-sm">
+              <div class="text-sm">
                 {
                   exposicionesIndividuales.map((item) => (
-                    <div>
-                      <p class="font-bold pb-0.5">{item.año}</p>
+                    <div class="pb-1">
+                      <p class="font-bold">{item.año}</p>
                       {item.exposiciones.map((expo, index) => (
-                        <div class={index > 0 ? "pt-2" : ""}>
-                          <p class="mb-2">
+                        <div>
+                          <p class="">
                             {expo.titulo ? (
                               <span class="italic">{expo.titulo}, </span>
                             ) : (
@@ -364,23 +364,23 @@ const exposicionesColectivas = [
               </div>
 
               <h2
-                class="text-sm font-bold tracking-wide mb-4 mt-12 text-gray-900"
+                class="text-sm font-bold tracking-wide mb-6 mt-12 text-gray-900"
               >
                 EXPOSICIONES COLECTIVAS (SELECCIÓN)
               </h2>
 
-              <div class="space-y-4 text-sm">
+              <div class="text-sm">
                 {
                   exposicionesColectivas.map((item) => (
-                    <div>
-                      <p class="font-bold mb-1">{item.año}</p>
+                    <div class="pb-1">
+                      <p class="font-bold">{item.año}</p>
                       {item.exposiciones.map((expo, index) => (
-                        <div class={index > 0 ? "mt-2" : ""}>
+                        <p class="">
                           {expo.titulo ? (
-                            <p class="italic mb-1">{expo.titulo}</p>
+                            <span class="italic">{expo.titulo}</span>
                           ) : null}
-                          <p>{expo.lugar}</p>
-                        </div>
+                          {expo.lugar}
+                        </p>
                       ))}
                     </div>
                   ))
