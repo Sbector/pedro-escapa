@@ -26,7 +26,7 @@ export const menu: MenuItem[] = [
     href: "/interacciones",
     visible: true,
     subitems: [
-      { label: "10 días de encierro de la vista el amor", slug: "de-la-vista-el-amor", visible: false },
+      { label: "10 días de encierro de la vista el amor", slug: "de-la-vista-el-amor", visible: true },
       { label: "Colegages", slug: "colegages", visible: true },
       { label: "Arquitecturas", slug: "arquitectura", visible: true },
       { label: "A quien corresponda", slug: "a-quien-corresponda", visible: true },
