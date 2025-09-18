@@ -5,84 +5,84 @@
     "description": "",
     "images": [
       {
-        "title": "Rusia 70",
-        "description": "Nogal y Acero esmaltado. 19.5 x 48.5 x 16 cm",
-        "imageRoute": "../assets/images/volumenes/01b.webp"
-      },
-      {
-        "title": "Pluma (adj.)",
-        "description": "Acero korten, Concreto pigmentado, Acero inoxidable, luz roja. 501 x 68.47 x 68.47 cm",
-        "imageRoute": "../assets/images/volumenes/02.webp"
-      },
-      {
-        "title": "Script",
-        "description": "Cedro, pasta, plomo y concreto pigmentado, base mármol. 174 x 20 cm",
-        "imageRoute": "../assets/images/volumenes/03.webp"
-      },
-      {
         "title": "Dynamica",
         "description": "Acero esmaltado. 220 x 400 x 100 cm",
-        "imageRoute": "../assets/images/volumenes/05b.webp"
+        "imageRoute": "../assets/images/volumenes/01.webp"
       },
       {
         "title": "México",
         "description": "Concreto lanzado. 564 x 600 x 635 cm",
-        "imageRoute": "../assets/images/volumenes/07b.webp"
+        "imageRoute": "../assets/images/volumenes/02.webp"
       },
       {
         "title": "Caballo de mar y fuego",
         "description": "Acero esmaltado. 88 x 52 x 34.5 cm",
-        "imageRoute": "../assets/images/volumenes/08.webp"
+        "imageRoute": "../assets/images/volumenes/03.webp"
+      },
+      {
+        "title": "Rusia 70",
+        "description": "Nogal y Acero esmaltado. 19.5 x 48.5 x 16 cm",
+        "imageRoute": "../assets/images/volumenes/04.webp"
+      },
+      {
+        "title": "Pluma (adj.)",
+        "description": "Acero korten, Concreto pigmentado, Acero inoxidable, luz roja. 501 x 68.47 x 68.47 cm",
+        "imageRoute": "../assets/images/volumenes/05.webp"
       },
       {
         "title": "México",
         "description": "Madera de cedro y hoja de oro. 30 x 32 x 34 cm",
-        "imageRoute": "../assets/images/volumenes/09.webp"
-      },
-      {
-        "title": "Les pelvis Maqueta",
-        "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
-        "imageRoute": "../assets/images/volumenes/11.webp"
-      },
-      {
-        "title": "Les pelvis Maqueta",
-        "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
-        "imageRoute": "../assets/images/volumenes/11b.webp"
-      },
-      {
-        "title": "Les pelvis",
-        "description": "Acero corten. 130 x 145 x 108 cm",
-        "imageRoute": "../assets/images/volumenes/12.webp"
-      },
-      {
-        "title": "Les pelvis",
-        "description": "Acero corten. 130 x 145 x 108 cm",
-        "imageRoute": "../assets/images/volumenes/12b.webp"
+        "imageRoute": "../assets/images/volumenes/06.webp"
       },
       {
         "title": "Inicio del siglo XXI",
         "description": "Madera de parota y concreto pigmentado. 190 x variables",
-        "imageRoute": "../assets/images/volumenes/13.webp"
+        "imageRoute": "../assets/images/volumenes/07.webp"
+      },
+      {
+        "title": "Script",
+        "description": "Cedro, pasta, plomo y concreto pigmentado, base mármol. 174 x 20 cm",
+        "imageRoute": "../assets/images/volumenes/08.webp"
       },
       {
         "title": "México cerámico volcánico Maqueta",
         "description": "Madera, petate y pasta acrílica. 23 x 16 x 16 cm",
-        "imageRoute": "../assets/images/volumenes/14.webp"
+        "imageRoute": "../assets/images/volumenes/09.webp"
       },
       {
         "title": "Sin título",
         "description": "Madera de cedro y pasta acrílica. 46 x 22 x 18 cm",
-        "imageRoute": "../assets/images/volumenes/15.webp"
+        "imageRoute": "../assets/images/volumenes/10.webp"
       },
       {
         "title": "Sin título Maqueta",
         "description": "Madera de cedro y pasta. 61 x 52 x 37 cm",
-        "imageRoute": "../assets/images/volumenes/16.webp"
+        "imageRoute": "../assets/images/volumenes/11a.webp"
       },
       {
         "title": "Sin título Maqueta",
         "description": "Madera de cedro y pasta. 61 x 52 x 37 cm",
-        "imageRoute": "../assets/images/volumenes/16b.webp"
+        "imageRoute": "../assets/images/volumenes/11b.webp"
+      },
+      {
+        "title": "Les pelvis Maqueta",
+        "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
+        "imageRoute": "../assets/images/volumenes/12a.webp"
+      },
+      {
+        "title": "Les pelvis Maqueta",
+        "description": "Madera de cedro y pasta. 40 x 62 x 63 cm",
+        "imageRoute": "../assets/images/volumenes/12b.webp"
+      },
+      {
+        "title": "Les pelvis",
+        "description": "Acero corten. 130 x 145 x 108 cm",
+        "imageRoute": "../assets/images/volumenes/13a.webp"
+      },
+      {
+        "title": "Les pelvis",
+        "description": "Acero corten. 130 x 145 x 108 cm",
+        "imageRoute": "../assets/images/volumenes/13b.webp"
       }
     ]
   },
@@ -594,6 +594,33 @@
         "imageRoute": "../assets/images/interacciones/arquitectura/07.webp"
       }
     ]
+  },
+  {
+    "id": "de-la-vista-el-amor",
+    "title": "10 días de encierrro de la vista nace el amor",
+    "description": "",
+    "images": [
+      {
+        "title": "Indigente",
+        "description": "Maniquí reconstruido y ropa usada en el encierro.  37 x 194 x 92 cm",
+        "imageRoute": "../assets/images/interacciones/de-la-vista-el-amor/04.webp"
+      },
+      {
+        "title": "Registro fotográfico",
+        "description": "Impresión fotográfica / acetato y aluminio. 210 x 150 x 300 cm",
+        "imageRoute": "../assets/images/interacciones/de-la-vista-el-amor/05.webp"
+      },
+      {
+        "title": "",
+        "description": "",
+        "imageRoute": "../assets/images/interacciones/de-la-vista-el-amor/06.webp"
+      }
+    ],
+    "video": {
+      "title": "10 días de encierrro de la vista nace el amor",
+      "description": "",
+      "videoRoute": "/video.mp4"
+    }
   },
   {
     "id": "colegages",

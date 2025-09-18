@@ -47,8 +47,6 @@ const descriptions = await getCollection("descriptions");
 let DescriptionContent = null;
 if (collection?.data?.description) {
   const descriptionRef = collection.data.description;
-  console.log("Description ref type:", typeof descriptionRef);
-  console.log("Description ref value:", descriptionRef);
 
   // Buscar la descripción por su id
   // Si es una referencia, usar el id; si es un string, usar directamente
@@ -71,7 +69,9 @@ if (collection?.data?.description) {
     {
       DescriptionContent && (
         <div
-          class="prose prose-sm prose-headings:text-2xl prose-headings:pt-8
+          class="prose prose-sm 
+          prose-headings:text-2xl prose-headings:pt-8
+          prose-strong:text-2xl
           max-w-none min-h-full
           pt-8 lg:pt-40 
           pb-16 lg:pb-48 
@@ -85,12 +85,19 @@ if (collection?.data?.description) {
     }
 
     <Wrapper className="min-h-full snap-start">
-      {
-        collection?.data?.images && (
-          <Carousel client:load images={collection.data.images} mode={collection.data.carouselMode}/>
-        )
-      }
-    </Wrapper>
+  {
+    (collection?.data?.images || collection?.data?.video) && (
+      <Carousel 
+        client:load 
+        items={[
+          ...collection.data.images, 
+          ...(collection.data.video ? [collection.data.video] : [])
+        ]} 
+        mode={collection.data.carouselMode}
+      />
+    )
+  }
+</Wrapper>
   </div>
 </Layout>
 

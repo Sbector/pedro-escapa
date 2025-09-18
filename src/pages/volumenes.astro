@@ -11,6 +11,6 @@ const volumenes = itemCollections.find(item => item.id === "volumenes")
 
 <Layout title={`${volumenes?.data.title} · Pedro Escapa`}>
     <Wrapper>
-        <Carousel client:load images={volumenes?.data.images} />
+        <Carousel client:load items={volumenes?.data.images} />
     </Wrapper>
 </Layout>
