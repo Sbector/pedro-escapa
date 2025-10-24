@@ -134,7 +134,7 @@ export default function Carousel({ items, mode = "single" }) {
                   muted
                   playsInline
                   loop
-                  className="max-h-full object-contain"
+                  className="h-[637px] object-contain"
                 />
                 {/* 👇 Mini botón para mute/unmute */}
                 <MuteButton videoRef={videoRef} />
