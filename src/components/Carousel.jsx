@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 
 const VolumeOn = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-       className="size-6 fill-current text-white">
-    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+    className="size-6 fill-current text-white">
+    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03z" />
   </svg>
 );
 
 const VolumeOff = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" 
-       className="size-6 fill-current text-white">
-    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM3 9v6h4l5 5V4L7 9H3z"/>
-    <line x1="19" y1="5" x2="5" y2="19" stroke="white" strokeWidth="2"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+    className="size-6 fill-current text-white">
+    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM3 9v6h4l5 5V4L7 9H3z" />
+    <line x1="19" y1="5" x2="5" y2="19" stroke="white" strokeWidth="2" />
   </svg>
 );
 
@@ -112,7 +112,7 @@ export default function Carousel({ items, mode = "single" }) {
         {items.map((item, index) => (
           <li
             key={index}
-            className={`snap-start flex flex-col justify-center items-center relative bg-white
+            className={`snap-start flex flex-col justify-center items-center relative bg-white 
             ${mode === "double" ? "basis-1/2 flex-shrink-0 px-4" : "min-w-full"}
           `}
           >
@@ -126,19 +126,14 @@ export default function Carousel({ items, mode = "single" }) {
                 loading={index === 0 ? "eager" : "lazy"}
               />
             ) : item.videoRoute ? (
-              <div className="relative">
-                <video
-                  ref={videoRef}
-                  src={item.videoRoute}
-                  autoPlay
-                  muted
-                  playsInline
-                  loop
-                  className="h-[637px] object-contain"
-                />
-                {/* 👇 Mini botón para mute/unmute */}
-                <MuteButton videoRef={videoRef} />
-              </div>
+              <video
+                ref={videoRef}
+                src={item.videoRoute}
+                controls
+                playsInline
+                loop
+                className="max-h-full object-contain lg:h-full scale-x-[0.9]"
+              />
             ) : null}
 
             <p className="text-xs font-light tracking-widest text-center static mt-8 lg:absolute lg:bottom-0 lg:translate-y-16 lg:mt-0">
