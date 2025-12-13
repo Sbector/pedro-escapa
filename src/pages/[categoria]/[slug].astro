@@ -81,19 +81,19 @@ if (collection?.data?.description) {
         >
           <DescriptionContent pb-16/>
           <!-- Botón -->
-        <div class="not-prose mt-12 flex justify-center">
-          <button
-            id="scroll-to-carousel"
-            class="inline-flex items-center gap-2
-                  px-4 py-2
-                  text-sm
-                  hover:bg-neutral-100
-                  transition"
-          >
-            ↓
-          </button>
+          <div class="not-prose mt-12 flex justify-center">
+            <button
+              id="scroll-to-carousel"
+              class="inline-flex items-center gap-2
+                    px-4 py-2
+                    text-sm
+                    hover:bg-neutral-100
+                    transition"
+            >
+              ↓
+            </button>
+          </div>
         </div>
-      </div>
       )
     }
 
@@ -114,15 +114,22 @@ if (collection?.data?.description) {
   </div>
 
   <script>
-    const button = document.getElementById("scroll-to-carousel");
-    const target = document.getElementById("carousel-section");
+    function setupScrollButton() {
+      const button = document.getElementById("scroll-to-carousel");
+      const target = document.getElementById("carousel-section");
 
-    button?.addEventListener("click", () => {
-      target?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
+      if (!button || !target) return;
+
+      button.onclick = () => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+    }
+
+  // Primera carga
+    setupScrollButton();
+
+  // Navegación Astro (View Transitions)
+    document.addEventListener("astro:page-load", setupScrollButton);
   </script>
 </Layout>
 
