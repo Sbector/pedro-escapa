@@ -80,11 +80,24 @@ if (collection?.data?.description) {
           snap-start"  
         >
           <DescriptionContent pb-16/>
+          <!-- Botón -->
+          <div class="not-prose mt-12 flex justify-center">
+            <button
+              id="scroll-to-carousel"
+              class="inline-flex items-center gap-2
+                    px-4 py-2
+                    text-sm
+                    hover:bg-neutral-100
+                    transition"
+            >
+              ↓
+            </button>
+          </div>
         </div>
       )
     }
 
-    <Wrapper className="min-h-full snap-start">
+    <Wrapper id="carousel-section" className="min-h-full snap-start">
   {
     (collection?.data?.images || collection?.data?.video) && (
       <Carousel 
@@ -99,5 +112,24 @@ if (collection?.data?.description) {
   }
 </Wrapper>
   </div>
+
+  <script>
+    function setupScrollButton() {
+      const button = document.getElementById("scroll-to-carousel");
+      const target = document.getElementById("carousel-section");
+
+      if (!button || !target) return;
+
+      button.onclick = () => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+    }
+
+  // Primera carga
+    setupScrollButton();
+
+  // Navegación Astro (View Transitions)
+    document.addEventListener("astro:page-load", setupScrollButton);
+  </script>
 </Layout>
 
