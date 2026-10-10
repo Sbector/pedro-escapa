@@ -149,7 +149,7 @@ const preloadFirst = responsiveImages[0];
     (collection?.data?.images || collection?.data?.video) && (
       <Carousel 
         key={slug}
-        client:visible 
+        client:idle 
         items={carouselItems} 
         mode={collection.data.carouselMode}
       />

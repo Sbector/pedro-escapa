@@ -133,6 +133,7 @@ export default function Carousel({ items, mode = "single" }) {
           const imgSizes = item.sizes ?? "(max-width: 768px) 100vw, 80vw";
           const imgWidth = item.width ?? item.imageRoute?.width;
           const imgHeight = item.height ?? item.imageRoute?.height;
+          const imgAlt = item.title ? `${item.title} – ${item.description || ""}`.trim() : "Obra de Pedro Escapa";
           return (
           <li
             key={item.videoRoute ? `video-${item.videoRoute}` : `img-${index}`}
@@ -145,7 +146,7 @@ export default function Carousel({ items, mode = "single" }) {
                 src={typeof imgSrc === "string" ? imgSrc : imgSrc.src ?? imgSrc}
                 srcSet={typeof imgSrcSet === "string" ? imgSrcSet : undefined}
                 sizes={imgSrcSet ? imgSizes : undefined}
-                alt={item.title ? `${item.title} – ${item.description || ""}`.trim() : "Obra de Pedro Escapa"}
+                alt={imgAlt}
                 width={typeof imgWidth === "number" ? imgWidth : undefined}
                 height={typeof imgHeight === "number" ? imgHeight : undefined}
                 className="max-h-full object-contain"

@@ -17,10 +17,33 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
     return id
   }
 
+  // Precarga con el mismo srcSet que usa el <img> en pantalla
+  const preloadResponsive = (target, onload, onerror) => {
+    const imgPreload = new Image()
+    const data = images[target]
+    if (data.srcSet) {
+      imgPreload.srcset = data.srcSet
+      imgPreload.sizes = data.sizes
+    }
+    imgPreload.src = data.src
+    if (onload) imgPreload.onload = onload
+    if (onerror) imgPreload.onerror = onerror
+    return imgPreload
+  }
+
+  const takeRandomFromPool = (exclude) => {
+    if (availableImagesRef.current.length === 0) {
+      availableImagesRef.current = [...images.keys()].filter((i) => i !== exclude)
+    }
+    const randomIndex = Math.floor(Math.random() * availableImagesRef.current.length)
+    const nextIndex = availableImagesRef.current[randomIndex]
+    availableImagesRef.current.splice(randomIndex, 1)
+    return nextIndex
+  }
+
   useEffect(() => {
     if (!images?.length) return
-    // Inicio determinista (coincide con el hero SSR si se usa); la
-    // aleatoriedad por visita la da el orden de rotación posterior
+    // Inicio determinista (coincide con el hero SSR si se usa)
     const startIndex = Math.min(initialIndex, images.length - 1)
     setCurrentIndex(startIndex)
     availableImagesRef.current = [...images.keys()].filter((i) => i !== startIndex)
@@ -30,8 +53,41 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
     const id = setTimeout(() => setOpacity(1), 50)
     timeoutsRef.current.push(id)
     // Respeta reduced-motion: no auto-rotar
-    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+    if (reduceMotion) {
       setPaused(true)
+      return () => {
+        timeoutsRef.current.forEach(clearTimeout)
+        timeoutsRef.current = []
+        clearTimeout(inactivityTimeout.current)
+      }
+    }
+    // Variación por visita: crossfade temprana a una imagen aleatoria.
+    // Se precarga en paralelo al hero (sin tiempos nuevos: reutiliza 400/50)
+    // y solo se muestra cuando ya está lista — nunca hay flash ni hueco.
+    if (images.length > 1) {
+      const target = takeRandomFromPool(startIndex)
+      if (target != null) {
+        setIsLoading(true)
+        preloadResponsive(
+          target,
+          () => {
+            preloadedImageRef.current = true
+            later(() => {
+              setOpacity(0)
+              later(() => {
+                setCurrentIndex(target)
+                setIsLoading(false)
+                later(() => setOpacity(1), 50)
+              }, 400)
+            }, 400)
+          },
+          () => {
+            availableImagesRef.current.push(target)
+            setIsLoading(false)
+          }
+        )
+      }
     }
     return () => {
       timeoutsRef.current.forEach(clearTimeout)
@@ -59,8 +115,7 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
     setIsLoading(true)
     setOpacity(0)
 
-    const imgPreload = new Image()
-    imgPreload.src = images[nextIndex].src
+    const imgPreload = preloadResponsive(nextIndex)
 
     imgPreload.onload = () => {
       preloadedImageRef.current = imgPreload
@@ -89,8 +144,7 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
     if (images.length <= 1 || !isInitialized) return
 
     const nextIndex = availableImagesRef.current[0] || getNextImageIndex()
-    const imgPreload = new Image()
-    imgPreload.src = images[nextIndex].src
+    preloadResponsive(nextIndex)
   }, [currentIndex, isInitialized])
 
   const handleMouseMove = () => {
@@ -103,6 +157,8 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
 
   if (!images?.length) return null
 
+  const current = images[currentIndex] || images[0]
+
   return (
     <div
       className="h-full w-full flex items-center justify-center overflow-hidden relative"
@@ -111,9 +167,9 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
     >
       <img
         key={currentIndex}
-        src={images[currentIndex].src || "/placeholder.svg"}
-        srcSet={images[currentIndex].srcSet}
-        sizes={images[currentIndex].sizes}
+        src={current.src || "/placeholder.svg"}
+        srcSet={current.srcSet}
+        sizes={current.sizes}
         alt={alt}
         decoding="async"
         fetchpriority="high"
