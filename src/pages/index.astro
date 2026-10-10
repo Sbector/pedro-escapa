@@ -44,14 +44,11 @@ const optimizedImages = await Promise.all(
   })
 );
 
-// Hero determinista = primera de las 15 (permite preload + SSR del LCP)
-const hero = optimizedImages[0];
 ---
 
 <Layout
   title="Pedro Escapa – Artista visual"
   description="Obra seleccionada de Pedro Escapa"
-  preloadImage={hero ? { href: hero.src, imagesrcset: hero.srcSet, imagesizes: hero.sizes } : undefined}
 >
 		<HomeCard images={optimizedImages} />
 </Layout>

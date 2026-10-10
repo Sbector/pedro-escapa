@@ -13,34 +13,8 @@ interface Props {
 }
 
 const { images } = Astro.props;
-
-// Hero SSR determinista: misma imagen que la isla muestra al hidratar (índice 0).
-// Pinta el LCP sin esperar al JS; la isla la reemplaza de forma invisible y
-// luego rota aleatoriamente entre las 15.
-const hero = images[0];
 ---
 
 <Wrapper>
-  {hero && (
-    <!-- Overlay calzado a la caja de contenido del Wrapper (replica su padding)
-      para que el hero SSR mida igual que la imagen de la isla -->
-    <div
-      id="home-hero-ssr"
-      class="absolute flex items-center justify-center overflow-hidden top-5 bottom-6 left-6 right-6 md:left-12 md:right-12 lg:top-9 lg:bottom-9 lg:left-12 lg:right-12"
-    >
-      <img
-        src={hero.src}
-        srcSet={hero.srcSet}
-        sizes={hero.sizes}
-        alt="Obra de Pedro Escapa"
-        width={hero.width}
-        height={hero.height}
-        decoding="async"
-        fetchpriority="high"
-        loading="eager"
-        class="absolute h-full w-auto object-contain"
-      />
-    </div>
-  )}
-  <RandomImage client:idle images={images} initialIndex={0} />
+  <RandomImage client:load images={images} />
 </Wrapper>

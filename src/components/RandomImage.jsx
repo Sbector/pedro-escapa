@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-export default function RandomImage({ images, alt = "Obra de Pedro Escapa", initialIndex = 0 }) {
+export default function RandomImage({ images, alt = "Obra de Pedro Escapa" }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [paused, setPaused] = useState(false)
@@ -43,57 +43,46 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
 
   useEffect(() => {
     if (!images?.length) return
-    // Inicio determinista (coincide con el hero SSR si se usa)
-    const startIndex = Math.min(initialIndex, images.length - 1)
-    setCurrentIndex(startIndex)
-    availableImagesRef.current = [...images.keys()].filter((i) => i !== startIndex)
-    setIsInitialized(true)
-    // Takeover invisible del hero SSR (misma imagen, ya en caché)
-    document.getElementById("home-hero-ssr")?.remove()
-    const id = setTimeout(() => setOpacity(1), 50)
-    timeoutsRef.current.push(id)
-    // Respeta reduced-motion: no auto-rotar
+    // Primera imagen siempre aleatoria por visita: se elige al azar,
+    // se precarga completa y recién entonces aparece con fade suave.
+    // (Hay una espera breve en blanco; es el costo de no repetir imagen.)
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
-    if (reduceMotion) {
-      setPaused(true)
-      return () => {
-        timeoutsRef.current.forEach(clearTimeout)
-        timeoutsRef.current = []
-        clearTimeout(inactivityTimeout.current)
+    if (reduceMotion) setPaused(true)
+
+    let cancelled = false
+    let attempts = 0
+    const pickFirst = () => {
+      if (cancelled) return
+      if (attempts >= 3) {
+        // Último recurso: mostrar la primera sin precargar
+        setCurrentIndex(0)
+        setIsInitialized(true)
+        later(() => setOpacity(1), 50)
+        return
       }
+      attempts += 1
+      const target = takeRandomFromPool(-1)
+      if (target == null) return
+      setIsLoading(true)
+      preloadResponsive(
+        target,
+        () => {
+          if (cancelled) return
+          setCurrentIndex(target)
+          setIsLoading(false)
+          setIsInitialized(true)
+          later(() => setOpacity(1), 50)
+        },
+        () => {
+          if (cancelled) return
+          setIsLoading(false)
+          pickFirst()
+        }
+      )
     }
-    // Variación por visita: crossfade temprana a una imagen aleatoria.
-    // El hero se muestra lo mismo que cualquier imagen (~3s, la cadencia
-    // de rotación existente) y recién ahí se cruza a la aleatoria, que
-    // se precarga en paralelo desde el inicio — nunca hay flash ni hueco.
-    // (No se toca ningún tiempo de transición: solo el dwell inicial.)
-    if (images.length > 1) {
-      const dwellUntil = Date.now() + 3000
-      const target = takeRandomFromPool(startIndex)
-      if (target != null) {
-        setIsLoading(true)
-        preloadResponsive(
-          target,
-          () => {
-            preloadedImageRef.current = true
-            const wait = Math.max(0, dwellUntil - Date.now())
-            later(() => {
-              setOpacity(0)
-              later(() => {
-                setCurrentIndex(target)
-                setIsLoading(false)
-                later(() => setOpacity(1), 50)
-              }, 400)
-            }, wait)
-          },
-          () => {
-            availableImagesRef.current.push(target)
-            setIsLoading(false)
-          }
-        )
-      }
-    }
+    pickFirst()
     return () => {
+      cancelled = true
       timeoutsRef.current.forEach(clearTimeout)
       timeoutsRef.current = []
       clearTimeout(inactivityTimeout.current)
@@ -169,6 +158,7 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
       onMouseMove={handleMouseMove}
       onTouchMove={handleMouseMove}
     >
+      {isInitialized && (
       <img
         key={currentIndex}
         src={current.src || "/placeholder.svg"}
@@ -179,11 +169,12 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
         fetchpriority="high"
         className="absolute h-full w-auto object-contain"
         style={{
-          opacity: isInitialized ? opacity : 0,
+          opacity,
           transition: "opacity 0.4s ease-in-out",
         }}
         onLoad={() => setIsLoading(false)}
       />
+      )}
     </div>
   )
 }
