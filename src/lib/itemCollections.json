@@ -941,6 +941,63 @@
     ]
   },
   {
+    "id": "se-parar-se",
+    "title": "Se Parar Se",
+    "description": "se-parar-se",
+    "images": [
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/01.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/02.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/03.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/04.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/05.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/06.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/07.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/08.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/09.webp"
+      },
+      {
+        "title": "",
+        "description": "Pigmentos de archivo/papel algodón",
+        "imageRoute": "../assets/images/papeleria/se-parar-se/10.webp"
+      }
+    ]
+  },
+  {
     "id": "shakers",
     "title": "Shakers",
     "description": "",
