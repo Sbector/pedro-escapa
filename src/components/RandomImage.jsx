@@ -63,9 +63,12 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
       }
     }
     // Variación por visita: crossfade temprana a una imagen aleatoria.
-    // Se precarga en paralelo al hero (sin tiempos nuevos: reutiliza 400/50)
-    // y solo se muestra cuando ya está lista — nunca hay flash ni hueco.
+    // El hero se muestra lo mismo que cualquier imagen (~3s, la cadencia
+    // de rotación existente) y recién ahí se cruza a la aleatoria, que
+    // se precarga en paralelo desde el inicio — nunca hay flash ni hueco.
+    // (No se toca ningún tiempo de transición: solo el dwell inicial.)
     if (images.length > 1) {
+      const dwellUntil = Date.now() + 3000
       const target = takeRandomFromPool(startIndex)
       if (target != null) {
         setIsLoading(true)
@@ -73,6 +76,7 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
           target,
           () => {
             preloadedImageRef.current = true
+            const wait = Math.max(0, dwellUntil - Date.now())
             later(() => {
               setOpacity(0)
               later(() => {
@@ -80,7 +84,7 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa", init
                 setIsLoading(false)
                 later(() => setOpacity(1), 50)
               }, 400)
-            }, 400)
+            }, wait)
           },
           () => {
             availableImagesRef.current.push(target)
