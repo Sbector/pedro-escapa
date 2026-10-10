@@ -3,29 +3,26 @@
   command = "npm run build"
   publish = "dist"
 
-# Assets con hash de Astro: inmutables, caché larga
+[build.environment]
+  NODE_VERSION = "20"
+
+# Assets con hash de Astro (incluye todos los .webp): inmutables, caché larga
 [[headers]]
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Imágenes y SVG optimizados
+# SVG en raíz (favicon, icons, poster del video)
 [[headers]]
-  for = "*.webp"
+  for = "/*.svg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Video en raíz: caché larga (el streaming por rangos 206 lo sirve Netlify por defecto)
 [[headers]]
-  for = "*.svg"
+  for = "/*.mp4"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-# Video: progresivo (206) + caché larga, mantiene audio
-[[headers]]
-  for = "*.mp4"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-    Accept-Ranges = "bytes"
 
 # HTML: siempre fresco (navegación cliente + View Transitions)
 [[headers]]

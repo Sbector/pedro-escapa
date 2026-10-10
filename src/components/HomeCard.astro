@@ -1,48 +1,44 @@
 ---
 import Wrapper from "./Wrapper.astro";
 import RandomImage from "./RandomImage.jsx"; // será un island React/vanilla
-import { getImage } from "astro:assets";
 
-// Obtener imágenes
-const allImages = [
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/98-01/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/escaleras/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/mixta-sobre-escaleras/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/composicion/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/consejos/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/colegages/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/arquitectura/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/a-quien-corresponda/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/death-of-painting/*.webp", { eager: true })),
-];
+interface Props {
+  images: Array<{
+    src: string;
+    srcSet?: string;
+    sizes?: string;
+    width?: number;
+    height?: number;
+  }>;
+}
 
-// 15 aleatorias por build: reduce props/JS hidratado (~75% menos) y mantiene
-// aleatoriedad por visita (RandomImage elige inicio y orden al azar en cliente)
-const shuffled = [...allImages].sort(() => Math.random() - 0.5);
-const images = shuffled.slice(0, 25);
+const { images } = Astro.props;
 
-// Optimizar (quality 85, responsive 640/960/1280)
-const optimizedImages = await Promise.all(
-  images.map(async (img: any) => {
-    const optimized = await getImage({
-      src: img.default ?? img.src ?? img,
-      format: "webp",
-      quality: 85,
-      widths: [640, 960, 1280],
-      sizes: "(max-width: 768px) 100vw, 80vw",
-    });
-
-    return {
-      src: optimized.src,
-      srcSet: (optimized as any).srcSet?.attribute ?? undefined,
-      sizes: "(max-width: 768px) 100vw, 80vw",
-      width: optimized.attributes.width,
-      height: optimized.attributes.height,
-    };
-  })
-);
+// Hero SSR determinista: misma imagen que la isla muestra al hidratar (índice 0).
+// Pinta el LCP sin esperar al JS; la isla la reemplaza de forma invisible y
+// luego rota aleatoriamente entre las 15.
+const hero = images[0];
 ---
 
 <Wrapper>
-  <RandomImage client:idle images={optimizedImages} />
+  {hero && (
+    <div
+      id="home-hero-ssr"
+      class="absolute inset-0 flex items-center justify-center overflow-hidden"
+    >
+      <img
+        src={hero.src}
+        srcSet={hero.srcSet}
+        sizes={hero.sizes}
+        alt="Obra de Pedro Escapa"
+        width={hero.width}
+        height={hero.height}
+        decoding="async"
+        fetchpriority="high"
+        loading="eager"
+        class="absolute h-full w-auto object-contain"
+      />
+    </div>
+  )}
+  <RandomImage client:idle images={images} initialIndex={0} />
 </Wrapper>

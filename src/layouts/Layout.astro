@@ -11,6 +11,11 @@ interface Props {
 	ogImage?: string;
 	noindex?: boolean;
 	currentPath?: string;
+	preloadImage?: {
+		href: string;
+		imagesrcset?: string;
+		imagesizes?: string;
+	};
 }
 
 const {
@@ -19,6 +24,7 @@ const {
 	ogImage,
 	noindex = false,
 	currentPath: currentPathProp,
+	preloadImage,
 } = Astro.props;
 
 // Construir la ruta actual: usar prop si se pasa, si no calcularla (misma lógica en un solo lugar)
@@ -57,6 +63,16 @@ if (currentPath !== "/" && currentPath.endsWith("/")) {
 		<meta name="twitter:description" content={description} />
 		{ogImage && <meta name="twitter:image" content={ogImage} />}
 		{noindex && <meta name="robots" content="noindex, nofollow" />}
+		{preloadImage && (
+			<link
+				rel="preload"
+				as="image"
+				href={preloadImage.href}
+				imagesrcset={preloadImage.imagesrcset}
+				imagesizes={preloadImage.imagesizes}
+				fetchpriority="high"
+			/>
+		)}
 		<title>{title}</title>
 		<ClientRouter />
 	</head>

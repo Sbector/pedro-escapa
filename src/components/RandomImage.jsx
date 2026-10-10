@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-export default function RandomImage({ images, alt = "Obra de Pedro Escapa" }) {
+export default function RandomImage({ images, alt = "Obra de Pedro Escapa", initialIndex = 0 }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [paused, setPaused] = useState(false)
@@ -19,11 +19,15 @@ export default function RandomImage({ images, alt = "Obra de Pedro Escapa" }) {
 
   useEffect(() => {
     if (!images?.length) return
-    const randomIndex = Math.floor(Math.random() * images.length)
-    setCurrentIndex(randomIndex)
-    availableImagesRef.current = [...images.keys()].filter((i) => i !== randomIndex)
+    // Inicio determinista (coincide con el hero SSR si se usa); la
+    // aleatoriedad por visita la da el orden de rotación posterior
+    const startIndex = Math.min(initialIndex, images.length - 1)
+    setCurrentIndex(startIndex)
+    availableImagesRef.current = [...images.keys()].filter((i) => i !== startIndex)
     setIsInitialized(true)
-    const id = setTimeout(() => setOpacity(1), 100)
+    // Takeover invisible del hero SSR (misma imagen, ya en caché)
+    document.getElementById("home-hero-ssr")?.remove()
+    const id = setTimeout(() => setOpacity(1), 50)
     timeoutsRef.current.push(id)
     // Respeta reduced-motion: no auto-rotar
     if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {

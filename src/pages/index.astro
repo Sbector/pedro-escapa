@@ -1,11 +1,54 @@
 ---
 import HomeCard from "@components/HomeCard.astro";
 import Layout from "@layouts/Layout.astro";
+import { getImage } from "astro:assets";
+
+// Pool de candidatas
+const allImages = [
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/98-01/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/escaleras/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/mixta-sobre-escaleras/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/composicion/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/bidimensional/consejos/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/colegages/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/arquitectura/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/a-quien-corresponda/*.webp", { eager: true })),
+  ...Object.values(import.meta.glob("../assets/images/interacciones/death-of-painting/*.webp", { eager: true })),
+];
+
+// 15 aleatorias por build (rotación aleatoria por visita la hace la isla en cliente)
+const shuffled = [...allImages].sort(() => Math.random() - 0.5);
+const images = shuffled.slice(0, 15);
+
+// Optimizar (quality 85, responsive 640/1024)
+const optimizedImages = await Promise.all(
+  images.map(async (img: any) => {
+    const optimized = await getImage({
+      src: img.default ?? img.src ?? img,
+      format: "webp",
+      quality: 85,
+      widths: [640, 1024],
+      sizes: "(max-width: 768px) 100vw, 80vw",
+    });
+
+    return {
+      src: optimized.src,
+      srcSet: (optimized as any).srcSet?.attribute ?? undefined,
+      sizes: "(max-width: 768px) 100vw, 80vw",
+      width: optimized.attributes.width,
+      height: optimized.attributes.height,
+    };
+  })
+);
+
+// Hero determinista = primera de las 15 (permite preload + SSR del LCP)
+const hero = optimizedImages[0];
 ---
 
 <Layout
   title="Pedro Escapa – Artista visual"
   description="Obra seleccionada de Pedro Escapa"
+  preloadImage={hero ? { href: hero.src, imagesrcset: hero.srcSet, imagesizes: hero.sizes } : undefined}
 >
-		<HomeCard />
+		<HomeCard images={optimizedImages} />
 </Layout>

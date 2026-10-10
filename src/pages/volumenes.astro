@@ -16,7 +16,7 @@ const responsiveVolumenes = volumenes?.data?.images
           src: img.imageRoute,
           format: "webp",
           quality: 85,
-          widths: [640, 1024, 1600],
+          widths: [640, 1024],
           sizes: "(max-width: 768px) 100vw, 80vw",
         });
         return {
@@ -31,13 +31,16 @@ const responsiveVolumenes = volumenes?.data?.images
       })
     )
   : [];
+
+const preloadFirstVol = responsiveVolumenes[0];
 ---
 
 <Layout
   title={`${volumenes?.data.title} · Pedro Escapa`}
   description="Volúmenes y esculturas de Pedro Escapa: acero, concreto, madera y materiales mixtos"
+  preloadImage={preloadFirstVol ? { href: preloadFirstVol.src, imagesrcset: preloadFirstVol.srcSet, imagesizes: preloadFirstVol.sizes } : undefined}
 >
     <Wrapper>
-        <Carousel client:visible items={responsiveVolumenes} />
+        <Carousel client:load items={responsiveVolumenes} />
     </Wrapper>
 </Layout>
