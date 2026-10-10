@@ -22,9 +22,11 @@ const hero = images[0];
 
 <Wrapper>
   {hero && (
+    <!-- Overlay calzado a la caja de contenido del Wrapper (replica su padding)
+      para que el hero SSR mida igual que la imagen de la isla -->
     <div
       id="home-hero-ssr"
-      class="absolute inset-0 flex items-center justify-center overflow-hidden"
+      class="absolute flex items-center justify-center overflow-hidden top-5 bottom-6 left-6 right-6 md:left-12 md:right-12 lg:top-9 lg:bottom-9 lg:left-12 lg:right-12"
     >
       <img
         src={hero.src}
