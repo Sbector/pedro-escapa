@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-export default function RandomImage({ images }) {
+export default function RandomImage({ images, alt = "Obra de Pedro Escapa" }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
   const [paused, setPaused] = useState(false)
@@ -8,14 +8,32 @@ export default function RandomImage({ images }) {
   const inactivityTimeout = useRef(null)
   const availableImagesRef = useRef([])
   const preloadedImageRef = useRef(null)
+  const timeoutsRef = useRef([])
   const [isInitialized, setIsInitialized] = useState(false)
 
+  const later = (fn, ms) => {
+    const id = setTimeout(fn, ms)
+    timeoutsRef.current.push(id)
+    return id
+  }
+
   useEffect(() => {
+    if (!images?.length) return
     const randomIndex = Math.floor(Math.random() * images.length)
     setCurrentIndex(randomIndex)
     availableImagesRef.current = [...images.keys()].filter((i) => i !== randomIndex)
     setIsInitialized(true)
-    setTimeout(() => setOpacity(1), 100)
+    const id = setTimeout(() => setOpacity(1), 100)
+    timeoutsRef.current.push(id)
+    // Respeta reduced-motion: no auto-rotar
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      setPaused(true)
+    }
+    return () => {
+      timeoutsRef.current.forEach(clearTimeout)
+      timeoutsRef.current = []
+      clearTimeout(inactivityTimeout.current)
+    }
   }, [])
 
   const getNextImageIndex = () => {
@@ -30,8 +48,10 @@ export default function RandomImage({ images }) {
 
   const changeImage = () => {
     if (isLoading) return
+    if (!images?.length) return
 
     const nextIndex = getNextImageIndex()
+    if (nextIndex == null) return
     setIsLoading(true)
     setOpacity(0)
 
@@ -40,10 +60,10 @@ export default function RandomImage({ images }) {
 
     imgPreload.onload = () => {
       preloadedImageRef.current = imgPreload
-      setTimeout(() => {
+      later(() => {
         setCurrentIndex(nextIndex)
         setIsLoading(false)
-        setTimeout(() => setOpacity(1), 50)
+        later(() => setOpacity(1), 50)
       }, 400)
     }
 
@@ -51,7 +71,7 @@ export default function RandomImage({ images }) {
       console.warn(`Failed to load image: ${images[nextIndex].src}`)
       setIsLoading(false)
       setOpacity(1)
-      setTimeout(changeImage, 100)
+      later(changeImage, 100)
     }
   }
 
@@ -70,10 +90,14 @@ export default function RandomImage({ images }) {
   }, [currentIndex, isInitialized])
 
   const handleMouseMove = () => {
+    // No reanudar si el usuario prefiere reduced-motion
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return
     setPaused(true)
     clearTimeout(inactivityTimeout.current)
     inactivityTimeout.current = setTimeout(() => setPaused(false), 1000)
   }
+
+  if (!images?.length) return null
 
   return (
     <div
@@ -84,7 +108,11 @@ export default function RandomImage({ images }) {
       <img
         key={currentIndex}
         src={images[currentIndex].src || "/placeholder.svg"}
-        alt=""
+        srcSet={images[currentIndex].srcSet}
+        sizes={images[currentIndex].sizes}
+        alt={alt}
+        decoding="async"
+        fetchpriority="high"
         className="absolute h-full w-auto object-contain"
         style={{
           opacity: isInitialized ? opacity : 0,

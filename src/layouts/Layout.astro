@@ -7,19 +7,30 @@ import UnderConstructionModal from "@components/UnderConstructionModal";
 
 interface Props {
 	title?: string;
+	description?: string;
+	ogImage?: string;
+	noindex?: boolean;
 	currentPath?: string;
 }
 
-const { title } = Astro.props;
+const {
+	title = "Pedro Escapa – Artista visual",
+	description = "Obra seleccionada de Pedro Escapa",
+	ogImage,
+	noindex = false,
+	currentPath: currentPathProp,
+} = Astro.props;
 
-// Construir la ruta actual basándose en los parámetros y la ruta
-let currentPath = Astro.url.pathname;
+// Construir la ruta actual: usar prop si se pasa, si no calcularla (misma lógica en un solo lugar)
+let currentPath = currentPathProp ?? Astro.url.pathname;
 
-// Para rutas dinámicas, construir la ruta desde los parámetros
-if (Astro.params.categoria && Astro.params.slug) {
-	currentPath = `/${Astro.params.categoria}/${Astro.params.slug}`;
-} else if (Astro.params.categoria) {
-	currentPath = `/${Astro.params.categoria}`;
+// Para rutas dinámicas, construir la ruta desde los parámetros (solo si no vino por prop)
+if (!currentPathProp) {
+	if (Astro.params.categoria && Astro.params.slug) {
+		currentPath = `/${Astro.params.categoria}/${Astro.params.slug}`;
+	} else if (Astro.params.categoria) {
+		currentPath = `/${Astro.params.categoria}`;
+	}
 }
 
 // Normalizar la ruta (remover trailing slash si existe, excepto para root)
@@ -29,17 +40,30 @@ if (currentPath !== "/" && currentPath.endsWith("/")) {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content="Pedro Escapa artista" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={Astro.url.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
+		{ogImage && <meta property="og:image" content={ogImage} />}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{ogImage && <meta name="twitter:image" content={ogImage} />}
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
 		<title>{title}</title>
 		<ClientRouter />
 	</head>
 	<body class="h-[calc(100dvh-64px)] lg:h-dvh flex flex-col lg:flex-row">
+		<a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-sm">Saltar al contenido</a>
 		<ReactHeader client:idle currentPath={currentPath} />
-		<main class="flex-1 overflow-y-auto">
+		<main id="contenido" class="flex-1 overflow-y-auto">
 			<slot />
 			<!-- <UnderConstructionModal client:load /> -->
 		</main>

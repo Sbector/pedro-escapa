@@ -41,7 +41,7 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
     const contactSpacing = isMobile ? "pt-8" : "pt-20";
 
     return (
-        <nav className="lg:max-w-[160px]">
+        <nav aria-label="Navegación principal" className="lg:max-w-[160px]">
             <ul className={containerClasses}>
                 {menu
                     .filter((item) => item.visible !== false)
@@ -67,6 +67,7 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
                                                         <a
                                                             href={`/${item.id}/${sub.slug}`}
                                                             onClick={handleLinkClick}
+                                                            aria-current={isSubitemActive(item.id, sub.slug) ? "page" : undefined}
                                                             className={`block hover:italic ${
                                                                 isSubitemActive(item.id, sub.slug)
                                                                     ? 'text-black font-semibold italic'
@@ -84,6 +85,7 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
                                 <a 
                                     href={item.href} 
                                     onClick={handleLinkClick}
+                                    aria-current={isActive(item.href) ? "page" : undefined}
                                     className={`inline-block ${
                                         isActive(item.href)
                                             ? 'font-bold text-black'
@@ -100,6 +102,7 @@ export default function ReactNav({ currentPath, isMobile = false, onLinkClick })
                     <a 
                         href="/contacto" 
                         onClick={handleLinkClick}
+                        aria-current={isActive('/contacto') ? "page" : undefined}
                         className={`
                             pb-20 
                             ${

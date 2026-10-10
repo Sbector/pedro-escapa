@@ -4,7 +4,7 @@ import RandomImage from "./RandomImage.jsx"; // será un island React/vanilla
 import { getImage } from "astro:assets";
 
 // Obtener imágenes
-const images = [
+const allImages = [
   ...Object.values(import.meta.glob("../assets/images/bidimensional/98-01/*.webp", { eager: true })),
   ...Object.values(import.meta.glob("../assets/images/bidimensional/escaleras/*.webp", { eager: true })),
   ...Object.values(import.meta.glob("../assets/images/bidimensional/mixta-sobre-escaleras/*.webp", { eager: true })),
@@ -16,18 +16,26 @@ const images = [
   ...Object.values(import.meta.glob("../assets/images/interacciones/death-of-painting/*.webp", { eager: true })),
 ];
 
-// Optimizar
+// 15 aleatorias por build: reduce props/JS hidratado (~75% menos) y mantiene
+// aleatoriedad por visita (RandomImage elige inicio y orden al azar en cliente)
+const shuffled = [...allImages].sort(() => Math.random() - 0.5);
+const images = shuffled.slice(0, 25);
+
+// Optimizar (quality 85, responsive 640/960/1280)
 const optimizedImages = await Promise.all(
   images.map(async (img: any) => {
     const optimized = await getImage({
       src: img.default ?? img.src ?? img,
       format: "webp",
       quality: 85,
-      height: 800,
+      widths: [640, 960, 1280],
+      sizes: "(max-width: 768px) 100vw, 80vw",
     });
 
     return {
       src: optimized.src,
+      srcSet: (optimized as any).srcSet?.attribute ?? undefined,
+      sizes: "(max-width: 768px) 100vw, 80vw",
       width: optimized.attributes.width,
       height: optimized.attributes.height,
     };
@@ -36,5 +44,5 @@ const optimizedImages = await Promise.all(
 ---
 
 <Wrapper>
-  <RandomImage client:load images={optimizedImages} />
+  <RandomImage client:idle images={optimizedImages} />
 </Wrapper>

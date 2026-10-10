@@ -46,7 +46,7 @@ export const menu: MenuItem[] = [
       { label: "Tórculo", slug: "torculo", visible: true },
       { label: "Shakers", slug: "shakers", visible: true },
       { label: "Recursos (Papelería y almaZen)", slug: "recursos", visible: true },
-      { label: "Se Parar Se", slug: "se-parar-se", visible: true },
+      { label: "Se parar se", slug: "se-parar-se", visible: true },
     ],
   },
   {
