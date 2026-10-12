@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@import "@fontsource/inter/latin-400.css";
-@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter";
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
