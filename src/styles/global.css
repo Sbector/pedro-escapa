@@ -17,3 +17,27 @@ body {
     height: 100%;
     font-family: 'Inter', sans-serif;
 }
+
+/* Llamado de la flecha "seguir abajo": dos pequeños saltos al entrar a la
+   página y luego queda quieta. Solo con movimiento permitido. */
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-hint-pulse {
+        display: inline-block;
+        animation: scroll-hint-pulse 1.3s ease-in-out 2;
+    }
+}
+
+@keyframes scroll-hint-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 0.55;
+        transform: translateY(8px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

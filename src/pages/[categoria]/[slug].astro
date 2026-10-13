@@ -125,24 +125,31 @@ const preloadFirst = responsiveImages[0];
           snap-start"  
         >
           <DescriptionContent pb-16/>
-          <!-- Botón -->
-          <div class="not-prose mt-12 flex justify-center">
-            <button
-              id="scroll-to-carousel"
-              type="button"
-              aria-label="Ir a la galería de imágenes"
-              class="inline-flex items-center gap-2
-                    px-4 py-2
-                    text-sm
-                    hover:bg-neutral-100
-                    transition"
-            >
-              <span aria-hidden="true">↓</span>
-            </button>
-          </div>
         </div>
       )
     }
+
+    {/* Botón flotante: acompaña la lectura (sticky), alineado al padding del texto */}
+    {DescriptionContent && (
+      <div
+        id="scroll-hint"
+        class="not-prose sticky bottom-6 z-10 -mt-16 flex justify-end pr-6 lg:pr-20 pointer-events-none transition-opacity duration-300"
+      >
+        <button
+          id="scroll-to-carousel"
+          type="button"
+          aria-label="Ir a la galería de imágenes"
+          class="pointer-events-auto inline-flex items-center gap-2
+                px-3 py-1
+                text-sm
+                bg-white/80 backdrop-blur-sm
+                hover:bg-neutral-100
+                transition"
+        >
+          <span aria-hidden="true" class="scroll-hint-pulse">↓</span>
+        </button>
+      </div>
+    )}
 
     <Wrapper id="carousel-section" className="min-h-full snap-start">
   {
@@ -161,13 +168,34 @@ const preloadFirst = responsiveImages[0];
   <script>
     function setupScrollButton() {
       const button = document.getElementById("scroll-to-carousel");
+      const hint = document.getElementById("scroll-hint");
       const target = document.getElementById("carousel-section");
 
       if (!button || !target) return;
 
+      const arrow = button.querySelector(".scroll-hint-pulse");
+
       button.onclick = () => {
+        // Detener el pulso tras el primer uso
+        arrow?.classList.remove("scroll-hint-pulse");
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       };
+
+      // Ocultar la flecha mientras la galería está visible
+      // (el contenedor conserva pointer-events-none; solo se alterna
+      // la opacidad y los clics del botón)
+      if (hint && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              hint.classList.toggle("opacity-0", entry.isIntersecting);
+              button.classList.toggle("pointer-events-auto", !entry.isIntersecting);
+            });
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(target);
+      }
     }
 
   // Primera carga
