@@ -1,6 +1,5 @@
 import { defineCollection, reference, z } from "astro:content"
 import { file, glob } from 'astro/loaders';
-import { Description } from "@headlessui/react";
 
 const itemCollections = defineCollection({
     loader: file("./src/lib/itemCollections.json"),

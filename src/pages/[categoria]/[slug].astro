@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import { menu } from "@lib/menu";
 import { getSubitemData } from "@lib/getSubitemData";
 import { getCollection, render } from "astro:content";
+import { getImage } from "astro:assets";
 import Carousel from "@components/Carousel.jsx";
 import Wrapper from "@components/Wrapper.astro";
 
@@ -31,7 +32,7 @@ const { categoria, slug } = Astro.params;
 const subitemData = getSubitemData(menu, categoria, slug);
 
 if (!subitemData) {
-  throw new Error(`No se encontró el subitem: ${categoria}/${slug}`);
+  return Astro.redirect("/404");
 }
 
 // Construir la ruta actual explícitamente
@@ -59,11 +60,55 @@ if (collection?.data?.description) {
     DescriptionContent = Content;
   }
 }
+
+const pageTitle = `${collection?.data.title ?? subitemData.label} · Pedro Escapa`;
+const firstImage = collection?.data?.images?.[0];
+const pageDescription = firstImage
+  ? `${firstImage.title ?? ""} ${firstImage.description ?? ""}`.trim().slice(0, 155) || `${collection?.data.title ?? subitemData.label} – obra de Pedro Escapa`
+  : `${collection?.data.title ?? subitemData.label} – obra de Pedro Escapa`;
+const ogImage = firstImage?.imageRoute?.src;
+
+// Responsive server-side (quality 85, sin herramientas nuevas): genera
+// srcSet 640/1024 para que móvil no descargue el archivo de desktop
+const responsiveImages = collection?.data?.images
+  ? await Promise.all(
+      collection.data.images.map(async (img: any) => {
+        const optimized = await getImage({
+          src: img.imageRoute,
+          format: "webp",
+          quality: 85,
+          widths: [640, 1024],
+          sizes: "(max-width: 768px) 100vw, 80vw",
+        });
+        return {
+          title: img.title,
+          description: img.description,
+          src: optimized.src,
+          srcSet: (optimized as any).srcSet?.attribute ?? undefined,
+          sizes: "(max-width: 768px) 100vw, 80vw",
+          width: optimized.attributes.width,
+          height: optimized.attributes.height,
+        };
+      })
+    )
+  : [];
+
+const carouselItems = [
+  ...responsiveImages,
+  ...(collection?.data?.video ? [collection.data.video] : []),
+];
+
+// Preload de la primera slide (server-known): descarga en paralelo al JS
+// de la isla en vez de esperar a la hidratación
+const preloadFirst = responsiveImages[0];
 ---
 
 <Layout
-  title={`${collection?.data.title} · Pedro Escapa`}
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={ogImage}
   currentPath={currentPath}
+  preloadImage={preloadFirst ? { href: preloadFirst.src, imagesrcset: preloadFirst.srcSet, imagesizes: preloadFirst.sizes } : undefined}
 >
   <div class="h-full w-full overflow-y-auto snap-y snap-mandatory">
     {
@@ -80,32 +125,39 @@ if (collection?.data?.description) {
           snap-start"  
         >
           <DescriptionContent pb-16/>
-          <!-- Botón -->
-          <div class="not-prose mt-12 flex justify-center">
-            <button
-              id="scroll-to-carousel"
-              class="inline-flex items-center gap-2
-                    px-4 py-2
-                    text-sm
-                    hover:bg-neutral-100
-                    transition"
-            >
-              ↓
-            </button>
-          </div>
         </div>
       )
     }
+
+    {/* Botón flotante: acompaña la lectura (sticky), alineado al padding del texto */}
+    {DescriptionContent && (
+      <div
+        id="scroll-hint"
+        class="not-prose sticky bottom-6 z-10 -mt-16 flex justify-end pr-6 lg:pr-20 pointer-events-none transition-opacity duration-300"
+      >
+        <button
+          id="scroll-to-carousel"
+          type="button"
+          aria-label="Ir a la galería de imágenes"
+          class="pointer-events-auto inline-flex items-center gap-2
+                px-3 py-1
+                text-sm
+                bg-white/80 backdrop-blur-sm
+                hover:bg-neutral-100
+                transition"
+        >
+          <span aria-hidden="true" class="scroll-hint-pulse">↓</span>
+        </button>
+      </div>
+    )}
 
     <Wrapper id="carousel-section" className="min-h-full snap-start">
   {
     (collection?.data?.images || collection?.data?.video) && (
       <Carousel 
-        client:load 
-        items={[
-          ...collection.data.images, 
-          ...(collection.data.video ? [collection.data.video] : [])
-        ]} 
+        key={slug}
+        client:idle 
+        items={carouselItems} 
         mode={collection.data.carouselMode}
       />
     )
@@ -116,13 +168,34 @@ if (collection?.data?.description) {
   <script>
     function setupScrollButton() {
       const button = document.getElementById("scroll-to-carousel");
+      const hint = document.getElementById("scroll-hint");
       const target = document.getElementById("carousel-section");
 
       if (!button || !target) return;
 
+      const arrow = button.querySelector(".scroll-hint-pulse");
+
       button.onclick = () => {
+        // Detener el pulso tras el primer uso
+        arrow?.classList.remove("scroll-hint-pulse");
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       };
+
+      // Ocultar la flecha mientras la galería está visible
+      // (el contenedor conserva pointer-events-none; solo se alterna
+      // la opacidad y los clics del botón)
+      if (hint && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              hint.classList.toggle("opacity-0", entry.isIntersecting);
+              button.classList.toggle("pointer-events-auto", !entry.isIntersecting);
+            });
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(target);
+      }
     }
 
   // Primera carga

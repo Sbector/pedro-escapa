@@ -5,7 +5,7 @@ import Layout from "@layouts/Layout.astro";
 const title = "Contacto";
 ---
 
-<Layout title={`${title} Pedro Escapa`}>
+<Layout title={`${title} Pedro Escapa`} description="Contacto con Pedro Escapa">
     <Wrapper>
         <section class="flex flex-1 items-center justify-center px-8 py-12">
             <form
@@ -13,6 +13,7 @@ const title = "Contacto";
                 method="POST"
                 data-netlify="true"
                 action="/agradecimiento"
+                aria-label="Formulario de contacto"
                 class="w-full max-w-3xl grid grid-cols-1 gap-6 lg:grid-cols-2"
             >
                 <!-- Required hidden input -->
@@ -27,6 +28,7 @@ const title = "Contacto";
                         name="nombre"
                         type="text"
                         required
+                        autocomplete="name"
                         class="border-b border-black outline-none"
                     />
                 </div>
@@ -40,6 +42,7 @@ const title = "Contacto";
                         name="correo"
                         type="email"
                         required
+                        autocomplete="email"
                         class="border-b border-black outline-none"
                     />
                 </div>

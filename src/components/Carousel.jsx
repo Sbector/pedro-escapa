@@ -52,6 +52,7 @@ export default function Carousel({ items, mode = "single" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
   const videoRef = useRef(null); // 👈 referencia al video actual
+  const tickingRef = useRef(false);
 
   const scrollToIndex = (index) => {
     const carousel = carouselRef.current;
@@ -62,43 +63,60 @@ export default function Carousel({ items, mode = "single" }) {
   };
 
   const handleNext = () => {
+    if (!items?.length) return;
     const nextIndex = currentIndex + 1 >= items.length ? 0 : currentIndex + 1;
     scrollToIndex(nextIndex);
   };
 
   const handlePrevious = () => {
+    if (!items?.length) return;
     const prevIndex = currentIndex - 1 < 0 ? items.length - 1 : currentIndex - 1;
     scrollToIndex(prevIndex);
   };
 
-  const handleScroll = () => {
+  const updateClosestIndex = () => {
+    tickingRef.current = false;
     const carousel = carouselRef.current;
     if (!carousel) return;
 
     let closestIndex = 0;
     let closestDistance = Infinity;
+    const carouselLeft = carousel.getBoundingClientRect().left;
 
     Array.from(carousel.children).forEach((item, index) => {
       const rect = item.getBoundingClientRect();
-      const distance = Math.abs(
-        rect.left - carousel.getBoundingClientRect().left
-      );
+      const distance = Math.abs(rect.left - carouselLeft);
       if (distance < closestDistance) {
         closestDistance = distance;
         closestIndex = index;
       }
     });
 
-    setCurrentIndex(closestIndex);
+    setCurrentIndex((prev) => (prev === closestIndex ? prev : closestIndex));
+  };
+
+  const handleScroll = () => {
+    if (tickingRef.current) return;
+    tickingRef.current = true;
+    requestAnimationFrame(updateClosestIndex);
   };
 
   useEffect(() => {
     const carousel = carouselRef.current;
     if (carousel) {
-      carousel.addEventListener("scroll", handleScroll);
+      carousel.addEventListener("scroll", handleScroll, { passive: true });
       return () => carousel.removeEventListener("scroll", handleScroll);
     }
   }, []);
+
+  // Recarga el video al cambiar de sección (navegación cliente con ClientRouter)
+  useEffect(() => {
+    if (videoRef.current) {
+      try { videoRef.current.load(); } catch {}
+    }
+  }, [items]);
+
+  if (!items?.length) return null;
 
   return (
     <div className="h-full w-full">
@@ -109,31 +127,48 @@ export default function Carousel({ items, mode = "single" }) {
         overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth no-scrollbar`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {items.map((item, index) => (
+        {items.map((item, index) => {
+          const imgSrc = item.src ?? item.imageRoute?.src;
+          const imgSrcSet = item.srcSet ?? item.imageRoute?.srcSet;
+          const imgSizes = item.sizes ?? "(max-width: 768px) 100vw, 80vw";
+          const imgWidth = item.width ?? item.imageRoute?.width;
+          const imgHeight = item.height ?? item.imageRoute?.height;
+          const imgAlt = item.title ? `${item.title} – ${item.description || ""}`.trim() : "Obra de Pedro Escapa";
+          return (
           <li
-            key={index}
+            key={item.videoRoute ? `video-${item.videoRoute}` : `img-${index}`}
             className={`snap-start flex flex-col justify-center items-center relative bg-white 
             ${mode === "double" ? "basis-1/2 flex-shrink-0 px-4" : "min-w-full"}
           `}
           >
-            {item.imageRoute ? (
+            {imgSrc ? (
               <img
-                src={item.imageRoute.src}
-                alt=""
-                width={item.width}
-                height={item.height}
+                src={typeof imgSrc === "string" ? imgSrc : imgSrc.src ?? imgSrc}
+                srcSet={typeof imgSrcSet === "string" ? imgSrcSet : undefined}
+                sizes={imgSrcSet ? imgSizes : undefined}
+                alt={imgAlt}
+                width={typeof imgWidth === "number" ? imgWidth : undefined}
+                height={typeof imgHeight === "number" ? imgHeight : undefined}
                 className="max-h-full object-contain"
                 loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+                fetchpriority={index === 0 ? "high" : "low"}
               />
             ) : item.videoRoute ? (
               <video
+                key={typeof item.videoRoute === "string" ? item.videoRoute : "video"}
                 ref={videoRef}
-                src={item.videoRoute}
+                preload="metadata"
+                poster="/video-poster.svg"
+                width={720}
+                height={480}
                 controls
                 playsInline
                 loop
-                className="max-h-full object-contain lg:h-full scale-x-[0.9]"
-              />
+                className="max-h-full object-contain lg:h-full scale-x-[0.9] bg-black"
+              >
+                <source src={item.videoRoute} type="video/mp4" />
+              </video>
             ) : null}
 
             <p className="text-xs font-light tracking-widest text-center static mt-8 lg:absolute lg:bottom-0 lg:translate-y-16 lg:mt-0">
@@ -143,11 +178,13 @@ export default function Carousel({ items, mode = "single" }) {
               {item.description || ""}
             </p>
           </li>
-        ))}
+          );
+        })}
       </ul>
 
       {/* Flechas */}
       <button
+        type="button"
         onClick={handlePrevious}
         className="hidden md:flex absolute top-1/2 left-0 -translate-y-1/2 rounded-full p-2 cursor-pointer"
         aria-label="Anterior"
@@ -156,6 +193,7 @@ export default function Carousel({ items, mode = "single" }) {
       </button>
 
       <button
+        type="button"
         onClick={handleNext}
         className="hidden md:flex absolute top-1/2 right-0 -translate-y-1/2 rounded-full p-2 cursor-pointer"
         aria-label="Siguiente"

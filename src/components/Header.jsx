@@ -42,13 +42,17 @@ export default function ReactHeader({ currentPath }) {
                 {/* Botón del menú mobile */}
                 <div className="absolute right-6 items-center lg:hidden">
                     <button 
+                        type="button"
                         onClick={toggleMobileMenu}
                         className="block size-8"
-                        aria-label="Toggle menu"
+                        aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                        aria-expanded={isMobileMenuOpen}
+                        aria-controls="mobile-menu"
                     >
                         <img 
                             src={isMobileMenuOpen ? "/close-icon.svg" : "/menu-icon.svg"} 
-                            alt={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                            alt=""
+                            aria-hidden="true"
                             className="w-full h-full"
                         />
                     </button>
@@ -64,7 +68,7 @@ export default function ReactHeader({ currentPath }) {
             )}
 
             {/* Menú mobile */}
-            <div className={`
+            <div id="mobile-menu" className={`
                 lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw]
                 bg-white shadow-xl z-50
                 transform transition-transform duration-300 ease-in-out

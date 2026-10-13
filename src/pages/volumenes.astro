@@ -3,14 +3,44 @@ import Layout from "@layouts/Layout.astro";
 import Carousel from "@components/Carousel.jsx";
 import Wrapper from "@components/Wrapper.astro";
 import { getCollection } from "astro:content";
+import { getImage } from "astro:assets";
 
 const itemCollections = await getCollection("itemCollections");
 
 const volumenes = itemCollections.find(item => item.id === "volumenes")
+
+const responsiveVolumenes = volumenes?.data?.images
+  ? await Promise.all(
+      volumenes.data.images.map(async (img: any) => {
+        const optimized = await getImage({
+          src: img.imageRoute,
+          format: "webp",
+          quality: 85,
+          widths: [640, 1024],
+          sizes: "(max-width: 768px) 100vw, 80vw",
+        });
+        return {
+          title: img.title,
+          description: img.description,
+          src: optimized.src,
+          srcSet: (optimized as any).srcSet?.attribute ?? undefined,
+          sizes: "(max-width: 768px) 100vw, 80vw",
+          width: optimized.attributes.width,
+          height: optimized.attributes.height,
+        };
+      })
+    )
+  : [];
+
+const preloadFirstVol = responsiveVolumenes[0];
 ---
 
-<Layout title={`${volumenes?.data.title} · Pedro Escapa`}>
+<Layout
+  title={`${volumenes?.data.title} · Pedro Escapa`}
+  description="Volúmenes y esculturas de Pedro Escapa: acero, concreto, madera y materiales mixtos"
+  preloadImage={preloadFirstVol ? { href: preloadFirstVol.src, imagesrcset: preloadFirstVol.srcSet, imagesizes: preloadFirstVol.sizes } : undefined}
+>
     <Wrapper>
-        <Carousel client:load items={volumenes?.data.images} />
+        <Carousel client:load items={responsiveVolumenes} />
     </Wrapper>
 </Layout>

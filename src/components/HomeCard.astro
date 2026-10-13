@@ -1,40 +1,20 @@
 ---
 import Wrapper from "./Wrapper.astro";
 import RandomImage from "./RandomImage.jsx"; // será un island React/vanilla
-import { getImage } from "astro:assets";
 
-// Obtener imágenes
-const images = [
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/98-01/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/escaleras/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/mixta-sobre-escaleras/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/composicion/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/bidimensional/consejos/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/colegages/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/arquitectura/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/a-quien-corresponda/*.webp", { eager: true })),
-  ...Object.values(import.meta.glob("../assets/images/interacciones/death-of-painting/*.webp", { eager: true })),
-];
+interface Props {
+  images: Array<{
+    src: string;
+    srcSet?: string;
+    sizes?: string;
+    width?: number;
+    height?: number;
+  }>;
+}
 
-// Optimizar
-const optimizedImages = await Promise.all(
-  images.map(async (img: any) => {
-    const optimized = await getImage({
-      src: img.default ?? img.src ?? img,
-      format: "webp",
-      quality: 85,
-      height: 800,
-    });
-
-    return {
-      src: optimized.src,
-      width: optimized.attributes.width,
-      height: optimized.attributes.height,
-    };
-  })
-);
+const { images } = Astro.props;
 ---
 
 <Wrapper>
-  <RandomImage client:load images={optimizedImages} />
+  <RandomImage client:load images={images} />
 </Wrapper>
