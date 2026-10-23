@@ -49,8 +49,6 @@ let DescriptionContent = null;
 if (collection?.data?.description) {
   const descriptionRef = collection.data.description;
 
-  // Buscar la descripción por su id
-  // Si es una referencia, usar el id; si es un string, usar directamente
   const refId =
     typeof descriptionRef === "string" ? descriptionRef : descriptionRef.id;
   const descriptionEntry = descriptions.find((desc) => desc.id === refId);
@@ -68,8 +66,6 @@ const pageDescription = firstImage
   : `${collection?.data.title ?? subitemData.label} – obra de Pedro Escapa`;
 const ogImage = firstImage?.imageRoute?.src;
 
-// Responsive server-side (quality 85, sin herramientas nuevas): genera
-// srcSet 640/1024 para que móvil no descargue el archivo de desktop
 const responsiveImages = collection?.data?.images
   ? await Promise.all(
       collection.data.images.map(async (img: any) => {
@@ -98,8 +94,6 @@ const carouselItems = [
   ...(collection?.data?.video ? [collection.data.video] : []),
 ];
 
-// Preload de la primera slide (server-known): descarga en paralelo al JS
-// de la isla en vez de esperar a la hidratación
 const preloadFirst = responsiveImages[0];
 ---
 
@@ -111,51 +105,10 @@ const preloadFirst = responsiveImages[0];
   preloadImage={preloadFirst ? { href: preloadFirst.src, imagesrcset: preloadFirst.srcSet, imagesizes: preloadFirst.sizes } : undefined}
 >
   <div class="h-full w-full overflow-y-auto snap-y snap-mandatory">
-    {
-      DescriptionContent && (
-        <div
-          class="prose prose-sm 
-          prose-headings:text-2xl prose-headings:pt-8
-          prose-strong:text-2xl
-          max-w-none min-h-full
-          pt-8 lg:pt-40 
-          pb-16 lg:pb-48 
-          px-6 lg:px-20
-          text-justify
-          snap-start"  
-        >
-          <DescriptionContent pb-16/>
-        </div>
-      )
-    }
-
-    {/* Botón flotante: acompaña la lectura (sticky), alineado al padding del texto */}
-    {DescriptionContent && (
-      <div
-        id="scroll-hint"
-        class="not-prose sticky bottom-6 z-10 -mt-16 flex justify-end pr-6 lg:pr-20 pointer-events-none transition-opacity duration-300"
-      >
-        <button
-          id="scroll-to-carousel"
-          type="button"
-          aria-label="Ir a la galería de imágenes"
-          class="pointer-events-auto inline-flex items-center gap-2
-                px-3 py-1
-                text-sm
-                bg-white/80 backdrop-blur-sm
-                hover:bg-neutral-100
-                transition"
-        >
-          <span aria-hidden="true" class="scroll-hint-pulse">↓</span>
-        </button>
-      </div>
-    )}
-
     <Wrapper id="carousel-section" className="min-h-full snap-start">
   {
     (collection?.data?.images || collection?.data?.video) && (
       <Carousel 
-        key={slug}
         client:idle 
         items={carouselItems} 
         mode={collection.data.carouselMode}
@@ -163,27 +116,58 @@ const preloadFirst = responsiveImages[0];
     )
   }
 </Wrapper>
+
+    {DescriptionContent && (
+      <div
+        id="info-button"
+        class="sticky bottom-0 lg:bottom-6 right-0 z-10 flex justify-end pointer-events-none transition-opacity duration-300"
+      >
+        <button
+          id="scroll-to-text"
+          type="button"
+          aria-label="Ver información"
+          class="pointer-events-auto inline-flex items-center gap-2
+                px-3 py-1.5
+                text-sm
+                bg-white/80 backdrop-blur-sm
+                hover:-translate-y-0.5 hover:shadow-lg
+                transition"
+        >
+          [ + información ]
+        </button>
+      </div>
+    )}
+
+    {DescriptionContent && (
+      <div
+        id="text-section"
+        class="prose prose-sm 
+        prose-headings:text-2xl prose-headings:pt-8
+        prose-strong:text-2xl
+        max-w-none min-h-full
+        pt-8 lg:pt-40 
+        pb-16 lg:pb-48 
+        px-6 lg:px-20
+        text-justify
+        snap-start"  
+      >
+        <DescriptionContent pb-16/>
+      </div>
+    )}
   </div>
 
   <script>
-    function setupScrollButton() {
-      const button = document.getElementById("scroll-to-carousel");
-      const hint = document.getElementById("scroll-hint");
-      const target = document.getElementById("carousel-section");
+    function setupInfoButton() {
+      const button = document.getElementById("scroll-to-text");
+      const hint = document.getElementById("info-button");
+      const target = document.getElementById("text-section");
 
       if (!button || !target) return;
 
-      const arrow = button.querySelector(".scroll-hint-pulse");
-
       button.onclick = () => {
-        // Detener el pulso tras el primer uso
-        arrow?.classList.remove("scroll-hint-pulse");
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       };
 
-      // Ocultar la flecha mientras la galería está visible
-      // (el contenedor conserva pointer-events-none; solo se alterna
-      // la opacidad y los clics del botón)
       if (hint && "IntersectionObserver" in window) {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -198,11 +182,9 @@ const preloadFirst = responsiveImages[0];
       }
     }
 
-  // Primera carga
-    setupScrollButton();
+    setupInfoButton();
 
-  // Navegación Astro (View Transitions)
-    document.addEventListener("astro:page-load", setupScrollButton);
+    document.addEventListener("astro:page-load", setupInfoButton);
   </script>
 </Layout>
 
